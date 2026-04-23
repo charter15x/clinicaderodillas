@@ -1,0 +1,77 @@
+# ══════════════════════════════════════════════════════
+#  Clínica de Rodilla – clinicaderodillas.net
+#  Apache .htaccess  |  InfinityFree Hosting
+# ══════════════════════════════════════════════════════
+
+# Ocultar listado de directorios
+Options -Indexes
+
+# Archivo por defecto
+DirectoryIndex index.html
+
+# ── TIPOS MIME ─────────────────────────────────────────
+AddType image/webp       .webp
+AddType image/avif       .avif
+AddType font/woff2       .woff2
+AddType application/javascript .js
+AddType text/css         .css
+
+# ── COMPRESIÓN GZIP ────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE text/plain
+</IfModule>
+
+# ── CACHÉ DE ASSETS ────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg        "access plus 3 months"
+  ExpiresByType image/jpg         "access plus 3 months"
+  ExpiresByType image/png         "access plus 3 months"
+  ExpiresByType image/webp        "access plus 3 months"
+  ExpiresByType image/gif         "access plus 3 months"
+  ExpiresByType image/svg+xml     "access plus 1 month"
+  ExpiresByType text/css          "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType text/html         "access plus 1 day"
+</IfModule>
+
+# ── CABECERAS DE SEGURIDAD ─────────────────────────────
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ── REWRITE ENGINE ────────────────────────────────────
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirigir HTTP → HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+  # Redirigir www → sin www
+  RewriteCond %{HTTP_HOST} ^www\.clinicaderodillas\.net$ [NC]
+  RewriteRule ^ https://clinicaderodillas.net%{REQUEST_URI} [R=301,L]
+
+  # ── Redirigir URLs antiguas de WordPress ──────────────
+  RewriteRule ^index\.php$           /index.html        [R=301,L]
+  RewriteRule ^\?page_id=211$        /citas.html        [R=301,L]
+  RewriteRule ^\?page_id=337$        /ejercicios.html   [R=301,L]
+  RewriteRule ^\?page_id=238$        /index.html        [R=301,L]
+  RewriteRule ^wp-admin/?.*$         /index.html        [R=301,L]
+  RewriteRule ^wp-login\.php$        /index.html        [R=301,L]
+  RewriteRule ^wp-content/?.*$       /index.html        [R=301,L]
+  RewriteRule ^wp-includes/?.*$      /index.html        [R=301,L]
+  RewriteRule ^xmlrpc\.php$          /index.html        [R=301,L]
+  RewriteRule ^feed/?$               /index.html        [R=301,L]
+
+</IfModule>
+
+# ── PÁGINA DE ERROR PERSONALIZADA ─────────────────────
+ErrorDocument 404 /index.html

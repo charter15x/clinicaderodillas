@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica de Rodilla – Dr. Cristóbal Alonso | Traumatología Guadalajara</title>
+  <meta name="description" content="Especialistas en rodilla en Guadalajara. Cirugía mínima invasiva, prótesis, artroscopia y tratamiento sin cirugía. Dr. Cristóbal Alonso – Av. Hidalgo 930, Col. Centro.">
+  <meta name="facebook-domain-verification" content="sy9d7opbnhxtssgbzib04rck41hhnr" />
+  <link rel="icon" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #0f2547;
+      --blue:   #1d4ed8;
+      --blue-lt:#3b82f6;
+      --dark:   #1e293b;
+      --mid:    #475569;
+      --muted:  #94a3b8;
+      --light:  #f8fafc;
+      --white:  #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(15,37,71,.08);
+      --r:      .75rem;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ── NAVBAR ──────────────────────────────────────────── */
+    .nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem; height: 64px;
+    }
+    .nav-logo img { height: 52px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a {
+      font-size: .875rem; font-weight: 600; letter-spacing: .03em;
+      color: var(--mid); transition: color .18s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a.active { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue); color: var(--white) !important;
+      padding: .45rem 1.2rem; border-radius: 9999px;
+      font-size: .82rem !important;
+      transition: background .18s !important;
+    }
+    .nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 64px); max-height: 780px;
+      overflow: hidden;
+    }
+    .hero-copy {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 4rem 3rem 4rem 4rem;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: #eff6ff; color: var(--blue);
+      font-size: .75rem; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+      padding: .35rem .75rem; border-radius: 9999px;
+      margin-bottom: 1.5rem; width: fit-content;
+    }
+    .hero-tag span { width: 6px; height: 6px; background: var(--blue-lt); border-radius: 50%; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 3.5vw, 3.4rem);
+      font-weight: 800; line-height: 1.12; color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: normal; color: var(--blue); }
+    .hero p { font-size: 1.05rem; color: var(--mid); line-height: 1.75; max-width: 460px; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: .875rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .75rem 1.75rem; border-radius: 9999px;
+      font-weight: 600; font-size: .95rem;
+      transition: transform .15s, box-shadow .15s, background .15s;
+      cursor: pointer; border: none;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-solid {
+      background: var(--blue); color: #fff;
+      box-shadow: 0 4px 16px rgba(29,78,216,.35);
+    }
+    .btn-solid:hover { background: var(--navy); box-shadow: 0 8px 24px rgba(15,37,71,.3); }
+    .btn-ghost {
+      background: transparent; color: var(--blue);
+      border: 2px solid var(--blue);
+    }
+    .btn-ghost:hover { background: #eff6ff; }
+    .btn-wa {
+      background: #22c55e; color: #fff;
+      box-shadow: 0 4px 16px rgba(34,197,94,.35);
+    }
+    .btn-wa:hover { background: #16a34a; box-shadow: 0 8px 24px rgba(34,197,94,.3); }
+    .btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .hero-img { position: relative; overflow: hidden; }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(15,37,71,.18) 0%, transparent 60%);
+    }
+
+    /* ── TRUST BAR ───────────────────────────────────────── */
+    .trust {
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      gap: 3rem; padding: 1.25rem 2rem; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: .6rem;
+      color: rgba(255,255,255,.85); font-size: .85rem; font-weight: 500;
+    }
+    .trust-item svg { width: 18px; height: 18px; fill: #60a5fa; flex-shrink: 0; }
+
+    /* ── SECTION WRAPPER ─────────────────────────────────── */
+    .section { padding: 5rem 2rem; }
+    .section-alt { background: var(--light); }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      font-size: .75rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--blue);
+      margin-bottom: .6rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      font-weight: 800; color: var(--navy); line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+    .section-sub { font-size: 1rem; color: var(--mid); line-height: 1.75; max-width: 600px; }
+
+    /* ── ESPECIALIDADES ──────────────────────────────────── */
+    .esp-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr);
+      gap: 1rem; margin-top: 3rem;
+    }
+    .esp-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 1.75rem 1rem;
+      text-align: center; transition: box-shadow .2s, transform .2s, border-color .2s;
+    }
+    .esp-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); border-color: #bfdbfe; }
+    .esp-card img { width: 56px; height: 56px; object-fit: contain; margin: 0 auto .875rem; }
+    .esp-card span { font-size: .82rem; font-weight: 600; color: var(--dark); line-height: 1.4; }
+
+    /* ── SEGUROS ─────────────────────────────────────────── */
+    .seguros-section { margin-top: 2.5rem; }
+    .seguros-header {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; margin-bottom: 1.25rem; flex-wrap: wrap;
+    }
+    .seguros-header h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: .25rem; }
+    .seguros-header p { font-size: .9rem; color: var(--mid); }
+    .seguros-badge {
+      display: flex; align-items: center; gap: .5rem;
+      background: #f0fdf4; color: #15803d;
+      font-size: .8rem; font-weight: 700;
+      padding: .45rem 1rem; border-radius: 9999px; white-space: nowrap; flex-shrink: 0;
+    }
+    .seguros-badge svg { width: 16px; height: 16px; fill: #22c55e; }
+    .seguros-img-band {
+      border-radius: var(--r); overflow: hidden;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .seguros-img-band img { width: 100%; height: auto; display: block; }
+
+    /* ── TRATAMIENTOS (2 col) ────────────────────────────── */
+    .trat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+    .trat-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r); overflow: hidden;
+      box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s;
+    }
+    .trat-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(15,37,71,.12); }
+    .trat-card img { width: 100%; height: 220px; object-fit: cover; }
+    .trat-body { padding: 1.5rem; }
+    .trat-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: .6rem; }
+    .trat-body p { font-size: .9rem; color: var(--mid); line-height: 1.7; }
+
+    /* ── EJERCICIOS BAND ─────────────────────────────────── */
+    .band {
+      background: var(--navy);
+      color: var(--white);
+      padding: 4.5rem 2rem;
+    }
+    .band-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+    .band h2 { font-size: 2rem; font-weight: 800; margin-bottom: .75rem; }
+    .band p { opacity: .8; font-size: 1rem; line-height: 1.75; margin-bottom: .5rem; }
+    .band small { display: block; opacity: .55; font-size: .85rem; margin-bottom: 1.75rem; }
+    .band-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .band .btn-solid { background: #fff; color: var(--navy); box-shadow: 0 4px 16px rgba(0,0,0,.18); }
+    .band .btn-solid:hover { background: #e0e7ff; }
+    .band .btn-ghost { border-color: rgba(255,255,255,.5); color: #fff; }
+    .band .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+    /* ── HIALURONICO ─────────────────────────────────────── */
+    .hia-section { background: var(--light); }
+    .hia-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 3rem;
+    }
+    .hia-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 2rem 1.5rem; text-align: center;
+      box-shadow: var(--shadow); transition: transform .2s;
+    }
+    .hia-card:hover { transform: translateY(-3px); }
+    .hia-card img { height: 100px; width: auto; margin: 0 auto 1.25rem; object-fit: contain; }
+    .hia-card .hia-no-img {
+      height: 100px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .hia-no-img svg { width: 64px; height: 64px; fill: #bfdbfe; }
+    .hia-card img { height: 120px; width: auto; margin: 0 auto 1.25rem; object-fit: contain; }
+    .hia-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: .6rem; }
+    .hia-card p { font-size: .85rem; color: var(--mid); line-height: 1.65; }
+
+    /* ── MAPA / CONTACTO ─────────────────────────────────── */
+    .contact-section { padding: 5rem 2rem; background: var(--white); }
+    .contact-card {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: 1rem; overflow: hidden;
+      box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1fr 420px;
+    }
+    .contact-map iframe {
+      width: 100%; height: 100%; min-height: 380px;
+      border: none; display: block; filter: saturate(.9);
+    }
+    .contact-info {
+      padding: 2.5rem 2rem;
+      display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
+    }
+    .contact-info h2 { font-size: 1.5rem; font-weight: 800; color: var(--navy); }
+    .contact-row { display: flex; align-items: flex-start; gap: .75rem; }
+    .contact-row svg { width: 20px; height: 20px; fill: var(--blue); flex-shrink: 0; margin-top: .15rem; }
+    .contact-row-text strong { display: block; font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .2rem; }
+    .contact-row-text span { font-size: .95rem; color: var(--dark); font-weight: 500; line-height: 1.5; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.55);
+      padding: 1.5rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: .75rem;
+      font-size: .82rem;
+    }
+    footer a { color: rgba(255,255,255,.75); transition: color .15s; }
+    footer a:hover { color: #fff; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; max-height: none; }
+      .hero-img { height: 320px; }
+      .hero-copy { padding: 3rem 2rem; }
+      .esp-grid { grid-template-columns: repeat(3, 1fr); }
+      .trat-grid { grid-template-columns: 1fr; }
+      .hia-grid { grid-template-columns: 1fr 1fr; }
+      .contact-card { grid-template-columns: 1fr; }
+      .contact-map iframe { min-height: 280px; }
+    }
+    @media (max-width: 600px) {
+      .nav { padding: 0 1.25rem; }
+      .nav-cta { display: none; }
+      .nav-links { gap: 1.5rem; }
+      .trust { gap: 1.25rem; }
+      .esp-grid { grid-template-columns: repeat(2, 1fr); }
+      .hia-grid { grid-template-columns: 1fr; }
+      footer { justify-content: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="images/logo.jpg" alt="Clínica de Rodilla">
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Inicio</a>
+    <a href="citas.html">Citas</a>
+    <a href="ejercicios.html">Ejercicios</a>
+    <a href="citas.html" class="nav-cta">Agendar cita</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-copy">
+    <span class="hero-tag"><span></span>Subespecialistas en Rodilla · Guadalajara</span>
+    <h1>Clínica de<br><em>Rodilla</em></h1>
+    <p>Ofrecemos cirugía mínima invasiva, tratamiento sin cirugía, ácido hialurónico y rehabilitación de alta calidad, centrados en el bienestar del paciente.</p>
+    <div class="hero-actions">
+      <a href="citas.html" class="btn btn-solid">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+        Agendar cita
+      </a>
+      <a href="ejercicios.html" class="btn btn-ghost">Ver ejercicios</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="images/portada.jpeg" alt="Especialistas en rodilla – Clínica de Rodilla Guadalajara">
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4c1.4 0 2.8 1.22 2.8 2.4 0 1.5-1.4 2.4-2.8 2.4-1.4 0-2.8-.9-2.8-2.4C9.2 6.22 10.6 5 12 5zm0 7.2c2.1 0 4.1 1.01 4.97 2.8H7.03c.87-1.79 2.87-2.8 4.97-2.8z"/></svg>
+    Dr. Cristóbal Alonso – Traumatólogo
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+    Subespecialista en Cirugía de Rodilla
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    Av. Hidalgo 930, Col. Centro, Guadalajara
+  </div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+    Citas y Urgencias disponibles
+  </div>
+</div>
+
+<!-- ESPECIALIDADES -->
+<section class="section">
+  <div class="container">
+    <p class="section-label">Áreas de especialidad</p>
+    <h2 class="section-title">Tratamos todas las patologías de rodilla</h2>
+    <p class="section-sub">Desde desgaste articular hasta cirugías complejas de ligamentos y meniscos, con tecnología de vanguardia.</p>
+    <div class="esp-grid">
+      <div class="esp-card">
+        <img src="images/ico-rodilla.png" alt="Desgaste de Rodilla">
+        <span>Desgaste de Rodilla</span>
+      </div>
+      <div class="esp-card">
+        <img src="images/ico-columna.png" alt="Tratamiento sin Cirugía">
+        <span>Tratamiento sin Cirugía</span>
+      </div>
+      <div class="esp-card">
+        <img src="images/ico-caderas.png" alt="Ácido Hialurónico">
+        <span>Ácido Hialurónico</span>
+      </div>
+      <div class="esp-card">
+        <img src="images/ico-mano.png" alt="Infiltraciones">
+        <span>Infiltraciones</span>
+      </div>
+      <div class="esp-card">
+        <img src="images/ico-pie.png" alt="Prótesis de Rodilla">
+        <span>Prótesis de Rodilla</span>
+      </div>
+    </div>
+
+    <div class="seguros-section">
+      <div class="seguros-header">
+        <div>
+          <h3>Bienvenidos los Seguros de Gastos Médicos</h3>
+          <p>Trabajamos con las principales aseguradoras del país. Consulta disponibilidad con tu póliza.</p>
+        </div>
+        <div class="seguros-badge">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+          Aceptamos seguros
+        </div>
+      </div>
+      <div class="seguros-img-band">
+        <img src="images/aseguradoras.jpg" alt="Aseguradoras médicas en México – GNP, AXA, Bupa, Allianz, MetLife, MAPFRE y más">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRATAMIENTOS -->
+<section class="section section-alt">
+  <div class="container">
+    <p class="section-label">Procedimientos</p>
+    <h2 class="section-title">Soluciones para cada caso</h2>
+    <p class="section-sub">Desde tratamientos conservadores hasta cirugía de alta complejidad, siempre con mínima invasión.</p>
+    <div class="trat-grid">
+      <div class="trat-card">
+        <img src="images/rodilla2.jpeg" alt="Tratamiento sin cirugía">
+        <div class="trat-body">
+          <h3>Tratamiento Sin Cirugía</h3>
+          <p>No todo el dolor de rodilla requiere cirugía. Ofrecemos tratamiento oral, infiltraciones, ácido hialurónico y rehabilitación para evitar procedimientos quirúrgicos.</p>
+        </div>
+      </div>
+      <div class="trat-card">
+        <img src="images/rodilla3.jpg" alt="Cirugía de prótesis mínima invasiva">
+        <div class="trat-body">
+          <h3>Cirugía Prótesis Mínima Invasiva</h3>
+          <p>Instalación de prótesis de rodilla con técnicas de mínima invasión, heridas pequeñas, menor dolor postoperatorio y recuperación más rápida.</p>
+        </div>
+      </div>
+      <div class="trat-card">
+        <img src="images/artroscopia.jpeg" alt="Artroscopia de rodilla">
+        <div class="trat-body">
+          <h3>Artroscopia de Rodilla</h3>
+          <p>Cirugía mínimamente invasiva para meniscos, ligamentos y desgaste. Una cámara de fibra óptica permite visualizar y tratar la articulación a través de pequeñas incisiones.</p>
+        </div>
+      </div>
+      <div class="trat-card">
+        <img src="images/rodilla2.jpeg" alt="Infiltraciones articulares" style="filter:hue-rotate(10deg) saturate(1.1)">
+        <div class="trat-body">
+          <h3>Infiltraciones &amp; Rehabilitación</h3>
+          <p>Infiltraciones de ácido hialurónico, corticoides y plasma rico en plaquetas (PRP), combinadas con plan de rehabilitación personalizado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EJERCICIOS BAND -->
+<section class="band">
+  <div class="band-inner">
+    <h2>Ejercicios para Rodilla</h2>
+    <p>Rutinas diseñadas para desgaste articular y para pacientes en rehabilitación post-prótesis.</p>
+    <small>Selecciona tu condición para ver los ejercicios correspondientes</small>
+    <div class="band-btns">
+      <a href="ejercicios.html#desgaste" class="btn btn-solid">Desgaste de Rodilla</a>
+      <a href="ejercicios.html#protesis" class="btn btn-ghost">Prótesis de Rodilla</a>
+    </div>
+  </div>
+</section>
+
+<!-- ÁCIDO HIALURÓNICO -->
+<section class="section hia-section">
+  <div class="container">
+    <p class="section-label">Viscosuplementación</p>
+    <h2 class="section-title">Ácido Hialurónico Intraarticular</h2>
+    <p class="section-sub">Gel lubricante que restaura las propiedades del líquido sinovial, alivia el dolor y mejora la movilidad sin cirugía.</p>
+    <div class="hia-grid">
+      <div class="hia-card">
+        <img src="images/synvisc.jpg" alt="Synvisc – Hylan G-F 20, Sanofi">
+        <h3>Synvisc®</h3>
+        <p>Único viscosuplemento formado por dos preparaciones de hialuronato entrecruzadas. 80% hilano A (fluido) + 20% hilano B (gel). Acción prolongada.</p>
+      </div>
+      <div class="hia-card">
+        <img src="images/suprahyal.jpg" alt="Suprahyal">
+        <h3>Suprahyal</h3>
+        <p>Hialuronato de sodio con alta viscoelasticidad e higroscopicidad. Mejora la función articular, alivia el dolor y normaliza el líquido sinovial alterado.</p>
+      </div>
+      <div class="hia-card">
+        <img src="images/durolane.webp" alt="Durolane">
+        <h3>Durolane</h3>
+        <p>Inyección de ácido hialurónico (HA) diseñada para alivio duradero del dolor por osteoartritis de rodilla. Una sola inyección, efecto prolongado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA + CONTACTO -->
+<section class="contact-section">
+  <div class="container">
+    <p class="section-label">Ubicación</p>
+    <h2 class="section-title" style="margin-bottom:2rem">Encuéntranos en el Centro de Guadalajara</h2>
+    <div class="contact-card">
+      <div class="contact-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.8754839793!2d-103.34758812394197!3d20.67449639736899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b1e5ac98bbf1%3A0x0!2zQXYuIEhpZGFsZ28gOTMwLCBDZW50cm8sIDQ0MTAwIEd1YWRhbGFqYXJhLCBKYWwu!5e0!3m2!1ses!2smx!4v1700000000000"
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Clínica de Rodilla – Av. Hidalgo 930, Guadalajara">
+        </iframe>
+      </div>
+      <div class="contact-info">
+        <h2>Consultorio</h2>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <div class="contact-row-text">
+            <strong>Dirección</strong>
+            <span>Av. Hidalgo 930, Col. Centro<br>Guadalajara, Jal. CP 44100</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          <div class="contact-row-text">
+            <strong>Teléfono / WhatsApp</strong>
+            <span>+52 (33) 1342-7809</span>
+          </div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          <div class="contact-row-text">
+            <strong>Atención</strong>
+            <span>Lun–Vie 9:00–19:00<br>Sáb 9:00–14:00</span>
+          </div>
+        </div>
+        <a href="https://wa.me/523313427809?text=Hola%20Dr.%20Cristóbal%2C%20me%20gustaría%20agendar%20una%20cita."
+           class="btn btn-wa" style="margin-top:.5rem; justify-content:center">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Agendar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
+  <span>
+    <a href="index.html">Inicio</a> &nbsp;·&nbsp;
+    <a href="citas.html">Citas</a> &nbsp;·&nbsp;
+    <a href="ejercicios.html">Ejercicios</a> &nbsp;·&nbsp;
+    <a href="alquiler/">Alquiler movilizador</a>
+  </span>
+</footer>
+
+</body>
+</html>
