@@ -263,6 +263,19 @@
     footer a:hover { color: #fff; }
 
     /* ── RESPONSIVE ──────────────────────────────────────── */
+    /* ── BOTÓN PDF ───────────────────────────────────────── */
+    .pdf-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      margin-top: .85rem;
+      background: #eff6ff; color: var(--blue);
+      border: 1.5px solid #bfdbfe;
+      padding: .45rem 1rem; border-radius: 9999px;
+      font-size: .82rem; font-weight: 600;
+      transition: background .15s, border-color .15s;
+    }
+    .pdf-btn:hover { background: #dbeafe; border-color: var(--blue); }
+    .pdf-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
     @media (max-width: 960px) {
       .hero { grid-template-columns: 1fr; max-height: none; }
       .hero-img { height: 320px; }
@@ -404,6 +417,10 @@
         <div class="trat-body">
           <h3>Cirugía Prótesis Mínima Invasiva</h3>
           <p>Instalación de prótesis de rodilla con técnicas de mínima invasión, heridas pequeñas, menor dolor postoperatorio y recuperación más rápida.</p>
+          <a href="pdfs/folleto-protesis-rodilla.pdf" target="_blank" class="pdf-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            Ver folleto PDF
+          </a>
         </div>
       </div>
       <div class="trat-card">
@@ -444,6 +461,17 @@
     <h2 class="section-title">Ácido Hialurónico Intraarticular</h2>
     <p class="section-sub">Gel lubricante que restaura las propiedades del líquido sinovial, alivia el dolor y mejora la movilidad sin cirugía.</p>
     <div class="hia-grid">
+      <div class="hia-card" style="grid-column: 1 / -1; display:flex; align-items:center; gap:1.5rem; text-align:left; padding:1.5rem 2rem; margin-bottom:.5rem; flex-wrap:wrap;">
+        <svg viewBox="0 0 24 24" fill="#bfdbfe" style="width:52px;height:52px;flex-shrink:0"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        <div style="flex:1">
+          <h3 style="margin-bottom:.3rem">Folleto Viscosuplementación</h3>
+          <p style="margin-bottom:.75rem">Información completa sobre el tratamiento con ácido hialurónico intraarticular para el paciente.</p>
+          <a href="pdfs/folleto-viscosuplementacion.pdf" target="_blank" class="pdf-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            Ver folleto PDF
+          </a>
+        </div>
+      </div>
       <div class="hia-card">
         <img src="images/synvisc.jpg" alt="Synvisc – Hylan G-F 20, Sanofi">
         <h3>Synvisc®</h3>
