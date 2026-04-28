@@ -139,6 +139,64 @@
       border-radius: .45rem; padding: .45rem .85rem; display: inline-block;
     }
 
+    /* ── FASE HEADERS (Prótesis) ─────────────────────────── */
+    .fase-block { margin-bottom: 2rem; }
+    .fase-header {
+      display: flex; align-items: center; gap: .75rem;
+      padding: .9rem 1.5rem; border-radius: var(--r) var(--r) 0 0;
+      color: #fff; font-weight: 800; font-size: .95rem;
+      text-transform: uppercase; letter-spacing: .04em;
+    }
+    .fase-header.fase-1 { background: #1d4ed8; }
+    .fase-header.fase-2 { background: #16a34a; }
+    .fase-header.fase-3 { background: #c2410c; }
+    .fase-num-badge {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,255,255,.25); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .78rem; font-weight: 800; flex-shrink: 0;
+    }
+    .ej-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem;
+      background: var(--white); border: 1px solid var(--border);
+      border-top: none; border-radius: 0 0 var(--r) var(--r);
+      padding: 1rem; box-shadow: var(--shadow);
+    }
+    .ej-card {
+      border: 1px solid var(--border); border-radius: calc(var(--r) - .1rem);
+      overflow: hidden; background: var(--white);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .ej-card:hover { box-shadow: 0 4px 16px rgba(15,37,71,.1); transform: translateY(-2px); }
+    .ej-img {
+      height: 150px; background: #f1f5f9;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .ej-img img { width: 100%; height: 100%; object-fit: contain; }
+    .ej-body { padding: .7rem .85rem .85rem; }
+    .ej-num-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--navy); color: #fff;
+      font-size: .68rem; font-weight: 800; margin-bottom: .3rem;
+    }
+    .ej-body h4 { font-size: .85rem; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: .25rem; }
+    .ej-reps { font-size: .73rem; font-weight: 700; color: var(--blue); margin-bottom: .35rem; display: block; }
+    .ej-desc {
+      font-size: .75rem; color: var(--mid); line-height: 1.45;
+      background: var(--light); border-left: 3px solid var(--blue-lt);
+      padding: .35rem .55rem; border-radius: 0 .3rem .3rem 0;
+    }
+    .pdf-download {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: #fef2f2; color: #dc2626; border: 1.5px solid #fecaca;
+      padding: .6rem 1.3rem; border-radius: 9999px;
+      font-size: .83rem; font-weight: 700;
+      transition: background .15s, border-color .15s;
+    }
+    .pdf-download:hover { background: #fee2e2; border-color: #dc2626; }
+    .pdf-download svg { width: 15px; height: 15px; flex-shrink: 0; fill: currentColor; }
+
     /* ── WA BUTTON ───────────────────────────────────────── */
     .btn-wa {
       display: inline-flex; align-items: center; justify-content: center; gap: .75rem;
@@ -163,6 +221,9 @@
     footer a:hover { color: #fff; }
 
     /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .ej-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 600px) {
       .nav { padding: 0 1.25rem; }
       .nav-cta { display: none; }
@@ -170,7 +231,11 @@
       .tab-btn { padding: 1rem 1.25rem; font-size: .875rem; }
       .ejercicio-card { grid-template-columns: 1fr; }
       .ejercicio-num { width: 36px; height: 36px; font-size: .9rem; }
+      .ej-grid { grid-template-columns: repeat(2, 1fr); }
       footer { justify-content: center; text-align: center; }
+    }
+    @media (max-width: 400px) {
+      .ej-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -289,75 +354,248 @@
     </div>
 
     <div class="section-intro">
-      <h2>Ejercicios Post-Operatorios – Prótesis de Rodilla</h2>
-      <p>La rehabilitación después de una cirugía de prótesis de rodilla es fundamental para recuperar movilidad y fuerza. Los ejercicios se dividen en fases progresivas. Siempre realízalos bajo supervisión médica inicial.</p>
+      <h2>Plan de Rehabilitación Post-Operatorio – Prótesis de Rodilla</h2>
+      <p>La recuperación sigue un protocolo progresivo de 3 fases con 20 ejercicios ilustrados. Realiza cada fase según tu semana de evolución y siempre bajo indicación médica.</p>
     </div>
 
-    <div class="ejercicio-grid">
-
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">1</div>
-        <div>
-          <h3>Contracción de cuádriceps <small style="font-weight:500;color:var(--muted)">(Fase temprana)</small></h3>
-          <p>Acostado, aprieta el músculo del muslo empujando la parte posterior de la rodilla hacia la cama. Mantén la contracción 5 segundos y relaja.</p>
-          <span class="detalle">🔁 3 series × 15 repeticiones · Desde el día 1 post-op</span>
-        </div>
+    <!-- FASE 1 -->
+    <div class="fase-block">
+      <div class="fase-header fase-1">
+        <span class="fase-num-badge">1</span>
+        Fase 1 — Primeros días (en cama)
       </div>
+      <div class="ej-grid">
 
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">2</div>
-        <div>
-          <h3>Bombeo de tobillo</h3>
-          <p>Acostado, mueve el pie hacia arriba y hacia abajo como si accionaras un pedal. Mejora la circulación y previene trombosis.</p>
-          <span class="detalle">🔁 10–20 repeticiones cada hora · Días 1–7</span>
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-1.jpg" alt="Flexión y dorsiflexión" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">1</span>
+            <h4>Flexión y dorsiflexión</h4>
+            <span class="ej-reps">🔁 3 series / 20 reps</span>
+            <p class="ej-desc">Mueva el pie arriba y abajo suavemente.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">3</div>
-        <div>
-          <h3>Flexión asistida de rodilla</h3>
-          <p>Sentado al borde de la cama, deja que la gravedad doble la rodilla lentamente. Puedes usar la pierna sana para asistir el movimiento. No fuerces el rango de movimiento.</p>
-          <span class="detalle">🔁 3 series × 10 repeticiones · Semana 1–2</span>
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-2.jpg" alt="Dorsiflexión con banda" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">2</span>
+            <h4>Dorsiflexión con banda</h4>
+            <span class="ej-reps">🔁 3 series / 10 reps</span>
+            <p class="ej-desc">Use banda para resistencia al subir el pie.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">4</div>
-        <div>
-          <h3>Elevación de pierna recta</h3>
-          <p>Acostado, contrae el cuádriceps y levanta la pierna operada a 30 cm del suelo. Mantén 3 segundos. Baja lentamente. Fortalece sin doblar la rodilla.</p>
-          <span class="detalle">🔁 3 series × 10 repeticiones · Semana 2–4</span>
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-3.jpg" alt="Extensión con toalla" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">3</span>
+            <h4>Extensión con toalla</h4>
+            <span class="ej-reps">🔁 10 reps (8 seg)</span>
+            <p class="ej-desc">Apriete el muslo contra la toalla.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">5</div>
-        <div>
-          <h3>Marcha y caminata progresiva</h3>
-          <p>Comienza caminando distancias cortas con apoyo (andadera/bastón). Incrementa la distancia y la velocidad gradualmente cada semana.</p>
-          <span class="detalle">⏱ 5 min · Semana 1 → 20–30 min · Semana 4–6</span>
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-4.jpg" alt="Isométrico de glúteo" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">4</span>
+            <h4>Isométrico de glúteo</h4>
+            <span class="ej-reps">🔁 10 reps (8 seg)</span>
+            <p class="ej-desc">Apriete las nalgas con fuerza.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">6</div>
-        <div>
-          <h3>Bicicleta estacionaria</h3>
-          <p>Cuando alcances 90° de flexión, inicia en bicicleta estacionaria. Asiento alto, sin resistencia. Aumenta progresivamente.</p>
-          <span class="detalle">⏱ 10–15 min · Semana 6–8 · Con autorización médica</span>
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-5.jpg" alt="Aductor con pelota" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">5</span>
+            <h4>Aductor con pelota</h4>
+            <span class="ej-reps">🔁 10 reps (8 seg)</span>
+            <p class="ej-desc">Apriete pelota o toalla entre rodillas.</p>
+          </div>
         </div>
-      </div>
 
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">7</div>
-        <div>
-          <h3>Subir y bajar escalones</h3>
-          <p>Primero sube con la pierna buena, baja con la operada. Usa el pasamanos. Comienza con escalones bajos (10 cm). Aumenta progresivamente.</p>
-          <span class="detalle">🔁 3 series × 10 repeticiones · Semana 6+ · Con autorización</span>
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-6.jpg" alt="Abductor con banda" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">6</span>
+            <h4>Abductor con banda</h4>
+            <span class="ej-reps">🔁 10 reps (8 seg)</span>
+            <p class="ej-desc">Separe las rodillas contra la banda.</p>
+          </div>
         </div>
-      </div>
 
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-7.jpg" alt="Puente de glúteo" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">7</span>
+            <h4>Puente de glúteo</h4>
+            <span class="ej-reps">🔁 3 series / 10 reps</span>
+            <p class="ej-desc">Eleve la pelvis de la cama despacio.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-8.jpg" alt="Elevación pierna recta" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">8</span>
+            <h4>Elevación pierna recta</h4>
+            <span class="ej-reps">🔁 3 series / 10 reps</span>
+            <p class="ej-desc">Suba la pierna totalmente estirada.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f1-9.jpg" alt="Flexión asistida" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">9</span>
+            <h4>Flexión asistida</h4>
+            <span class="ej-reps">🔁 10 reps</span>
+            <p class="ej-desc">Doble la rodilla deslizando el talón.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div class="fase-block">
+      <div class="fase-header fase-2">
+        <span class="fase-num-badge">2</span>
+        Fase 2 — Fortalecimiento (andador / silla)
+      </div>
+      <div class="ej-grid">
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f2-1.jpg" alt="Andar con andador" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">10</span>
+            <h4>Andar con andador</h4>
+            <span class="ej-reps">⏱ 5 minutos</span>
+            <p class="ej-desc">Marque talón y luego punta al caminar.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f2-2.jpg" alt="Flexión de cadera" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">11</span>
+            <h4>Flexión de cadera</h4>
+            <span class="ej-reps">🔁 3 series / 10 reps</span>
+            <p class="ej-desc">Eleve las rodillas al caminar.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f2-3.jpg" alt="Elevación de talones" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">12</span>
+            <h4>Elevación de talones</h4>
+            <span class="ej-reps">🔁 3 series / 10 reps</span>
+            <p class="ej-desc">Apoyado en silla, póngase de puntitas.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f2-4.jpg" alt="Extensión sentado" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">13</span>
+            <h4>Extensión sentado</h4>
+            <span class="ej-reps">🔁 10 reps (8 seg)</span>
+            <p class="ej-desc">Estire la pierna estando sentado.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f2-5.jpg" alt="Isométrico glúteo sentado" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">14</span>
+            <h4>Isométrico glúteo (sentado)</h4>
+            <span class="ej-reps">🔁 10 reps (8 seg)</span>
+            <p class="ej-desc">Apriete nalgas contra la silla.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f2-6.jpg" alt="Aductor sentado" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">15</span>
+            <h4>Aductor sentado</h4>
+            <span class="ej-reps">🔁 10 reps (8 seg)</span>
+            <p class="ej-desc">Apriete pelota entre rodillas (sentado).</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f2-7.jpg" alt="Abductor sentado" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">16</span>
+            <h4>Abductor sentado</h4>
+            <span class="ej-reps">🔁 10 reps (8 seg)</span>
+            <p class="ej-desc">Abra rodillas contra la banda (sentado).</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div class="fase-block">
+      <div class="fase-header fase-3">
+        <span class="fase-num-badge">3</span>
+        Fase 3 — Avanzados y equilibrio
+      </div>
+      <div class="ej-grid">
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f3-1.jpg" alt="Extensión hacia atrás" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">17</span>
+            <h4>Extensión hacia atrás</h4>
+            <span class="ej-reps">🔁 3 series / 10 reps</span>
+            <p class="ej-desc">Lleve la pierna recta hacia atrás.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f3-2.jpg" alt="Abducción de pie" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">18</span>
+            <h4>Abducción de pie</h4>
+            <span class="ej-reps">🔁 3 series / 10 reps</span>
+            <p class="ej-desc">Lleve la pierna hacia un lado.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f3-3.jpg" alt="Flexión autoasistida" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">19</span>
+            <h4>Flexión autoasistida</h4>
+            <span class="ej-reps">🔁 10 reps</span>
+            <p class="ej-desc">Empuje el pie operado con el sano.</p>
+          </div>
+        </div>
+
+        <div class="ej-card">
+          <div class="ej-img"><img src="EJERCICIOS/img/f3-4.jpg" alt="Pararse y sentarse" loading="lazy"></div>
+          <div class="ej-body">
+            <span class="ej-num-badge">20</span>
+            <h4>Pararse y sentarse</h4>
+            <span class="ej-reps">🔁 10 reps</span>
+            <p class="ej-desc">Levántese de la silla con el andador.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div style="margin-top:1.75rem;margin-bottom:.25rem;">
+      <a href="EJERCICIOS/Ejercicios%20protesis.pdf" download class="pdf-download">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        Descargar guía completa en PDF
+      </a>
     </div>
 
     <a href="https://wa.me/523313427809?text=Hola%20Dr.%2C%20tengo%20dudas%20sobre%20mi%20rehabilitaci%C3%B3n%20post-pr%C3%B3tesis%20de%20rodilla." class="btn-wa">

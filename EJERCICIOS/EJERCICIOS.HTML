@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehabilitación Rodilla - Dr. Cristobal Alonso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .exercise-card { transition: transform 0.2s; border: 1px solid #e2e8f0; }
+        .exercise-card:hover { transform: scale(1.02); border-color: #3b82f6; }
+        .download-btn { background-color: #ef4444; color: white; padding: 1rem 2rem; border-radius: 1rem; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
+        .download-btn:hover { background-color: #dc2626; transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <header class="bg-white border-b sticky top-0 z-50 p-6 shadow-sm text-center">
+        <h1 class="text-3xl font-black text-blue-900 uppercase tracking-tighter text-center">Plan de Ejercicios Post-Prótesis</h1>
+        <p class="text-slate-500 font-bold uppercase text-sm mt-1 mb-4">Dr. Cristobal Alonso Gonzalez</p>
+        
+        <a href="Ejercicios protesis.pdf" download class="download-btn">
+            <span>📄</span> DESCARGAR GUÍA EN PDF
+        </a>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-16">
+
+        <div id="app" class="space-y-20"></div>
+
+        <div class="flex justify-center pt-10">
+            <a href="Ejercicios protesis.pdf" download class="download-btn text-xl p-6">
+                <span>📄</span> DESCARGAR MANUAL COMPLETO (PDF)
+            </a>
+        </div>
+
+    </main>
+
+    <footer class="bg-slate-900 text-white p-12 mt-20 text-center">
+        <p class="text-2xl font-bold italic mb-4 uppercase"><code>CLÍNICA DE RODILLA</code></p>
+        <p class="text-slate-400 mb-6 font-mono text-sm uppercase"><code>Av. Hidalgo 930, Guadalajara - Hospital MAC Bernardette</code></p>
+        <a href="https://wa.me/3313427809" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-black text-xl transition shadow-xl inline-block">
+            CONSULTAR DUDAS (WHATSAPP)
+        </a>
+    </footer>
+
+    <script>
+        const secciones = [
+            {
+                titulo: "FASE 1: PRIMEROS DÍAS (EN CAMA)",
+                color: "bg-blue-700",
+                ejercicios: [
+                    { n: "1", t: "FLEXIÓN Y DORSIFLEXIÓN", r: "3 SERIES / 20 REPS", d: "MUEVA EL PIE ARRIBA Y ABAJO SUAVEMENTE.", i: "f1-1.jpg" },
+                    { n: "2", t: "DORSIFLEXIÓN CON BANDA", r: "3 SERIES / 10 REPS", d: "USE BANDA PARA RESISTENCIA AL SUBIR EL PIE.", i: "f1-2.jpg" },
+                    { n: "3", t: "EXTENSIÓN CON TOALLA", r: "10 REPS (8 SEG)", d: "APRIETE EL MUSLO CONTRA LA TOALLA.", i: "f1-3.jpg" },
+                    { n: "4", t: "ISOMÉTRICO DE GLÚTEO", r: "10 REPS (8 SEG)", d: "APRIETE LAS NALGAS CON FUERZA.", i: "f1-4.jpg" },
+                    { n: "5", t: "ADUCTOR CON PELOTA", r: "10 REPS (8 SEG)", d: "APRIETE PELOTA O TOALLA ENTRE RODILLAS.", i: "f1-5.jpg" },
+                    { n: "6", t: "ABDUCTOR CON BANDA", r: "10 REPS (8 SEG)", d: "SEPARE LAS RODILLAS CONTRA LA BANDA.", i: "f1-6.jpg" },
+                    { n: "7", t: "PUENTE DE GLÚTEO", r: "3 SERIES / 10 REPS", d: "ELEVE LA PELVIS DE LA CAMA DESPACIO.", i: "f1-7.jpg" },
+                    { n: "8", t: "ELEVACIÓN PIERNA RECTA", r: "3 SERIES / 10 REPS", d: "SUBA LA PIERNA TOTALMENTE ESTIRADA.", i: "f1-8.jpg" },
+                    { n: "9", t: "FLEXIÓN ASISTIDA", r: "10 REPS", d: "DOBLE RODILLA DESLIZANDO EL TALÓN.", i: "f1-9.jpg" }
+                ]
+            },
+            {
+                titulo: "FASE 2: FORTALECIMIENTO (ANDADOR / SILLA)",
+                color: "bg-green-700",
+                ejercicios: [
+                    { n: "10", t: "ANDAR CON ANDADOR", r: "5 MINUTOS", d: "MARQUE TALÓN Y LUEGO PUNTA AL CAMINAR.", i: "f2-1.jpg" },
+                    { n: "11", t: "FLEXIÓN DE CADERA", r: "3 SERIES / 10 REPS", d: "ELEVE LAS RODILLAS AL CAMINAR.", i: "f2-2.jpg" },
+                    { n: "12", t: "ELEVACIÓN DE TALONES", r: "3 SERIES / 10 REPS", d: "APOYADO EN SILLA, PÓNGASE DE PUNTITAS.", i: "f2-3.jpg" },
+                    { n: "13", t: "EXTENSIÓN SENTADO", r: "10 REPS (8 SEG)", d: "ESTIRE LA PIERNA ESTANDO SENTADO.", i: "f2-4.jpg" },
+                    { n: "14", t: "ISOMÉTRICO GLÚTEO S.", r: "10 REPS (8 SEG)", d: "APRIETE NALGAS CONTRA LA SILLA.", i: "f2-5.jpg" },
+                    { n: "15", t: "ADUCTOR SENTADO", r: "10 REPS (8 SEG)", d: "APRIETE PELOTA ENTRE RODILLAS (SENTADO).", i: "f2-6.jpg" },
+                    { n: "16", t: "ABDUCTOR SENTADO", r: "10 REPS (8 SEG)", d: "ABRA RODILLAS CONTRA LA BANDA (SENTADO).", i: "f2-7.jpg" }
+                ]
+            },
+            {
+                titulo: "FASE 3: AVANZADOS Y EQUILIBRIO",
+                color: "bg-orange-700",
+                ejercicios: [
+                    { n: "17", t: "EXTENSIÓN ATRÁS", r: "3 SERIES / 10 REPS", d: "LLEVE LA PIERNA RECTA HACIA ATRÁS.", i: "f3-1.jpg" },
+                    { n: "18", t: "ABDUCCIÓN DE PIE", r: "3 SERIES / 10 REPS", d: "LLEVE LA PIERNA HACIA UN LADO.", i: "f3-2.jpg" },
+                    { n: "19", t: "FLEXIÓN AUTOASISTIDA", r: "10 REPS", d: "EMPUJE EL PIE OPERADO CON EL SANO.", i: "f3-3.jpg" },
+                    { n: "20", t: "PARARSE Y SENTARSE", r: "10 REPS", d: "LEVÁNTESE DE LA SILLA CON EL ANDADOR.", i: "f3-4.jpg" }
+                ]
+            }
+        ];
+
+        const app = document.getElementById('app');
+
+        app.innerHTML = secciones.map(sec => `
+            <section>
+                <div class="${sec.color} text-white p-6 rounded-t-3xl shadow-lg">
+                    <h2 class="text-2xl font-black uppercase tracking-widest text-center">${sec.titulo}</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 bg-white p-6 rounded-b-3xl border shadow-sm">
+                    ${sec.ejercicios.map(ex => `
+                        <div class="exercise-card p-4 rounded-2xl flex flex-col">
+                            <div class="bg-slate-50 rounded-xl h-48 flex items-center justify-center mb-4 overflow-hidden border border-slate-100">
+                                <img src="img/${ex.i}" alt="${ex.t}" class="max-h-full object-contain">
+                            </div>
+                            <div class="flex-grow">
+                                <h4 class="text-blue-900 font-black text-lg leading-tight mb-1">${ex.t}</h4>
+                                <p class="text-blue-600 font-bold text-sm mb-3 underline decoration-blue-200 decoration-2">${ex.r}</p>
+                                <div class="bg-slate-100 p-3 rounded-lg border-l-4 border-blue-500">
+                                    <code class="text-xs md:text-sm text-slate-700 uppercase font-bold leading-relaxed block">
+                                        ${ex.d}
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </section>
+        `).join('');
+    </script>
+</body>
+</html>
