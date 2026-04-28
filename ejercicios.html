@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <style>
-    /* ── RESET & BASE ─────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --navy:   #0f2547;
@@ -29,33 +28,28 @@
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
 
-    /* ── NAVBAR ──────────────────────────────────────────── */
+    /* NAVBAR */
     .nav {
       position: sticky; top: 0; z-index: 200;
       background: rgba(255,255,255,.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 2.5rem; height: 64px;
     }
     .nav-logo img { height: 52px; width: auto; display: block; }
     .nav-links { display: flex; align-items: center; gap: 2.5rem; }
-    .nav-links a {
-      font-size: .875rem; font-weight: 600; letter-spacing: .03em;
-      color: var(--mid); transition: color .18s;
-    }
+    .nav-links a { font-size: .875rem; font-weight: 600; letter-spacing: .03em; color: var(--mid); transition: color .18s; }
     .nav-links a:hover { color: var(--navy); }
     .nav-links a.active { color: var(--blue); }
     .nav-cta {
       background: var(--blue); color: var(--white) !important;
       padding: .45rem 1.2rem; border-radius: 9999px;
-      font-size: .82rem !important;
-      transition: background .18s !important;
+      font-size: .82rem !important; transition: background .18s !important;
     }
     .nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
 
-    /* ── PAGE HEADER ─────────────────────────────────────── */
+    /* PAGE HEADER */
     .page-header {
       background: var(--navy); color: var(--white);
       padding: 3.5rem 2rem; text-align: center;
@@ -64,178 +58,65 @@
       display: inline-flex; align-items: center; gap: .4rem;
       background: rgba(255,255,255,.1); color: rgba(255,255,255,.85);
       font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
-      padding: .35rem .85rem; border-radius: 9999px;
-      margin-bottom: 1rem;
+      padding: .35rem .85rem; border-radius: 9999px; margin-bottom: 1rem;
     }
     .page-header h1 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 800; margin-bottom: .5rem; }
     .page-header p { opacity: .75; font-size: 1rem; max-width: 520px; margin: 0 auto; line-height: 1.6; }
 
-    /* ── TAB SELECTOR ────────────────────────────────────── */
-    .tabs {
-      background: var(--white);
-      border-bottom: 2px solid var(--border);
-      position: sticky; top: 64px; z-index: 100;
-      display: flex; justify-content: center; gap: 0;
+    /* CARDS GRID */
+    .container { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem 5rem; }
+    .cards-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem;
     }
-    .tab-btn {
-      padding: 1rem 2.5rem; font-weight: 700; font-size: .95rem;
-      cursor: pointer; border: none; background: none;
-      color: var(--mid); border-bottom: 3px solid transparent;
-      transition: color .18s, border-color .18s; margin-bottom: -2px;
-      letter-spacing: .01em;
-    }
-    .tab-btn.active { color: var(--navy); border-bottom-color: var(--blue); }
-    .tab-btn:hover:not(.active) { color: var(--dark); }
-
-    /* ── CONTAINER ───────────────────────────────────────── */
-    .container { max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
-
-    /* ── PANELS ──────────────────────────────────────────── */
-    .panel { display: none; }
-    .panel.active { display: block; }
-
-    /* ── AVISO ───────────────────────────────────────────── */
-    .aviso {
-      background: #eff6ff; border: 1px solid #bfdbfe;
-      border-left: 4px solid var(--blue);
-      border-radius: 0 var(--r) var(--r) 0;
-      padding: 1rem 1.5rem; margin-bottom: 1.75rem;
-      color: #1e40af; font-size: .9rem; line-height: 1.65;
-    }
-
-    /* ── SECTION INTRO ───────────────────────────────────── */
-    .section-intro {
+    .card {
       background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--r); padding: 1.75rem 2rem;
-      box-shadow: var(--shadow); margin-bottom: 1.75rem;
+      border-radius: 1rem; overflow: hidden; box-shadow: var(--shadow);
+      display: flex; flex-direction: column;
+      transition: box-shadow .22s, transform .22s;
     }
-    .section-intro h2 {
-      font-size: 1.3rem; font-weight: 800; color: var(--navy); margin-bottom: .6rem;
-    }
-    .section-intro p { color: var(--mid); line-height: 1.75; font-size: .95rem; }
+    .card:hover { box-shadow: 0 12px 40px rgba(15,37,71,.13); transform: translateY(-4px); }
 
-    /* ── EXERCISE CARDS ──────────────────────────────────── */
-    .ejercicio-grid { display: grid; gap: 1.25rem; }
-    .ejercicio-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: var(--r); padding: 1.5rem 1.75rem;
-      box-shadow: var(--shadow);
-      display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: start;
-      transition: box-shadow .2s, transform .2s;
+    .card-top {
+      height: 130px; display: flex; align-items: center; justify-content: center;
     }
-    .ejercicio-card:hover { box-shadow: 0 8px 32px rgba(15,37,71,.1); transform: translateY(-2px); }
-    .ejercicio-num {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: var(--navy); color: var(--white);
-      font-weight: 700; font-size: 1rem;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .ejercicio-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .4rem; }
-    .ejercicio-card p { color: var(--mid); font-size: .9rem; line-height: 1.65; }
-    .detalle {
-      margin-top: .65rem; font-size: .82rem; color: var(--dark); font-weight: 500;
-      background: var(--light); border: 1px solid var(--border);
-      border-radius: .45rem; padding: .45rem .85rem; display: inline-block;
-    }
+    .card-top svg { width: 56px; height: 56px; opacity: .9; }
+    .card-top.blue   { background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%); }
+    .card-top.navy   { background: linear-gradient(135deg, #0f2547 0%, #1e4080 100%); }
+    .card-top.green  { background: linear-gradient(135deg, #059669 0%, #34d399 100%); }
 
-    /* ── FASE HEADERS (Prótesis) ─────────────────────────── */
-    .fase-block { margin-bottom: 2rem; }
-    .fase-header {
-      display: flex; align-items: center; gap: .75rem;
-      padding: .9rem 1.5rem; border-radius: var(--r) var(--r) 0 0;
-      color: #fff; font-weight: 800; font-size: .95rem;
-      text-transform: uppercase; letter-spacing: .04em;
-    }
-    .fase-header.fase-1 { background: #1d4ed8; }
-    .fase-header.fase-2 { background: #16a34a; }
-    .fase-header.fase-3 { background: #c2410c; }
-    .fase-num-badge {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: rgba(255,255,255,.25); color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-size: .78rem; font-weight: 800; flex-shrink: 0;
-    }
-    .ej-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem;
-      background: var(--white); border: 1px solid var(--border);
-      border-top: none; border-radius: 0 0 var(--r) var(--r);
-      padding: 1rem; box-shadow: var(--shadow);
-    }
-    .ej-card {
-      border: 1px solid var(--border); border-radius: calc(var(--r) - .1rem);
-      overflow: hidden; background: var(--white);
-      transition: box-shadow .2s, transform .2s;
-    }
-    .ej-card:hover { box-shadow: 0 4px 16px rgba(15,37,71,.1); transform: translateY(-2px); }
-    .ej-img {
-      height: 150px; background: #f1f5f9;
-      display: flex; align-items: center; justify-content: center; overflow: hidden;
-    }
-    .ej-img img { width: 100%; height: 100%; object-fit: contain; }
-    .ej-body { padding: .7rem .85rem .85rem; }
-    .ej-num-badge {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 22px; height: 22px; border-radius: 50%;
-      background: var(--navy); color: #fff;
-      font-size: .68rem; font-weight: 800; margin-bottom: .3rem;
-    }
-    .ej-body h4 { font-size: .85rem; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: .25rem; }
-    .ej-reps { font-size: .73rem; font-weight: 700; color: var(--blue); margin-bottom: .35rem; display: block; }
-    .ej-desc {
-      font-size: .75rem; color: var(--mid); line-height: 1.45;
-      background: var(--light); border-left: 3px solid var(--blue-lt);
-      padding: .35rem .55rem; border-radius: 0 .3rem .3rem 0;
-    }
-    .pdf-download {
+    .card-body { padding: 1.75rem 1.75rem 2rem; flex: 1; display: flex; flex-direction: column; }
+    .card-body h2 { font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: .6rem; line-height: 1.3; }
+    .card-body p  { font-size: .9rem; color: var(--mid); line-height: 1.7; flex: 1; }
+
+    .card-btn {
       display: inline-flex; align-items: center; gap: .5rem;
-      background: #fef2f2; color: #dc2626; border: 1.5px solid #fecaca;
-      padding: .6rem 1.3rem; border-radius: 9999px;
-      font-size: .83rem; font-weight: 700;
-      transition: background .15s, border-color .15s;
+      margin-top: 1.5rem; padding: .65rem 1.4rem; border-radius: 9999px;
+      font-size: .875rem; font-weight: 700;
+      transition: background .18s, transform .15s;
     }
-    .pdf-download:hover { background: #fee2e2; border-color: #dc2626; }
-    .pdf-download svg { width: 15px; height: 15px; flex-shrink: 0; fill: currentColor; }
+    .card-btn.blue  { background: #eff6ff; color: var(--blue); border: 1.5px solid #bfdbfe; }
+    .card-btn.blue:hover  { background: #dbeafe; }
+    .card-btn.navy  { background: #f0f4ff; color: var(--navy); border: 1.5px solid #c7d7f9; }
+    .card-btn.navy:hover  { background: #dde6ff; }
+    .card-btn.green { background: #f0fdf4; color: #16a34a; border: 1.5px solid #bbf7d0; }
+    .card-btn.green:hover { background: #dcfce7; }
+    .card-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-    /* ── WA BUTTON ───────────────────────────────────────── */
-    .btn-wa {
-      display: inline-flex; align-items: center; justify-content: center; gap: .75rem;
-      background: #22c55e; color: #fff; font-weight: 700; font-size: .95rem;
-      padding: .85rem 2rem; border-radius: 9999px;
-      transition: background .18s, transform .15s, box-shadow .15s;
-      box-shadow: 0 4px 16px rgba(34,197,94,.3);
-      margin-top: 2.25rem;
-    }
-    .btn-wa:hover { background: #16a34a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,197,94,.35); }
-    .btn-wa svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
-
-    /* ── FOOTER ──────────────────────────────────────────── */
+    /* FOOTER */
     footer {
       background: var(--navy); color: rgba(255,255,255,.55);
-      padding: 1.5rem 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: .75rem;
-      font-size: .82rem;
+      padding: 1.5rem 2rem; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: .75rem; font-size: .82rem;
     }
     footer a { color: rgba(255,255,255,.75); transition: color .15s; }
     footer a:hover { color: #fff; }
 
-    /* ── RESPONSIVE ──────────────────────────────────────── */
-    @media (max-width: 860px) {
-      .ej-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
+    @media (max-width: 860px)  { .cards-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+    @media (max-width: 600px)  {
       .nav { padding: 0 1.25rem; }
       .nav-cta { display: none; }
       .nav-links { gap: 1.5rem; }
-      .tab-btn { padding: 1rem 1.25rem; font-size: .875rem; }
-      .ejercicio-card { grid-template-columns: 1fr; }
-      .ejercicio-num { width: 36px; height: 36px; font-size: .9rem; }
-      .ej-grid { grid-template-columns: repeat(2, 1fr); }
       footer { justify-content: center; text-align: center; }
-    }
-    @media (max-width: 400px) {
-      .ej-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -258,373 +139,73 @@
 <div class="page-header">
   <div class="page-header-tag">Rehabilitación · Clínica de Rodilla</div>
   <h1>Ejercicios para Rodilla</h1>
-  <p>Rutinas diseñadas para desgaste articular y para pacientes en rehabilitación post-prótesis.</p>
+  <p>Selecciona el tipo de ejercicio que necesitas según tu condición.</p>
 </div>
 
-<!-- TAB SELECTOR -->
-<div class="tabs">
-  <button class="tab-btn active" onclick="showTab('desgaste', this)" id="tab-desgaste">Desgaste de Rodilla</button>
-  <button class="tab-btn" onclick="showTab('protesis', this)" id="tab-protesis">Prótesis de Rodilla</button>
-</div>
-
+<!-- CARDS -->
 <div class="container">
+  <div class="cards-grid">
 
-  <!-- PANEL DESGASTE -->
-  <div class="panel active" id="panel-desgaste">
-
-    <div class="aviso">
-      <strong>Nota:</strong> Realiza estos ejercicios de forma suave y progresiva. Si sientes dolor agudo, detente y consulta al Dr. Cristóbal Alonso antes de continuar.
-    </div>
-
-    <div class="section-intro">
-      <h2>Ejercicios para Desgaste de Rodilla</h2>
-      <p>El desgaste articular (osteoartritis) puede mejorar significativamente con ejercicios que fortalecen los músculos alrededor de la rodilla, reduciendo la carga sobre el cartílago y aliviando el dolor. Realiza cada ejercicio 2 veces al día.</p>
-    </div>
-
-    <div class="ejercicio-grid">
-
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">1</div>
-        <div>
-          <h3>Extensión de rodilla sentado</h3>
-          <p>Siéntate en una silla con la espalda recta. Extiende lentamente la pierna hasta que quede horizontal, mantén 5 segundos y baja despacio.</p>
-          <span class="detalle">🔁 3 series × 15 repeticiones por pierna</span>
-        </div>
+    <!-- PRÓTESIS -->
+    <div class="card">
+      <div class="card-top blue">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="26" y="4" width="12" height="28" rx="6" fill="white" fill-opacity=".9"/>
+          <rect x="26" y="32" width="12" height="28" rx="6" fill="white" fill-opacity=".7"/>
+          <rect x="20" y="28" width="24" height="8" rx="4" fill="white"/>
+        </svg>
       </div>
-
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">2</div>
-        <div>
-          <h3>Elevación de pierna recta</h3>
-          <p>Acostado boca arriba, dobla una pierna con el pie en el suelo. La otra pierna extendida: elévala 30 cm del suelo, mantén 3 segundos y baja lentamente.</p>
-          <span class="detalle">🔁 3 series × 12 repeticiones por pierna</span>
-        </div>
-      </div>
-
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">3</div>
-        <div>
-          <h3>Puente de glúteos</h3>
-          <p>Acostado boca arriba, rodillas dobladas, pies apoyados. Eleva las caderas hasta formar una línea recta desde hombros hasta rodillas. Mantén 5 segundos.</p>
-          <span class="detalle">🔁 3 series × 12 repeticiones</span>
-        </div>
-      </div>
-
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">4</div>
-        <div>
-          <h3>Cuádriceps en pared</h3>
-          <p>De pie, apoya la espalda en una pared y deslízate hacia abajo hasta que las rodillas formen un ángulo de 90°. Mantén la posición estática.</p>
-          <span class="detalle">⏱ 3 series × 20–30 segundos</span>
-        </div>
-      </div>
-
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">5</div>
-        <div>
-          <h3>Bicicleta estacionaria</h3>
-          <p>El ciclismo es excelente para la rodilla: fortalece sin impacto. Usa resistencia baja, asiento alto y pedalea con movimiento fluido.</p>
-          <span class="detalle">⏱ 15–20 minutos diarios, ritmo moderado</span>
-        </div>
-      </div>
-
-      <div class="ejercicio-card">
-        <div class="ejercicio-num">6</div>
-        <div>
-          <h3>Estiramiento de isquiotibiales</h3>
-          <p>Acostado boca arriba, sujeta la parte posterior del muslo con ambas manos y extiende la rodilla lentamente hasta sentir tensión suave en la parte posterior de la pierna.</p>
-          <span class="detalle">⏱ 3 × 30 segundos por pierna</span>
-        </div>
-      </div>
-
-    </div>
-
-    <a href="https://wa.me/523313427809?text=Hola%20Dr.%20tengo%20dudas%20sobre%20los%20ejercicios%20para%20desgaste%20de%20rodilla." class="btn-wa">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Consultar al Dr. por WhatsApp
-    </a>
-
-  </div>
-
-  <!-- PANEL PRÓTESIS -->
-  <div class="panel" id="panel-protesis">
-
-    <div class="aviso">
-      <strong>Importante:</strong> Estos ejercicios están diseñados para rehabilitación post-operatoria de prótesis de rodilla. Sigue las indicaciones del Dr. Cristóbal Alonso según tu etapa de recuperación.
-    </div>
-
-    <div class="section-intro">
-      <h2>Plan de Rehabilitación Post-Operatorio – Prótesis de Rodilla</h2>
-      <p>La recuperación sigue un protocolo progresivo de 3 fases con 20 ejercicios ilustrados. Realiza cada fase según tu semana de evolución y siempre bajo indicación médica.</p>
-    </div>
-
-    <!-- FASE 1 -->
-    <div class="fase-block">
-      <div class="fase-header fase-1">
-        <span class="fase-num-badge">1</span>
-        Fase 1 — Primeros días (en cama)
-      </div>
-      <div class="ej-grid">
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-1.jpg" alt="Flexión y dorsiflexión" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">1</span>
-            <h4>Flexión y dorsiflexión</h4>
-            <span class="ej-reps">🔁 3 series / 20 reps</span>
-            <p class="ej-desc">Mueva el pie arriba y abajo suavemente.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-2.jpg" alt="Dorsiflexión con banda" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">2</span>
-            <h4>Dorsiflexión con banda</h4>
-            <span class="ej-reps">🔁 3 series / 10 reps</span>
-            <p class="ej-desc">Use banda para resistencia al subir el pie.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-3.jpg" alt="Extensión con toalla" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">3</span>
-            <h4>Extensión con toalla</h4>
-            <span class="ej-reps">🔁 10 reps (8 seg)</span>
-            <p class="ej-desc">Apriete el muslo contra la toalla.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-4.jpg" alt="Isométrico de glúteo" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">4</span>
-            <h4>Isométrico de glúteo</h4>
-            <span class="ej-reps">🔁 10 reps (8 seg)</span>
-            <p class="ej-desc">Apriete las nalgas con fuerza.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-5.jpg" alt="Aductor con pelota" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">5</span>
-            <h4>Aductor con pelota</h4>
-            <span class="ej-reps">🔁 10 reps (8 seg)</span>
-            <p class="ej-desc">Apriete pelota o toalla entre rodillas.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-6.jpg" alt="Abductor con banda" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">6</span>
-            <h4>Abductor con banda</h4>
-            <span class="ej-reps">🔁 10 reps (8 seg)</span>
-            <p class="ej-desc">Separe las rodillas contra la banda.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-7.jpg" alt="Puente de glúteo" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">7</span>
-            <h4>Puente de glúteo</h4>
-            <span class="ej-reps">🔁 3 series / 10 reps</span>
-            <p class="ej-desc">Eleve la pelvis de la cama despacio.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-8.jpg" alt="Elevación pierna recta" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">8</span>
-            <h4>Elevación pierna recta</h4>
-            <span class="ej-reps">🔁 3 series / 10 reps</span>
-            <p class="ej-desc">Suba la pierna totalmente estirada.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f1-9.jpg" alt="Flexión asistida" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">9</span>
-            <h4>Flexión asistida</h4>
-            <span class="ej-reps">🔁 10 reps</span>
-            <p class="ej-desc">Doble la rodilla deslizando el talón.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- FASE 2 -->
-    <div class="fase-block">
-      <div class="fase-header fase-2">
-        <span class="fase-num-badge">2</span>
-        Fase 2 — Fortalecimiento (andador / silla)
-      </div>
-      <div class="ej-grid">
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f2-1.jpg" alt="Andar con andador" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">10</span>
-            <h4>Andar con andador</h4>
-            <span class="ej-reps">⏱ 5 minutos</span>
-            <p class="ej-desc">Marque talón y luego punta al caminar.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f2-2.jpg" alt="Flexión de cadera" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">11</span>
-            <h4>Flexión de cadera</h4>
-            <span class="ej-reps">🔁 3 series / 10 reps</span>
-            <p class="ej-desc">Eleve las rodillas al caminar.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f2-3.jpg" alt="Elevación de talones" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">12</span>
-            <h4>Elevación de talones</h4>
-            <span class="ej-reps">🔁 3 series / 10 reps</span>
-            <p class="ej-desc">Apoyado en silla, póngase de puntitas.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f2-4.jpg" alt="Extensión sentado" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">13</span>
-            <h4>Extensión sentado</h4>
-            <span class="ej-reps">🔁 10 reps (8 seg)</span>
-            <p class="ej-desc">Estire la pierna estando sentado.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f2-5.jpg" alt="Isométrico glúteo sentado" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">14</span>
-            <h4>Isométrico glúteo (sentado)</h4>
-            <span class="ej-reps">🔁 10 reps (8 seg)</span>
-            <p class="ej-desc">Apriete nalgas contra la silla.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f2-6.jpg" alt="Aductor sentado" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">15</span>
-            <h4>Aductor sentado</h4>
-            <span class="ej-reps">🔁 10 reps (8 seg)</span>
-            <p class="ej-desc">Apriete pelota entre rodillas (sentado).</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f2-7.jpg" alt="Abductor sentado" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">16</span>
-            <h4>Abductor sentado</h4>
-            <span class="ej-reps">🔁 10 reps (8 seg)</span>
-            <p class="ej-desc">Abra rodillas contra la banda (sentado).</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- FASE 3 -->
-    <div class="fase-block">
-      <div class="fase-header fase-3">
-        <span class="fase-num-badge">3</span>
-        Fase 3 — Avanzados y equilibrio
-      </div>
-      <div class="ej-grid">
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f3-1.jpg" alt="Extensión hacia atrás" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">17</span>
-            <h4>Extensión hacia atrás</h4>
-            <span class="ej-reps">🔁 3 series / 10 reps</span>
-            <p class="ej-desc">Lleve la pierna recta hacia atrás.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f3-2.jpg" alt="Abducción de pie" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">18</span>
-            <h4>Abducción de pie</h4>
-            <span class="ej-reps">🔁 3 series / 10 reps</span>
-            <p class="ej-desc">Lleve la pierna hacia un lado.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f3-3.jpg" alt="Flexión autoasistida" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">19</span>
-            <h4>Flexión autoasistida</h4>
-            <span class="ej-reps">🔁 10 reps</span>
-            <p class="ej-desc">Empuje el pie operado con el sano.</p>
-          </div>
-        </div>
-
-        <div class="ej-card">
-          <div class="ej-img"><img src="EJERCICIOS/img/f3-4.jpg" alt="Pararse y sentarse" loading="lazy"></div>
-          <div class="ej-body">
-            <span class="ej-num-badge">20</span>
-            <h4>Pararse y sentarse</h4>
-            <span class="ej-reps">🔁 10 reps</span>
-            <p class="ej-desc">Levántese de la silla con el andador.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <div style="margin-top:1.75rem;margin-bottom:.25rem;">
-      <a href="https://drive.google.com/file/d/1HxqjR2AP040hruPTpH40hynmFs894jC9/view?usp=sharing" target="_blank" class="pdf-download">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-        Descargar guía completa en PDF
-      </a>
-    </div>
-
-    <a href="https://wa.me/523313427809?text=Hola%20Dr.%2C%20tengo%20dudas%20sobre%20mi%20rehabilitaci%C3%B3n%20post-pr%C3%B3tesis%20de%20rodilla." class="btn-wa">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Consultar al Dr. por WhatsApp
-    </a>
-
-  </div>
-
-</div>
-
-<!-- FOLLETO INDICACIONES -->
-<section style="background:var(--white);padding:3rem 2rem;">
-  <div style="max-width:1080px;margin:0 auto;">
-    <div style="background:var(--light);border:1px solid var(--border);border-radius:.75rem;padding:2rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;box-shadow:0 4px 24px rgba(15,37,71,.08);">
-      <svg viewBox="0 0 24 24" fill="#bfdbfe" style="width:56px;height:56px;flex-shrink:0"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-      <div style="flex:1">
-        <p style="font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.3rem;">Recurso para pacientes</p>
-        <h3 style="font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.4rem;">Indicaciones y Ejercicios Postquirúrgicos</h3>
-        <p style="font-size:.9rem;color:var(--mid);line-height:1.6;margin-bottom:.85rem;">Guía completa con indicaciones y rutina de ejercicios para la recuperación después de la cirugía de rodilla.</p>
-        <a href="pdfs/indicaciones-postquirurgicas.pdf" target="_blank"
-           style="display:inline-flex;align-items:center;gap:.4rem;background:#eff6ff;color:var(--blue);border:1.5px solid #bfdbfe;padding:.45rem 1rem;border-radius:9999px;font-size:.82rem;font-weight:600;text-decoration:none;">
-          <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-          Ver indicaciones PDF
+      <div class="card-body">
+        <h2>Prótesis de Rodilla</h2>
+        <p>Plan de rehabilitación post-operatorio en 3 fases con 20 ejercicios ilustrados para recuperar movilidad y fuerza tras la cirugía.</p>
+        <a href="ejercicios-protesis.html" class="card-btn blue">
+          Ver ejercicios
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
         </a>
       </div>
     </div>
+
+    <!-- DESGASTE -->
+    <div class="card">
+      <div class="card-top navy">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="32" cy="32" rx="14" ry="20" stroke="white" stroke-width="4" fill="none" stroke-opacity=".9"/>
+          <line x1="32" y1="12" x2="32" y2="52" stroke="white" stroke-width="3" stroke-opacity=".6"/>
+          <ellipse cx="32" cy="32" rx="6" ry="9" fill="white" fill-opacity=".3"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h2>Desgaste de Rodilla</h2>
+        <p>Rutina de ejercicios para osteoartritis y desgaste articular. Fortalece los músculos alrededor de la rodilla y reduce el dolor sin cirugía.</p>
+        <a href="ejercicios-desgaste.html" class="card-btn navy">
+          Ver ejercicios
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- OTROS -->
+    <div class="card">
+      <div class="card-top green">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="8" fill="white" fill-opacity=".85"/>
+          <circle cx="44" cy="20" r="8" fill="white" fill-opacity=".65"/>
+          <circle cx="20" cy="44" r="8" fill="white" fill-opacity=".65"/>
+          <circle cx="44" cy="44" r="8" fill="white" fill-opacity=".45"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <h2>Otros Ejercicios</h2>
+        <p>Ejercicios complementarios de movilidad, equilibrio y fortalecimiento general para el cuidado integral de la articulación de la rodilla.</p>
+        <a href="ejercicios-otros.html" class="card-btn green">
+          Ver ejercicios
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+        </a>
+      </div>
+    </div>
+
   </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -637,20 +218,5 @@
   </span>
 </footer>
 
-<script>
-  function showTab(id, btn) {
-    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('panel-' + id).classList.add('active');
-    btn.classList.add('active');
-  }
-
-  // Activate tab from URL hash (links from homepage)
-  const hash = location.hash.replace('#', '');
-  if (hash === 'desgaste' || hash === 'protesis') {
-    const btn = document.getElementById('tab-' + hash);
-    if (btn) showTab(hash, btn);
-  }
-</script>
 </body>
 </html>

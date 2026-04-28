@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicios Desgaste de Rodilla – Dr. Cristóbal Alonso</title>
+  <meta name="description" content="Ejercicios para desgaste articular y osteoartritis de rodilla. Dr. Cristóbal Alonso – Guadalajara, Jal.">
+  <link rel="icon" href="images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:   #0f2547;
+      --blue:   #1d4ed8;
+      --blue-lt:#3b82f6;
+      --dark:   #1e293b;
+      --mid:    #475569;
+      --muted:  #94a3b8;
+      --light:  #f8fafc;
+      --white:  #ffffff;
+      --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(15,37,71,.08);
+      --r:      .75rem;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--light); -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* NAVBAR */
+    .nav {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem; height: 64px;
+    }
+    .nav-logo img { height: 52px; width: auto; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 2.5rem; }
+    .nav-links a { font-size: .875rem; font-weight: 600; letter-spacing: .03em; color: var(--mid); transition: color .18s; }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-links a.active { color: var(--blue); }
+    .nav-cta {
+      background: var(--blue); color: var(--white) !important;
+      padding: .45rem 1.2rem; border-radius: 9999px;
+      font-size: .82rem !important; transition: background .18s !important;
+    }
+    .nav-cta:hover { background: var(--navy) !important; color: var(--white) !important; }
+
+    /* PAGE HEADER */
+    .page-header {
+      background: var(--navy); color: var(--white);
+      padding: 3rem 2rem; text-align: center;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      color: rgba(255,255,255,.65); font-size: .82rem; font-weight: 600;
+      margin-bottom: 1.1rem; transition: color .18s;
+    }
+    .back-link:hover { color: #fff; }
+    .back-link svg { width: 16px; height: 16px; fill: currentColor; }
+    .page-header h1 { font-size: clamp(1.6rem, 3vw, 2.3rem); font-weight: 800; margin-bottom: .5rem; }
+    .page-header p { opacity: .75; font-size: .95rem; max-width: 540px; margin: 0 auto; line-height: 1.6; }
+
+    /* CONTAINER */
+    .container { max-width: 860px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+
+    /* AVISO */
+    .aviso {
+      background: #eff6ff; border: 1px solid #bfdbfe;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 var(--r) var(--r) 0;
+      padding: 1rem 1.5rem; margin-bottom: 1.75rem;
+      color: #1e40af; font-size: .9rem; line-height: 1.65;
+    }
+
+    /* SECTION INTRO */
+    .section-intro {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 1.75rem 2rem;
+      box-shadow: var(--shadow); margin-bottom: 1.75rem;
+    }
+    .section-intro h2 { font-size: 1.3rem; font-weight: 800; color: var(--navy); margin-bottom: .6rem; }
+    .section-intro p  { color: var(--mid); line-height: 1.75; font-size: .95rem; }
+
+    /* EXERCISE CARDS */
+    .ejercicio-grid { display: grid; gap: 1.25rem; }
+    .ejercicio-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 1.5rem 1.75rem;
+      box-shadow: var(--shadow);
+      display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: start;
+      transition: box-shadow .2s, transform .2s;
+    }
+    .ejercicio-card:hover { box-shadow: 0 8px 32px rgba(15,37,71,.1); transform: translateY(-2px); }
+    .ejercicio-num {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--navy); color: var(--white);
+      font-weight: 700; font-size: 1rem;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .ejercicio-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: .4rem; }
+    .ejercicio-card p  { color: var(--mid); font-size: .9rem; line-height: 1.65; }
+    .detalle {
+      margin-top: .65rem; font-size: .82rem; color: var(--dark); font-weight: 500;
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: .45rem; padding: .45rem .85rem; display: inline-block;
+    }
+
+    /* WA BUTTON */
+    .btn-wa {
+      display: inline-flex; align-items: center; justify-content: center; gap: .75rem;
+      background: #22c55e; color: #fff; font-weight: 700; font-size: .95rem;
+      padding: .85rem 2rem; border-radius: 9999px;
+      transition: background .18s, transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 16px rgba(34,197,94,.3); margin-top: 2.25rem;
+    }
+    .btn-wa:hover { background: #16a34a; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(34,197,94,.35); }
+    .btn-wa svg { width: 20px; height: 20px; fill: #fff; flex-shrink: 0; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy); color: rgba(255,255,255,.55);
+      padding: 1.5rem 2rem; display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: .75rem; font-size: .82rem;
+    }
+    footer a { color: rgba(255,255,255,.75); transition: color .15s; }
+    footer a:hover { color: #fff; }
+
+    @media (max-width: 600px) {
+      .nav { padding: 0 1.25rem; }
+      .nav-cta { display: none; }
+      .nav-links { gap: 1.5rem; }
+      .ejercicio-card { grid-template-columns: 1fr; }
+      .ejercicio-num { width: 36px; height: 36px; font-size: .9rem; }
+      footer { justify-content: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="nav">
+  <a class="nav-logo" href="index.html">
+    <img src="images/logo.jpg" alt="Clínica de Rodilla">
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Inicio</a>
+    <a href="citas.html">Citas</a>
+    <a href="ejercicios.html" class="active">Ejercicios</a>
+    <a href="citas.html" class="nav-cta">Agendar cita</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <a href="ejercicios.html" class="back-link">
+    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    Todos los ejercicios
+  </a>
+  <h1>Desgaste de Rodilla</h1>
+  <p>Rutina de ejercicios para fortalecer la rodilla, reducir el dolor y mejorar la movilidad.</p>
+</div>
+
+<div class="container">
+
+  <div class="aviso">
+    <strong>Nota:</strong> Realiza estos ejercicios de forma suave y progresiva. Si sientes dolor agudo, detente y consulta al Dr. Cristóbal Alonso antes de continuar.
+  </div>
+
+  <div class="section-intro">
+    <h2>Ejercicios para Desgaste de Rodilla</h2>
+    <p>El desgaste articular (osteoartritis) puede mejorar significativamente con ejercicios que fortalecen los músculos alrededor de la rodilla, reduciendo la carga sobre el cartílago y aliviando el dolor. Realiza cada ejercicio 2 veces al día.</p>
+  </div>
+
+  <div class="ejercicio-grid">
+
+    <div class="ejercicio-card">
+      <div class="ejercicio-num">1</div>
+      <div>
+        <h3>Extensión de rodilla sentado</h3>
+        <p>Siéntate en una silla con la espalda recta. Extiende lentamente la pierna hasta que quede horizontal, mantén 5 segundos y baja despacio.</p>
+        <span class="detalle">🔁 3 series × 15 repeticiones por pierna</span>
+      </div>
+    </div>
+
+    <div class="ejercicio-card">
+      <div class="ejercicio-num">2</div>
+      <div>
+        <h3>Elevación de pierna recta</h3>
+        <p>Acostado boca arriba, dobla una pierna con el pie en el suelo. La otra pierna extendida: elévala 30 cm del suelo, mantén 3 segundos y baja lentamente.</p>
+        <span class="detalle">🔁 3 series × 12 repeticiones por pierna</span>
+      </div>
+    </div>
+
+    <div class="ejercicio-card">
+      <div class="ejercicio-num">3</div>
+      <div>
+        <h3>Puente de glúteos</h3>
+        <p>Acostado boca arriba, rodillas dobladas, pies apoyados. Eleva las caderas hasta formar una línea recta desde hombros hasta rodillas. Mantén 5 segundos.</p>
+        <span class="detalle">🔁 3 series × 12 repeticiones</span>
+      </div>
+    </div>
+
+    <div class="ejercicio-card">
+      <div class="ejercicio-num">4</div>
+      <div>
+        <h3>Cuádriceps en pared</h3>
+        <p>De pie, apoya la espalda en una pared y deslízate hacia abajo hasta que las rodillas formen un ángulo de 90°. Mantén la posición estática.</p>
+        <span class="detalle">⏱ 3 series × 20–30 segundos</span>
+      </div>
+    </div>
+
+    <div class="ejercicio-card">
+      <div class="ejercicio-num">5</div>
+      <div>
+        <h3>Bicicleta estacionaria</h3>
+        <p>El ciclismo es excelente para la rodilla: fortalece sin impacto. Usa resistencia baja, asiento alto y pedalea con movimiento fluido.</p>
+        <span class="detalle">⏱ 15–20 minutos diarios, ritmo moderado</span>
+      </div>
+    </div>
+
+    <div class="ejercicio-card">
+      <div class="ejercicio-num">6</div>
+      <div>
+        <h3>Estiramiento de isquiotibiales</h3>
+        <p>Acostado boca arriba, sujeta la parte posterior del muslo con ambas manos y extiende la rodilla lentamente hasta sentir tensión suave en la parte posterior de la pierna.</p>
+        <span class="detalle">⏱ 3 × 30 segundos por pierna</span>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="https://wa.me/523313427809?text=Hola%20Dr.%20tengo%20dudas%20sobre%20los%20ejercicios%20para%20desgaste%20de%20rodilla." class="btn-wa">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Consultar al Dr. por WhatsApp
+  </a>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2025 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
+  <span>
+    <a href="index.html">Inicio</a> &nbsp;·&nbsp;
+    <a href="citas.html">Citas</a> &nbsp;·&nbsp;
+    <a href="ejercicios.html">Ejercicios</a> &nbsp;·&nbsp;
+    <a href="alquiler/">Alquiler movilizador</a>
+  </span>
+</footer>
+
+</body>
+</html>
