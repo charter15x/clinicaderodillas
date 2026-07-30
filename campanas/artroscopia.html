@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Artroscopia de Rodilla – Dr. Cristóbal Alonso | Guadalajara</title>
+  <meta name="description" content="Cirugía artroscópica de rodilla mínimamente invasiva. Dr. Cristóbal Alonso – Subespecialista. Guadalajara. (33) 3825-8447">
+  <meta property="og:title"       content="🔬 Artroscopia de Rodilla — Sin grandes cortes, recuperación rápida">
+  <meta property="og:description" content="Cirugía mínimamente invasiva para menisco, ligamentos y desgaste. Dr. Cristóbal Alonso, Guadalajara. Aceptamos seguros.">
+  <meta property="og:image"       content="https://clinicaderodillas.net/images/artroscopia.jpeg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url"         content="https://clinicaderodillas.net/campanas/artroscopia.html">
+  <meta property="og:type"        content="website">
+  <link rel="icon" href="../images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root {
+      --navy:#0f2547; --blue:#1d4ed8;
+      --dark:#1e293b; --mid:#475569; --light:#f8fafc; --white:#fff;
+      --border:#e2e8f0; --shadow:0 2px 16px rgba(15,37,71,.09); --r:1rem;
+      --green:#16a34a;
+    }
+    html { -webkit-text-size-adjust:100%; }
+    body {
+      font-family:'Inter',sans-serif; background:var(--light);
+      color:var(--dark); -webkit-font-smoothing:antialiased;
+      font-size:17px; line-height:1.65; overflow-x:hidden;
+    }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; max-width:100%; }
+
+    /* HERO */
+    .hero { position:relative; }
+    .hero-img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 40%; display:block; }
+    @media (min-width:480px) { .hero-img { aspect-ratio:16/9; } }
+    .hero-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(10,25,50,.94) 0%, rgba(10,25,50,.48) 58%, rgba(10,25,50,.12) 100%);
+    }
+    .hero-content { position:absolute; bottom:0; left:0; right:0; padding:1.5rem 1.25rem; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:.35rem;
+      background:#1d4ed8; color:#fff;
+      font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+      padding:.35rem .85rem; border-radius:9999px; margin-bottom:.65rem;
+    }
+    .hero-content h1 { font-size:clamp(1.5rem,6vw,2rem); font-weight:800; color:#fff; line-height:1.15; margin-bottom:.4rem; }
+    .hero-content p  { color:rgba(255,255,255,.78); font-size:.9rem; line-height:1.6; }
+
+    /* LOGO BAR */
+    .logo-bar {
+      background:var(--white); padding:.9rem 1.25rem;
+      display:flex; align-items:center; gap:.75rem;
+      border-bottom:1px solid var(--border);
+      position:sticky; top:0; z-index:50;
+      box-shadow:0 1px 8px rgba(0,0,0,.07);
+    }
+    .logo-bar img { height:36px; border-radius:.375rem; }
+    .logo-bar-text strong { display:block; font-size:.88rem; font-weight:800; color:var(--navy); }
+    .logo-bar-text span  { font-size:.75rem; color:var(--mid); }
+
+    /* CONTENT */
+    .content { max-width:540px; margin:0 auto; padding:1.5rem 1.25rem calc(2rem + env(safe-area-inset-bottom)); }
+
+    /* STICKY CTA */
+    .sticky-cta {
+      position:fixed; bottom:0; left:0; right:0; z-index:100;
+      background:var(--white); border-top:1px solid var(--border);
+      padding:.85rem 1.25rem calc(.85rem + env(safe-area-inset-bottom));
+      display:flex; gap:.65rem;
+      box-shadow:0 -4px 20px rgba(0,0,0,.1);
+    }
+    .sticky-cta .btn-wa {
+      flex:2; display:flex; align-items:center; justify-content:center; gap:.5rem;
+      background:#22c55e; color:#fff; min-height:52px; border-radius:.875rem;
+      font-size:1rem; font-weight:700; -webkit-tap-highlight-color:transparent;
+    }
+    .sticky-cta .btn-wa:active { background:#16a34a; }
+    .sticky-cta .btn-wa svg { width:20px; height:20px; fill:#fff; }
+    .sticky-cta .btn-call {
+      flex:1; display:flex; align-items:center; justify-content:center; gap:.4rem;
+      background:var(--light); color:var(--navy); min-height:52px; border-radius:.875rem;
+      font-size:.88rem; font-weight:700; border:1.5px solid var(--border);
+      -webkit-tap-highlight-color:transparent;
+    }
+    .sticky-cta .btn-call:active { background:#e2e8f0; }
+    .sticky-cta .btn-call svg { width:18px; height:18px; fill:var(--blue); }
+
+    /* BENEFICIOS */
+    .benefits { display:flex; flex-direction:column; gap:.85rem; margin-bottom:1.25rem; }
+    .benefit {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:1.1rem 1rem;
+      display:flex; gap:.9rem; align-items:flex-start; box-shadow:var(--shadow);
+    }
+    .benefit .icon { font-size:2rem; flex-shrink:0; line-height:1; }
+    .benefit h3 { font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:.2rem; }
+    .benefit p  { font-size:.875rem; color:var(--mid); line-height:1.6; }
+
+    /* INDICACIONES */
+    .indica-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:1.25rem; margin-bottom:1.25rem; box-shadow:var(--shadow);
+    }
+    .indica-card h3 { font-size:.95rem; font-weight:800; color:var(--navy); margin-bottom:.9rem; }
+    .indica-card ul { list-style:none; display:flex; flex-direction:column; gap:.6rem; }
+    .indica-card li { display:flex; gap:.6rem; font-size:.9rem; color:var(--mid); line-height:1.5; }
+    .indica-card li::before { content:'✓'; color:var(--blue); font-weight:800; flex-shrink:0; font-size:1rem; }
+
+    /* DOCTOR */
+    .doctor-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow); margin-bottom:1.25rem;
+    }
+    .doctor-img { width:100%; aspect-ratio:16/9; object-fit:cover; object-position:right top; }
+    .doctor-body { padding:1.1rem 1.1rem; }
+    .doctor-body h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.15rem; }
+    .doctor-body .role { font-size:.8rem; color:var(--blue); font-weight:700; margin-bottom:.55rem; }
+    .doctor-body p { font-size:.875rem; color:var(--mid); line-height:1.65; }
+
+    /* SEGUROS */
+    .seguros {
+      background:#f0fdf4; border:1px solid #bbf7d0; border-radius:var(--r);
+      padding:1rem 1.1rem; display:flex; gap:.75rem; align-items:center; margin-bottom:1.25rem;
+    }
+    .seguros .icon { font-size:1.75rem; flex-shrink:0; }
+    .seguros p { font-size:.88rem; color:#166534; font-weight:600; line-height:1.5; }
+
+    /* UBICACIÓN */
+    .ubicacion {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:1.1rem 1.1rem; box-shadow:var(--shadow); margin-bottom:5rem;
+    }
+    .ubicacion h3 { font-size:.9rem; font-weight:800; color:var(--navy); margin-bottom:.8rem; }
+    .ubi-row { display:flex; gap:.65rem; align-items:flex-start; margin-bottom:.6rem; }
+    .ubi-row:last-child { margin-bottom:0; }
+    .ubi-row svg { width:20px; height:20px; fill:var(--blue); flex-shrink:0; margin-top:.1rem; }
+    .ubi-row span { font-size:.88rem; color:var(--mid); line-height:1.55; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <img class="hero-img" src="../images/artroscopia.jpeg" alt="Artroscopia de rodilla">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🔬 Cirugía mínimamente invasiva</div>
+    <h1>Artroscopia de Rodilla</h1>
+    <p>Tratamiento preciso a través de incisiones mínimas — sin grandes cortes, recuperación más rápida.</p>
+  </div>
+</div>
+
+<div class="logo-bar">
+  <img src="../images/logo.jpg" alt="Logo">
+  <div class="logo-bar-text">
+    <strong>Clínica de Rodilla</strong>
+    <span>Dr. Cristóbal Alonso · Traumatólogo</span>
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="benefits">
+    <div class="benefit">
+      <span class="icon">🎯</span>
+      <div><h3>Máxima precisión</h3><p>Una cámara de fibra óptica permite visualizar y tratar el interior de la articulación con exactitud quirúrgica.</p></div>
+    </div>
+    <div class="benefit">
+      <span class="icon">🩹</span>
+      <div><h3>Incisiones mínimas</h3><p>Solo dos pequeñas entradas de menos de 1 cm. Menos dolor, menos cicatriz y menor riesgo de infección.</p></div>
+    </div>
+    <div class="benefit">
+      <span class="icon">🚶</span>
+      <div><h3>Recuperación acelerada</h3><p>La mayoría de los pacientes regresan a sus actividades diarias en menos tiempo que con cirugía abierta.</p></div>
+    </div>
+    <div class="benefit">
+      <span class="icon">🏥</span>
+      <div><h3>Sin internamiento prolongado</h3><p>Procedimiento ambulatorio o de corta estancia en Hospital Bernardette, Guadalajara.</p></div>
+    </div>
+  </div>
+
+  <div class="indica-card">
+    <h3>¿Cuándo se recomienda la artroscopia?</h3>
+    <ul>
+      <li>Lesión de menisco (desgarro o daño)</li>
+      <li>Ruptura o lesión de ligamentos (LCA, LCP)</li>
+      <li>Desgaste articular (condromalacia)</li>
+      <li>Cuerpos libres dentro de la articulación</li>
+      <li>Sinovitis o inflamación crónica de la rodilla</li>
+      <li>Dolor persistente sin diagnóstico claro</li>
+    </ul>
+  </div>
+
+  <div class="doctor-card">
+    <img class="doctor-img" src="../images/bernardette-bata.jpg" alt="Dr. Cristóbal Alonso">
+    <div class="doctor-body">
+      <h3>Dr. Cristóbal Alonso</h3>
+      <p class="role">Traumatólogo · Subespecialista en Cirugía de Rodilla</p>
+      <p>Amplia experiencia en artroscopia de rodilla. Diagnóstico y tratamiento de lesiones de menisco, ligamentos y cartílago con técnicas mínimamente invasivas.</p>
+    </div>
+  </div>
+
+  <div class="seguros">
+    <span class="icon">🛡️</span>
+    <p>Aceptamos seguros de gastos médicos. Consulte disponibilidad con su aseguradora.</p>
+  </div>
+
+  <div class="ubicacion">
+    <h3>📍 Dónde encontrarnos</h3>
+    <div class="ubi-row">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span>Av. Hidalgo 930, Col. Centro<br>Guadalajara, Jal. CP 44100</span>
+    </div>
+    <div class="ubi-row">
+      <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+      <span>Lun–Vie 9:00–19:00 · Sáb 9:00–14:00</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="sticky-cta">
+  <a class="btn-wa" href="https://wa.me/523313427809?text=Hola%20Dr.%20Cristóbal%2C%20me%20gustaría%20información%20sobre%20la%20artroscopia%20de%20rodilla.">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    WhatsApp
+  </a>
+  <a class="btn-call" href="tel:+523338258447">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Llamar
+  </a>
+</div>
+
+</body>
+</html>
