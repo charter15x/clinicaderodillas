@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campañas de Difusión – Clínica de Rodilla</title>
+  <link rel="icon" href="../images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0f2547; --blue: #1d4ed8; --blue-lt: #3b82f6;
+      --dark: #1e293b; --mid: #475569; --muted: #94a3b8;
+      --light: #f8fafc; --white: #fff; --border: #e2e8f0;
+      --shadow: 0 4px 24px rgba(15,37,71,.08); --r: .875rem;
+      --green: #16a34a; --red: #dc2626; --amber: #d97706;
+    }
+    body { font-family:'Inter',sans-serif; background:var(--light); color:var(--dark); -webkit-font-smoothing:antialiased; }
+    a { text-decoration:none; color:inherit; }
+
+    /* NAV */
+    .nav {
+      background:var(--navy); padding:0 2rem; height:60px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .nav-logo { display:flex; align-items:center; gap:.75rem; }
+    .nav-logo img { height:40px; border-radius:.375rem; }
+    .nav-logo span { font-size:.95rem; font-weight:700; color:#fff; }
+    .nav a { color:rgba(255,255,255,.7); font-size:.82rem; font-weight:600; }
+    .nav a:hover { color:#fff; }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, #1a3a6e 100%);
+      padding:2.5rem 2rem 2rem; text-align:center;
+    }
+    .header .badge {
+      display:inline-block; background:rgba(255,255,255,.12);
+      color:rgba(255,255,255,.85); font-size:.7rem; font-weight:700;
+      letter-spacing:.1em; text-transform:uppercase;
+      padding:.3rem .85rem; border-radius:9999px; margin-bottom:.75rem;
+    }
+    .header h1 { font-size:1.8rem; font-weight:800; color:#fff; margin-bottom:.4rem; }
+    .header p  { color:rgba(255,255,255,.65); font-size:.9rem; max-width:480px; margin:0 auto; }
+
+    /* MAIN */
+    .main { max-width:900px; margin:0 auto; padding:2rem 1.5rem 4rem; }
+
+    /* NUEVA CAMPAÑA BTN */
+    .top-bar { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; }
+    .top-bar h2 { font-size:1rem; font-weight:700; color:var(--navy); }
+    .btn-new {
+      display:inline-flex; align-items:center; gap:.4rem;
+      background:var(--blue); color:#fff;
+      padding:.55rem 1.1rem; border-radius:9999px;
+      font-size:.82rem; font-weight:700;
+      box-shadow:0 3px 12px rgba(29,78,216,.3);
+      transition:background .15s, transform .15s;
+    }
+    .btn-new:hover { background:var(--navy); transform:translateY(-1px); }
+    .btn-new svg { width:16px; height:16px; fill:#fff; }
+
+    /* GRID DE CAMPAÑAS */
+    .campaigns { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:1.25rem; }
+
+    .campaign-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); overflow:hidden;
+      box-shadow:var(--shadow); transition:transform .2s, box-shadow .2s;
+    }
+    .campaign-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(15,37,71,.13); }
+
+    .campaign-img {
+      width:100%; height:160px; object-fit:cover; display:block;
+    }
+    .campaign-img-placeholder {
+      width:100%; height:160px; background:linear-gradient(135deg,#dbeafe,#eff6ff);
+      display:flex; align-items:center; justify-content:center;
+      font-size:3rem;
+    }
+
+    .campaign-body { padding:1.1rem 1.2rem; }
+    .campaign-meta {
+      display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem;
+    }
+    .status-dot {
+      width:8px; height:8px; border-radius:50%; flex-shrink:0;
+    }
+    .dot-active   { background:var(--green); box-shadow:0 0 0 2px #dcfce7; }
+    .dot-draft    { background:var(--amber); box-shadow:0 0 0 2px #fef9c3; }
+    .dot-inactive { background:var(--muted); box-shadow:0 0 0 2px #f1f5f9; }
+    .status-label { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); }
+
+    .campaign-body h3 { font-size:1rem; font-weight:800; color:var(--navy); margin-bottom:.3rem; line-height:1.25; }
+    .campaign-body p  { font-size:.82rem; color:var(--mid); line-height:1.55; margin-bottom:.9rem; }
+
+    .campaign-actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+    .btn-share {
+      display:inline-flex; align-items:center; gap:.35rem;
+      background:#22c55e; color:#fff;
+      padding:.5rem 1rem; border-radius:9999px;
+      font-size:.78rem; font-weight:700; cursor:pointer; border:none;
+      transition:background .15s, transform .15s;
+    }
+    .btn-share:hover { background:#16a34a; transform:translateY(-1px); }
+    .btn-share svg { width:15px; height:15px; fill:#fff; }
+    .btn-view {
+      display:inline-flex; align-items:center; gap:.35rem;
+      background:var(--light); color:var(--navy);
+      padding:.5rem 1rem; border-radius:9999px;
+      font-size:.78rem; font-weight:600; border:1px solid var(--border);
+      transition:background .15s;
+    }
+    .btn-view:hover { background:var(--border); }
+    .btn-view svg { width:14px; height:14px; fill:var(--navy); }
+
+    /* MODAL SHARE */
+    .modal-overlay {
+      display:none; position:fixed; inset:0; z-index:500;
+      background:rgba(0,0,0,.5); backdrop-filter:blur(4px);
+      align-items:center; justify-content:center; padding:1rem;
+    }
+    .modal-overlay.open { display:flex; }
+    .modal {
+      background:var(--white); border-radius:1rem;
+      padding:1.75rem; max-width:480px; width:100%;
+      box-shadow:0 24px 64px rgba(0,0,0,.3);
+      animation:slide-up .2s ease;
+    }
+    @keyframes slide-up { from { transform:translateY(24px); opacity:0; } to { transform:none; opacity:1; } }
+    .modal h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.25rem; }
+    .modal .modal-sub { font-size:.82rem; color:var(--mid); margin-bottom:1rem; }
+
+    .msg-box {
+      background:var(--light); border:1px solid var(--border);
+      border-radius:.6rem; padding:.9rem 1rem;
+      font-size:.875rem; color:var(--dark); line-height:1.65;
+      white-space:pre-wrap; word-break:break-all;
+      max-height:200px; overflow-y:auto; margin-bottom:.85rem;
+      user-select:all;
+    }
+    .modal-btns { display:flex; gap:.65rem; flex-wrap:wrap; }
+    .btn-copy {
+      flex:1; display:inline-flex; align-items:center; justify-content:center; gap:.4rem;
+      background:var(--light); color:var(--dark);
+      padding:.6rem 1rem; border-radius:9999px;
+      font-size:.82rem; font-weight:700; border:1px solid var(--border);
+      cursor:pointer; transition:background .15s;
+    }
+    .btn-copy:hover { background:var(--border); }
+    .btn-copy.copied { background:#dcfce7; border-color:#86efac; color:var(--green); }
+    .btn-copy svg { width:16px; height:16px; }
+    .btn-wa-modal {
+      flex:1; display:inline-flex; align-items:center; justify-content:center; gap:.4rem;
+      background:#22c55e; color:#fff;
+      padding:.6rem 1rem; border-radius:9999px;
+      font-size:.82rem; font-weight:700; border:none;
+      cursor:pointer; transition:background .15s;
+      text-decoration:none;
+    }
+    .btn-wa-modal:hover { background:#16a34a; }
+    .btn-wa-modal svg { width:16px; height:16px; fill:#fff; }
+    .btn-close-modal {
+      width:100%; margin-top:.65rem;
+      background:none; border:none; color:var(--muted);
+      font-size:.82rem; cursor:pointer; padding:.4rem;
+      font-family:inherit;
+    }
+    .btn-close-modal:hover { color:var(--dark); }
+
+    /* INSTRUCCIONES */
+    .how-it-works {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:1.5rem; margin-top:2rem;
+      box-shadow:var(--shadow);
+    }
+    .how-it-works h3 { font-size:.95rem; font-weight:800; color:var(--navy); margin-bottom:1rem; }
+    .steps { display:flex; flex-direction:column; gap:.75rem; }
+    .step { display:flex; gap:.85rem; align-items:flex-start; }
+    .step-num {
+      width:28px; height:28px; border-radius:50%;
+      background:var(--blue); color:#fff;
+      font-size:.78rem; font-weight:800;
+      display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    }
+    .step p { font-size:.85rem; color:var(--mid); line-height:1.55; padding-top:.2rem; }
+    .step p strong { color:var(--dark); }
+
+    @media (max-width:600px) {
+      .header h1 { font-size:1.4rem; }
+      .campaigns { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="../images/logo.jpg" alt="Logo">
+    <span>Clínica de Rodilla</span>
+  </div>
+  <a href="../index.html">← Ir al sitio</a>
+</nav>
+
+<!-- HEADER -->
+<div class="header">
+  <p class="badge">Panel de Campañas</p>
+  <h1>📢 Campañas de Difusión</h1>
+  <p>Selecciona una campaña, copia el mensaje y compártelo con tu lista de difusión en WhatsApp.</p>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <div class="top-bar">
+    <h2>Campañas activas</h2>
+  </div>
+
+  <div class="campaigns">
+
+    <!-- CAMPAÑA 1: Prótesis $85,000 -->
+    <div class="campaign-card">
+      <img class="campaign-img" src="../images/rodilla3.jpg" alt="Prótesis de Rodilla">
+      <div class="campaign-body">
+        <div class="campaign-meta">
+          <span class="status-dot dot-active"></span>
+          <span class="status-label">Activa</span>
+        </div>
+        <h3>Prótesis de Rodilla — Precio Especial $85,000</h3>
+        <p>Campaña de precio promocional para prótesis de rodilla con técnica mínima invasiva.</p>
+        <div class="campaign-actions">
+          <button class="btn-share" onclick="openShare('protesis')">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Compartir
+          </button>
+          <a class="btn-view" href="protesis-85k.html" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            Ver página
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAÑA 2: Ácido Hialurónico -->
+    <div class="campaign-card">
+      <img class="campaign-img" src="../images/synvisc.jpg" alt="Ácido Hialurónico">
+      <div class="campaign-body">
+        <div class="campaign-meta">
+          <span class="status-dot dot-active"></span>
+          <span class="status-label">Activa</span>
+        </div>
+        <h3>Ácido Hialurónico — Sin Cirugía</h3>
+        <p>Alivio del dolor de rodilla con una sola inyección. Ideal para pacientes con desgaste articular.</p>
+        <div class="campaign-actions">
+          <button class="btn-share" onclick="openShare('hialuronico')">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Compartir
+          </button>
+          <a class="btn-view" href="hialuronico.html" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            Ver página
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAÑA 3: Primera Consulta -->
+    <div class="campaign-card">
+      <img class="campaign-img" src="../images/bernardette-bata.jpg" alt="Primera consulta">
+      <div class="campaign-body">
+        <div class="campaign-meta">
+          <span class="status-dot dot-active"></span>
+          <span class="status-label">Activa</span>
+        </div>
+        <h3>Consulta con el Dr. Cristóbal Alonso</h3>
+        <p>Campaña general de agenda. Ideal para pacientes nuevos o que llevan tiempo con dolor de rodilla.</p>
+        <div class="campaign-actions">
+          <button class="btn-share" onclick="openShare('consulta')">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Compartir
+          </button>
+          <a class="btn-view" href="consulta.html" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            Ver página
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /campaigns -->
+
+  <!-- CÓMO FUNCIONA -->
+  <div class="how-it-works">
+    <h3>📱 ¿Cómo usar estas campañas?</h3>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <p>Haz clic en <strong>"Compartir"</strong> en la campaña que quieras difundir.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <p>Copia el mensaje con el botón <strong>"Copiar texto"</strong> o ábrelo directo en WhatsApp.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <p>Pega el mensaje en tu <strong>lista de difusión</strong>. El link genera automáticamente una vista previa con imagen al abrirse.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <p>Los pacientes que abran el link verán la <strong>página completa de la campaña</strong> con todos los detalles y botón para agendar cita.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<!-- MODAL SHARE -->
+<div class="modal-overlay" id="shareModal">
+  <div class="modal">
+    <h3 id="modalTitle">Compartir campaña</h3>
+    <p class="modal-sub">Copia este mensaje y pégalo en tu lista de difusión de WhatsApp:</p>
+    <div class="msg-box" id="modalMsg"></div>
+    <div class="modal-btns">
+      <button class="btn-copy" id="btnCopy" onclick="copyMsg()">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+        Copiar texto
+      </button>
+      <a class="btn-wa-modal" id="btnWA" href="#" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Abrir en WhatsApp
+      </a>
+    </div>
+    <button class="btn-close-modal" onclick="closeShare()">Cerrar</button>
+  </div>
+</div>
+
+<script>
+  const campaigns = {
+    protesis: {
+      title: '🦴 Prótesis de Rodilla — Precio Especial',
+      msg: `🦴 *¡PRECIO ESPECIAL EN PRÓTESIS DE RODILLA!*
+
+¿Sufre dolor de rodilla que ya no le deja caminar bien? En la *Clínica de Rodilla* del Dr. Cristóbal Alonso le ofrecemos:
+
+✅ Prótesis de rodilla mínima invasiva
+✅ Precio especial: *$85,000*
+✅ Técnica de mínima invasión — recuperación más rápida
+✅ Heridas pequeñas y menor dolor postoperatorio
+✅ Aceptamos seguros de gastos médicos
+
+📍 Av. Hidalgo 930, Col. Centro, Guadalajara
+📞 (33) 3825-8447
+
+👇 Más información aquí:
+https://clinicaderodillas.net/campanas/protesis-85k.html`,
+      url: 'https://clinicaderodillas.net/campanas/protesis-85k.html'
+    },
+    hialuronico: {
+      title: '💉 Ácido Hialurónico — Sin Cirugía',
+      msg: `💉 *¿DOLOR DE RODILLA SIN NECESIDAD DE CIRUGÍA?*
+
+El *Ácido Hialurónico Intraarticular* es un tratamiento que:
+
+✅ Alivia el dolor de forma duradera
+✅ Mejora la movilidad de la rodilla
+✅ Se aplica en consultorio — sin internamiento
+✅ Resultados desde la primera sesión
+✅ Ideal para desgaste articular (artrosis)
+
+Con el *Dr. Cristóbal Alonso*, subespecialista en cirugía de rodilla.
+
+📍 Av. Hidalgo 930, Col. Centro, Guadalajara
+📞 (33) 3825-8447
+
+👇 Conoce más sobre este tratamiento:
+https://clinicaderodillas.net/campanas/hialuronico.html`,
+      url: 'https://clinicaderodillas.net/campanas/hialuronico.html'
+    },
+    consulta: {
+      title: '🩺 Consulta con el Dr. Cristóbal Alonso',
+      msg: `🩺 *¿LE DUELE LA RODILLA?*
+
+No espere más. Agenda su consulta con el *Dr. Cristóbal Alonso*, subespecialista en cirugía de rodilla en Guadalajara.
+
+Tratamos:
+✅ Desgaste articular
+✅ Dolor crónico de rodilla
+✅ Lesiones de menisco y ligamentos
+✅ Preparación y recuperación post-operatoria
+
+🏥 Hospital Bernardette — Av. Hidalgo 930, Col. Centro
+📞 Citas: (33) 3825-8447
+💬 WhatsApp: (33) 1342-7809
+
+Aceptamos seguros de gastos médicos.
+
+👇 Agenda tu cita aquí:
+https://clinicaderodillas.net/campanas/consulta.html`,
+      url: 'https://clinicaderodillas.net/campanas/consulta.html'
+    }
+  };
+
+  let currentMsg = '';
+
+  function openShare(id) {
+    const c = campaigns[id];
+    document.getElementById('modalTitle').textContent = c.title;
+    document.getElementById('modalMsg').textContent = c.msg;
+    document.getElementById('btnWA').href = 'https://wa.me/?text=' + encodeURIComponent(c.msg);
+    currentMsg = c.msg;
+    document.getElementById('btnCopy').classList.remove('copied');
+    document.getElementById('btnCopy').innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> Copiar texto`;
+    document.getElementById('shareModal').classList.add('open');
+  }
+
+  function closeShare() {
+    document.getElementById('shareModal').classList.remove('open');
+  }
+
+  async function copyMsg() {
+    try {
+      await navigator.clipboard.writeText(currentMsg);
+      const btn = document.getElementById('btnCopy');
+      btn.classList.add('copied');
+      btn.innerHTML = `<svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> ¡Copiado!`;
+    } catch(e) {
+      document.getElementById('modalMsg').select && document.getElementById('modalMsg').select();
+    }
+  }
+
+  document.getElementById('shareModal').addEventListener('click', function(e) {
+    if (e.target === this) closeShare();
+  });
+</script>
+
+</body>
+</html>

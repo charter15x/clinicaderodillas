@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Consulta – Dr. Cristóbal Alonso | Clínica de Rodilla Guadalajara</title>
+  <meta name="description" content="¿Le duele la rodilla? Agende su consulta con el Dr. Cristóbal Alonso, subespecialista en cirugía de rodilla. Guadalajara. (33) 3825-8447">
+
+  <meta property="og:title"       content="🩺 ¿Le duele la rodilla? — Consulta con el Dr. Cristóbal Alonso">
+  <meta property="og:description" content="Subespecialista en cirugía de rodilla en Guadalajara. Tratamiento sin cirugía, prótesis y artroscopia. Aceptamos seguros.">
+  <meta property="og:image"       content="https://clinicaderodillas.net/images/portada.jpeg">
+  <meta property="og:image:width"  content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url"         content="https://clinicaderodillas.net/campanas/consulta.html">
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="Clínica de Rodilla – Dr. Cristóbal Alonso">
+
+  <link rel="icon" href="../images/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root {
+      --navy:#0f2547; --blue:#1d4ed8;
+      --dark:#1e293b; --mid:#475569; --light:#f8fafc; --white:#fff;
+      --border:#e2e8f0; --shadow:0 4px 24px rgba(15,37,71,.08); --r:1rem;
+      --green:#16a34a;
+    }
+    body { font-family:'Inter',sans-serif; background:var(--light); color:var(--dark); -webkit-font-smoothing:antialiased; font-size:16px; }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; max-width:100%; }
+
+    .hero { position:relative; overflow:hidden; }
+    .hero-img { width:100%; height:260px; object-fit:cover; object-position:center 20%; display:block; }
+    .hero-overlay { position:absolute; inset:0; background:linear-gradient(to top, rgba(15,37,71,.9) 35%, rgba(15,37,71,.25) 100%); }
+    .hero-content { position:absolute; bottom:0; left:0; right:0; padding:1.4rem 1.25rem; }
+    .hero-content h1 { font-size:1.5rem; font-weight:800; color:#fff; line-height:1.2; margin-bottom:.35rem; }
+    .hero-content p  { color:rgba(255,255,255,.75); font-size:.88rem; line-height:1.6; }
+
+    .logo-bar { background:var(--white); padding:.85rem 1.25rem; display:flex; align-items:center; gap:.75rem; border-bottom:1px solid var(--border); }
+    .logo-bar img { height:38px; border-radius:.375rem; }
+    .logo-bar-text { font-size:.78rem; color:var(--mid); line-height:1.4; }
+    .logo-bar-text strong { display:block; color:var(--navy); font-size:.85rem; }
+
+    .content { max-width:520px; margin:0 auto; padding:1.5rem 1.25rem 3rem; }
+
+    .especialidades { display:grid; grid-template-columns:1fr 1fr; gap:.75rem; margin-bottom:1.75rem; }
+    .esp-item {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:.9rem .85rem;
+      text-align:center; box-shadow:var(--shadow);
+    }
+    .esp-item .esp-icon { font-size:1.8rem; margin-bottom:.4rem; }
+    .esp-item span { font-size:.8rem; font-weight:600; color:var(--navy); line-height:1.3; display:block; }
+
+    .doctor-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow); margin-bottom:1.5rem;
+    }
+    .doctor-img { width:100%; height:200px; object-fit:cover; object-position:right top; }
+    .doctor-body { padding:1.1rem 1.25rem; }
+    .doctor-body h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
+    .doctor-body .doc-role { font-size:.8rem; color:var(--blue); font-weight:600; margin-bottom:.6rem; }
+    .doctor-body p { font-size:.85rem; color:var(--mid); line-height:1.6; }
+
+    .seguros-badge {
+      background:#f0fdf4; border:1px solid #bbf7d0; border-radius:var(--r);
+      padding:.9rem 1.1rem; display:flex; gap:.6rem; align-items:center;
+      font-size:.875rem; color:var(--green); font-weight:600; margin-bottom:1.5rem;
+    }
+    .seguros-badge span { font-size:1.4rem; flex-shrink:0; }
+
+    .cta-stack { display:flex; flex-direction:column; gap:.75rem; margin-bottom:1.5rem; }
+    .btn-wa {
+      display:flex; align-items:center; justify-content:center; gap:.6rem;
+      background:#22c55e; color:#fff; padding:1rem 1.5rem; border-radius:9999px;
+      font-size:1.05rem; font-weight:700; box-shadow:0 4px 18px rgba(34,197,94,.35);
+      transition:background .15s, transform .15s;
+    }
+    .btn-wa:hover { background:var(--green); transform:translateY(-2px); }
+    .btn-wa svg { width:22px; height:22px; fill:#fff; }
+    .btn-primary {
+      display:flex; align-items:center; justify-content:center; gap:.6rem;
+      background:var(--blue); color:#fff; padding:1rem 1.5rem; border-radius:9999px;
+      font-size:1.05rem; font-weight:700; box-shadow:0 4px 18px rgba(29,78,216,.3);
+      transition:background .15s, transform .15s;
+    }
+    .btn-primary:hover { background:var(--navy); transform:translateY(-2px); }
+    .btn-primary svg { width:22px; height:22px; fill:#fff; }
+    .btn-call {
+      display:flex; align-items:center; justify-content:center; gap:.6rem;
+      background:var(--white); color:var(--navy); padding:.9rem 1.5rem; border-radius:9999px;
+      font-size:.95rem; font-weight:700; border:2px solid var(--border);
+      transition:border-color .15s, background .15s;
+    }
+    .btn-call:hover { border-color:#94a3b8; background:#f1f5f9; }
+    .btn-call svg { width:20px; height:20px; fill:var(--blue); }
+
+    .ubicacion { background:var(--white); border:1px solid var(--border); border-radius:var(--r); padding:1.1rem 1.25rem; box-shadow:var(--shadow); }
+    .ubicacion h3 { font-size:.9rem; font-weight:800; color:var(--navy); margin-bottom:.75rem; }
+    .ubi-row { display:flex; gap:.6rem; align-items:flex-start; margin-bottom:.5rem; }
+    .ubi-row svg { width:18px; height:18px; fill:var(--blue); flex-shrink:0; margin-top:.1rem; }
+    .ubi-row span { font-size:.85rem; color:var(--mid); line-height:1.5; }
+
+    @media (max-width:380px) { .especialidades { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <img class="hero-img" src="../images/portada.jpeg" alt="Clínica de Rodilla Guadalajara">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>¿Le duele la rodilla?<br>No espere más.</h1>
+    <p>Agende su consulta con un subespecialista en cirugía de rodilla en Guadalajara.</p>
+  </div>
+</div>
+
+<div class="logo-bar">
+  <img src="../images/logo.jpg" alt="Clínica de Rodilla">
+  <div class="logo-bar-text">
+    <strong>Clínica de Rodilla</strong>
+    Dr. Cristóbal Alonso · Traumatólogo
+  </div>
+</div>
+
+<div class="content">
+
+  <div class="especialidades">
+    <div class="esp-item"><div class="esp-icon">🦴</div><span>Desgaste de Rodilla</span></div>
+    <div class="esp-item"><div class="esp-icon">💉</div><span>Ácido Hialurónico</span></div>
+    <div class="esp-item"><div class="esp-icon">🔬</div><span>Artroscopia</span></div>
+    <div class="esp-item"><div class="esp-icon">🦾</div><span>Prótesis de Rodilla</span></div>
+    <div class="esp-item"><div class="esp-icon">🩻</div><span>Infiltraciones</span></div>
+    <div class="esp-item"><div class="esp-icon">🏃</div><span>Sin Cirugía</span></div>
+  </div>
+
+  <div class="doctor-card">
+    <img class="doctor-img" src="../images/bernardette-bata.jpg" alt="Dr. Cristóbal Alonso">
+    <div class="doctor-body">
+      <h3>Dr. Cristóbal Alonso</h3>
+      <p class="doc-role">Traumatólogo · Subespecialista en Cirugía de Rodilla</p>
+      <p>Atención personalizada con las técnicas más avanzadas. Experiencia en cirugía mínima invasiva, prótesis y tratamientos sin cirugía para el dolor de rodilla.</p>
+    </div>
+  </div>
+
+  <div class="seguros-badge">
+    <span>🛡️</span>
+    Aceptamos seguros de gastos médicos. Consulte disponibilidad con su póliza.
+  </div>
+
+  <div class="cta-stack">
+    <a href="https://wa.me/523313427809?text=Hola%20Dr.%20Cristóbal%2C%20me%20gustaría%20agendar%20una%20consulta." class="btn-wa">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Agendar por WhatsApp
+    </a>
+    <a href="../citas.html" class="btn-primary">
+      <svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+      Ver disponibilidad de citas
+    </a>
+    <a href="tel:+523338258447" class="btn-call">
+      <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+      Llamar: (33) 3825-8447
+    </a>
+  </div>
+
+  <div class="ubicacion">
+    <h3>📍 Dónde encontrarnos</h3>
+    <div class="ubi-row">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span>Av. Hidalgo 930, Col. Centro · Guadalajara, Jal.</span>
+    </div>
+    <div class="ubi-row">
+      <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+      <span>Lun–Vie 9:00–19:00 · Sáb 9:00–14:00</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
