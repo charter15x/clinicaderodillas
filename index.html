@@ -67,6 +67,10 @@
 
     /* 4 · Especialista y consultorio */
     .doc { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+    .doc { grid-template-columns: .85fr 1.15fr; align-items: stretch; }
+    .doc__photo { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--c-line); box-shadow: var(--shadow); min-height: 420px; }
+    .doc__photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    .doc__side { display: flex; flex-direction: column; gap: 1.25rem; }
     .doc__card { background: var(--c-white); border: 1px solid var(--c-line); border-radius: var(--radius-lg); padding: 2rem; }
     .doc__card h3 { font-size: 1.45rem; font-weight: 700; color: var(--c-navy); margin-bottom: .35rem; }
     .doc__role { color: var(--c-blue); font-weight: 600; margin-bottom: 1.25rem; }
@@ -169,6 +173,7 @@
       .hero__media { height: 230px; }
       .hia { grid-template-columns: 1fr; }
       .doc__card { padding: 1.5rem; }
+      .doc__photo { min-height: 0; aspect-ratio: 4 / 4.2; }
       .band { padding: 2rem 1.4rem; }
       .band__btns .btn { flex: 1 1 auto; }
     }
@@ -264,6 +269,10 @@
       <h2 class="section-title">Atención de un subespecialista en rodilla</h2>
     </div>
     <div class="doc">
+      <figure class="doc__photo">
+        <img src="images/dr-alonso-cirugia.jpg" alt="Dr. Cristóbal Alonso durante una cirugía de rodilla" width="724" height="813" loading="lazy">
+      </figure>
+      <div class="doc__side">
       <div class="doc__card">
         <h3>Dr. Cristóbal Alonso</h3>
         <p class="doc__role">Traumatólogo · Subespecialista en Cirugía de Rodilla</p>
@@ -283,6 +292,7 @@
           <div><strong>Hospital Bernardette</strong><span>MAC Hospitales · Guadalajara</span></div>
         </figcaption>
       </figure>
+      </div>
     </div>
   </div>
 </section>
@@ -410,7 +420,7 @@
       </div>
       <div class="contact__info">
         <div class="contact__photo">
-          <img src="images/bernardette-bata.jpg" alt="Médico con bata de MAC Hospitales" loading="lazy">
+          <img src="images/dr-alonso-cirugia.jpg" alt="Dr. Cristóbal Alonso durante una cirugía" style="object-position:center 28%" loading="lazy">
         </div>
         <div class="contact__body">
           <div class="hosp">
