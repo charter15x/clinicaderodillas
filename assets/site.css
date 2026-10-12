@@ -85,25 +85,28 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus
 }
 
 .brand { display: inline-flex; align-items: center; gap: .65rem; color: var(--c-navy); text-decoration: none; flex-shrink: 0; }
-.brand__icon { width: 42px; height: 42px; flex-shrink: 0; }
+.brand__icon { width: 46px; height: 46px; flex-shrink: 0; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
-.brand__name { font-size: 1.05rem; font-weight: 700; color: var(--c-navy); letter-spacing: -.01em; }
-.brand__city { font-size: .66rem; font-weight: 600; letter-spacing: .22em; color: var(--c-blue); margin-top: .2rem; }
+.brand__name { font-size: 1.2rem; font-weight: 700; color: var(--c-navy); letter-spacing: -.01em; }
+.brand__city { font-size: .68rem; font-weight: 600; letter-spacing: .32em; color: var(--c-blue); margin-top: .2rem; }
 
-.site-nav { display: flex; align-items: center; gap: .25rem; }
+.site-nav { display: flex; align-items: center; gap: 1.6rem; flex: 1; }
+.site-nav > a:first-child { margin-left: auto; }
 .site-nav a {
-  font-size: .925rem; font-weight: 500; color: var(--c-text-2);
-  padding: .5rem .8rem; border-radius: var(--radius-sm);
-  text-decoration: none; transition: color .15s, background-color .15s;
+  font-size: .975rem; font-weight: 500; color: var(--c-navy);
+  padding: .45rem .1rem; border-radius: var(--radius-sm);
+  text-decoration: none; transition: color .15s, box-shadow .15s;
 }
-.site-nav a:hover { color: var(--c-navy); background: var(--c-gray-bg); }
+.site-nav a:hover { color: var(--c-blue); }
 .site-nav a[aria-current="page"] { color: var(--c-navy); font-weight: 600; box-shadow: inset 0 -2px 0 var(--c-blue-2); border-radius: 0; }
 .site-nav .site-nav__cta {
-  margin-left: .6rem; background: var(--c-blue); color: #fff;
-  font-weight: 600; padding: .55rem 1rem; border-radius: var(--radius-sm);
+  margin-left: auto; display: inline-flex; align-items: center; gap: .5rem;
+  background: #0550AE; color: #fff;
+  font-weight: 600; padding: .65rem 1.15rem; border-radius: var(--radius-sm);
   border: 1px solid rgba(13, 27, 42, .12);
 }
-.site-nav .site-nav__cta:hover { background: var(--c-blue-hover); color: #fff; }
+.site-nav__cta svg { width: 19px; height: 19px; flex-shrink: 0; }
+.site-nav .site-nav__cta:hover { background: var(--c-navy); color: #fff; }
 .site-nav .site-nav__cta[aria-current="page"] { color: #fff; box-shadow: none; border-radius: var(--radius-sm); }
 
 .nav-toggle {
@@ -128,9 +131,10 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus
     padding: .5rem 1rem 1rem; box-shadow: 0 8px 20px rgba(13, 27, 42, .08);
   }
   .site-nav.is-open { display: flex; }
+  .site-nav > a:first-child { margin-left: 0; }
   .site-nav a { padding: .85rem .5rem; font-size: 1rem; border-bottom: 1px solid var(--c-gray-bg); border-radius: 0; }
   .site-nav a[aria-current="page"] { box-shadow: inset 3px 0 0 var(--c-blue-2); padding-left: .85rem; }
-  .site-nav .site-nav__cta { margin: .75rem 0 0; text-align: center; border-bottom: 0; border-radius: var(--radius-sm); }
+  .site-nav .site-nav__cta { margin: .75rem 0 0; justify-content: center; text-align: center; border-bottom: 0; border-radius: var(--radius-sm); }
 }
 
 /* ── Botones ──────────────────────────────────────────────────────────── */
@@ -208,12 +212,15 @@ main p a:not([class]), .content p a:not([class]), .container p a:not([class]) {
 }
 
 /* ── Pie de página ────────────────────────────────────────────────────── */
-.site-footer { background: var(--c-navy); color: rgba(255, 255, 255, .78); font-size: .9rem; }
+.site-footer { display: block !important; padding: 0 !important; text-align: left !important; background: var(--c-navy); color: rgba(255, 255, 255, .78); font-size: .9rem; }
+.site-footer__bottom { width: 100%; }
 .site-footer__inner {
   max-width: 1180px; margin: 0 auto; padding: 3rem 1.25rem 2rem;
   display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 2rem;
 }
 .site-footer .brand__name { color: #fff; }
+.site-footer .brand__icon { filter: invert(1); }
+.site-footer__tree { display: block; width: 170px; height: auto; margin-top: 1.1rem; background: #fff; border-radius: var(--radius-sm); padding: .45rem .6rem; }
 .site-footer .brand__city { color: #8CC8FF; }
 .site-footer__about { margin-top: .9rem; color: rgba(255, 255, 255, .7); line-height: 1.6; max-width: 300px; }
 .site-footer h2 {
