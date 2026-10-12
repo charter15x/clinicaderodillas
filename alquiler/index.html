@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alquiler de Movilizador Pasivo de Rodilla (CPM) – Dr. Cristóbal Alonso</title>
     <meta name="description" content="Alquila un movilizador pasivo de rodilla (CPM) para tu recuperación. Servicio del Dr. Cristóbal Alonso – Guadalajara, Jal. Desde $500 MXN/día.">
-    <link rel="icon" href="../images/logo.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="../assets/logo-icon.svg">
+  <link rel="alternate icon" href="../images/logo.jpg">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Inter', sans-serif; background-color: #f9fafb; color: #1f2937; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font); background-color: #F6F8FA; color: #0D1B2A; -webkit-font-smoothing: antialiased; }
         a { text-decoration: none; color: inherit; }
         img { display: block; max-width: 100%; }
         p { line-height: 1.7; margin-bottom: 1rem; font-size: 1rem; }
@@ -21,21 +20,21 @@
         .nav { background: #fff; box-shadow: 0 1px 4px rgba(0,0,0,.08); padding: 0 1.25rem; height: 64px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
         .nav-logo img { height: 48px; width: auto; }
         .nav-menu { display: flex; gap: 1.75rem; align-items: center; }
-        .nav-menu a { color: #374151; font-weight: 600; font-size: .9rem; transition: color .18s; }
-        .nav-menu a:hover { color: #b91c1c; }
-        .nav-menu .nav-wa { background: #22c55e; color: #fff !important; padding: .4rem 1.1rem; border-radius: 9999px; font-size: .82rem; }
-        .nav-menu .nav-wa:hover { background: #16a34a; }
+        .nav-menu a { color: #0D1B2A; font-weight: 600; font-size: .9rem; transition: color .18s; }
+        .nav-menu a:hover { color: #0969DA; }
+        .nav-menu .nav-wa { background: #0969DA; color: #fff !important; padding: .4rem 1.1rem; border-radius: 9999px; font-size: .82rem; }
+        .nav-menu .nav-wa:hover { background: #0550AE; }
 
         /* HEADER */
-        .header { background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%); color: #fff; padding: 4rem 1.25rem; text-align: center; }
+        .header { background: linear-gradient(135deg, #0D1B2A 0%, #0969DA 100%); color: #fff; padding: 4rem 1.25rem; text-align: center; }
         .header-tag { display: inline-block; background: rgba(255,255,255,.15); color: rgba(255,255,255,.9); font-size: .75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .9rem; border-radius: 9999px; margin-bottom: 1rem; }
         .header h1 { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; margin-bottom: .75rem; }
         .header p { font-size: 1.1rem; opacity: .85; max-width: 560px; margin: 0 auto; line-height: 1.65; }
 
         /* SECTIONS */
         .section { padding: 3.5rem 0; }
-        .section-gray { background: #f3f4f6; padding: 3.5rem 1.25rem; }
-        .section-title { font-size: 1.75rem; font-weight: 800; text-align: center; margin-bottom: 2rem; color: #111827; }
+        .section-gray { background: #F6F8FA; padding: 3.5rem 1.25rem; }
+        .section-title { font-size: 1.75rem; font-weight: 800; text-align: center; margin-bottom: 2rem; color: #0D1B2A; }
 
         /* GRID */
         .grid { display: grid; gap: 1.5rem; }
@@ -47,46 +46,46 @@
         /* CARDS */
         .card { background: #fff; padding: 1.75rem; border-radius: .75rem; box-shadow: 0 2px 12px rgba(0,0,0,.07); }
         .card-icon { font-size: 2.25rem; margin-bottom: .875rem; }
-        .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; color: #111827; }
-        .card p { font-size: .9rem; color: #4b5563; margin: 0; }
+        .card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; color: #0D1B2A; }
+        .card p { font-size: .9rem; color: #57606A; margin: 0; }
 
         /* PRICE CARDS */
-        .price-card { border-top: 4px solid #b91c1c; text-align: center; }
-        .price-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #6b7280; margin-bottom: .5rem; }
-        .price { font-size: 2.5rem; font-weight: 800; color: #111827; margin-bottom: .25rem; }
-        .price span { font-size: 1rem; font-weight: 500; color: #6b7280; }
-        .price-card ul { list-style: disc; padding-left: 1.25rem; text-align: left; margin: .75rem 0 1.25rem; color: #4b5563; font-size: .9rem; }
+        .price-card { border-top: 4px solid #0969DA; text-align: center; }
+        .price-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: #57606A; margin-bottom: .5rem; }
+        .price { font-size: 2.5rem; font-weight: 800; color: #0D1B2A; margin-bottom: .25rem; }
+        .price span { font-size: 1rem; font-weight: 500; color: #57606A; }
+        .price-card ul { list-style: disc; padding-left: 1.25rem; text-align: left; margin: .75rem 0 1.25rem; color: #57606A; font-size: .9rem; }
         .price-card ul li { margin-bottom: .35rem; }
 
         /* BUTTONS */
-        .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.75rem; border-radius: .5rem; font-weight: 700; font-size: .95rem; background: #b91c1c; color: #fff; transition: background .18s, transform .15s; cursor: pointer; border: none; }
-        .btn:hover { background: #991b1b; transform: translateY(-1px); }
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .75rem 1.75rem; border-radius: .5rem; font-weight: 700; font-size: .95rem; background: #0969DA; color: #fff; transition: background .18s, transform .15s; cursor: pointer; border: none; }
+        .btn:hover { background: #0D1B2A; transform: translateY(-1px); }
         .btn-full { width: 100%; }
-        .btn-outline { background: transparent; color: #b91c1c; border: 2px solid #b91c1c; }
-        .btn-outline:hover { background: #fff1f1; }
+        .btn-outline { background: transparent; color: #0969DA; border: 2px solid #0969DA; }
+        .btn-outline:hover { background: #DDF4FF; }
 
         /* CPM IMAGE */
-        .cpm-img-wrap { border-radius: .75rem; overflow: hidden; background: #e5e7eb; min-height: 260px; display: flex; align-items: center; justify-content: center; }
+        .cpm-img-wrap { border-radius: .75rem; overflow: hidden; background: #D0D7DE; min-height: 260px; display: flex; align-items: center; justify-content: center; }
         .cpm-img-wrap img { width: 100%; height: 100%; object-fit: cover; border-radius: .75rem; }
-        .cpm-placeholder { text-align: center; padding: 3rem 2rem; color: #9ca3af; }
-        .cpm-placeholder svg { width: 80px; height: 80px; fill: #d1d5db; margin: 0 auto 1rem; }
+        .cpm-placeholder { text-align: center; padding: 3rem 2rem; color: #57606A; }
+        .cpm-placeholder svg { width: 80px; height: 80px; fill: #D0D7DE; margin: 0 auto 1rem; }
         .cpm-placeholder p { font-size: .875rem; margin: 0; }
 
         /* CONTACT BAND */
-        .contact-band { background: linear-gradient(135deg, #991b1b 0%, #b91c1c 100%); color: #fff; padding: 3.5rem 1.25rem; text-align: center; border-radius: .75rem; }
+        .contact-band { background: linear-gradient(135deg, #0D1B2A 0%, #0969DA 100%); color: #fff; padding: 3.5rem 1.25rem; text-align: center; border-radius: .75rem; }
         .contact-band h2 { font-size: 1.75rem; font-weight: 800; margin-bottom: .75rem; }
         .contact-band p { opacity: .85; font-size: 1rem; margin-bottom: .5rem; }
-        .contact-band a { color: #fde68a; }
-        .contact-band .btn { background: #fff; color: #b91c1c; margin-top: 1.25rem; }
-        .contact-band .btn:hover { background: #f3f4f6; }
+        .contact-band a { color: #DDF4FF; }
+        .contact-band .btn { background: #fff; color: #0969DA; margin-top: 1.25rem; }
+        .contact-band .btn:hover { background: #F6F8FA; }
 
         /* WA FLOAT */
-        .whatsapp-float { position: fixed; width: 58px; height: 58px; bottom: 36px; right: 36px; background: #22c55e; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(34,197,94,.4); z-index: 200; transition: transform .2s; }
+        .whatsapp-float { position: fixed; width: 58px; height: 58px; bottom: 36px; right: 36px; background: #0969DA; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(9,105,218,.4); z-index: 200; transition: transform .2s; }
         .whatsapp-float:hover { transform: scale(1.1); }
         .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
 
         /* FOOTER */
-        .footer { background: #111827; color: rgba(255,255,255,.55); padding: 1.5rem 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; font-size: .82rem; }
+        .footer { background: #0D1B2A; color: rgba(255,255,255,.55); padding: 1.5rem 1.25rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem; font-size: .82rem; }
         .footer a { color: rgba(255,255,255,.75); transition: color .15s; }
         .footer a:hover { color: #fff; }
 
@@ -95,20 +94,29 @@
             .footer { justify-content: center; text-align: center; }
         }
     </style>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-    <a href="../">
-        <img src="../images/logo.jpg" alt="Clínica de Rodilla – Dr. Cristóbal Alonso" class="nav-logo" style="height:48px;width:auto;display:block;">
-    </a>
-    <div class="nav-menu">
-        <a href="../">Inicio</a>
-        <a href="../citas.html">Citas</a>
-        <a href="https://wa.me/523313427809" target="_blank" class="nav-wa">WhatsApp</a>
-    </div>
-</nav>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio"><img class="brand__icon" src="../assets/logo-icon.svg" alt="" width="42" height="42"><span class="brand__text"><span class="brand__name">Clínica de Rodilla</span><span class="brand__city">GUADALAJARA</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../citas.html">Citas</a>
+      <a href="../ejercicios.html">Ejercicios</a>
+      <a href="../recomendaciones.html">Recomendaciones</a>
+      <a class="site-nav__cta" href="../citas.html">Agendar cita</a>
+    </nav>
+  </div>
+</header>
+<span id="contenido"></span>
 
 <!-- HEADER -->
 <header class="header">
@@ -132,7 +140,7 @@
                     </div>
                 </div>
                 <div>
-                    <h2 style="font-size:1.6rem;font-weight:800;color:#111827;margin-bottom:1rem;">¿Qué es un Movilizador Pasivo de Rodilla?</h2>
+                    <h2 style="font-size:1.6rem;font-weight:800;color:#0D1B2A;margin-bottom:1rem;">¿Qué es un Movilizador Pasivo de Rodilla?</h2>
                     <p>Un Movilizador Pasivo Continuo (CPM) es un dispositivo médico que mueve la articulación de la rodilla de forma suave y controlada sin esfuerzo del paciente.</p>
                     <p>Es clave para la rehabilitación tras cirugías de rodilla, ayudando a reducir la hinchazón, prevenir la rigidez articular y acelerar significativamente la recuperación.</p>
                     <a href="https://www.youtube.com/watch?v=z8wN_2A69Bw" target="_blank" class="btn btn-outline" style="margin-top:.5rem;">
@@ -181,8 +189,8 @@
                     </ul>
                     <a href="https://wa.me/523313427809?text=Hola%2C%20me%20interesa%20el%20alquiler%20diario%20del%20movilizador%20de%20rodilla." target="_blank" class="btn btn-full">¡Alquilar Ahora!</a>
                 </div>
-                <div class="card price-card" style="border-top-color:#b91c1c; position:relative; box-shadow:0 8px 32px rgba(185,28,28,.15);">
-                    <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#b91c1c;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.25rem .75rem;border-radius:9999px;white-space:nowrap;">Más popular</div>
+                <div class="card price-card" style="border-top-color:#0969DA; position:relative; box-shadow:0 8px 32px rgba(9,105,218,.15);">
+                    <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#0969DA;color:#fff;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:.25rem .75rem;border-radius:9999px;white-space:nowrap;">Más popular</div>
                     <p class="price-label">Alquiler 10 Días</p>
                     <div class="price">$3,000 <span>MXN</span></div>
                     <ul>
@@ -219,13 +227,39 @@
 
 </main>
 
-<footer class="footer">
-    <span>© 2025 Dr. Cristóbal Alonso – Traumatología y Ortopedia</span>
-    <span>
-        <a href="../">Inicio</a> &nbsp;·&nbsp;
-        <a href="../citas.html">Citas</a> &nbsp;·&nbsp;
-        <a href="../ejercicios.html">Ejercicios</a>
-    </span>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <a class="brand" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio"><img class="brand__icon" src="../assets/logo-icon.svg" alt="" width="42" height="42"><span class="brand__text"><span class="brand__name">Clínica de Rodilla</span><span class="brand__city">GUADALAJARA</span></span></a>
+      <p class="site-footer__about">Dr. Cristóbal Alonso · Traumatólogo, subespecialista en cirugía de rodilla.</p>
+    </div>
+    <div>
+      <h2>Consultorio</h2>
+      <address>Hospital Bernardette, MAC Hospitales<br>Av. Hidalgo 930, Col. Centro<br>Guadalajara, Jal. CP 44100</address>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <ul>
+        <li>Citas: <a href="tel:+523338258447">(33) 3825-8447</a></li>
+        <li>WhatsApp: <a href="https://wa.me/523313427809">(33) 1342-7809</a></li>
+        <li>Lun–Vie 9:00–19:00 · Sáb 9:00–14:00</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Sitio</h2>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../citas.html">Citas</a></li>
+        <li><a href="../ejercicios.html">Ejercicios</a></li>
+        <li><a href="../recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="../alquiler/">Alquiler movilizador</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2025 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
+    <span>Guadalajara, Jalisco</span>
+  </div>
 </footer>
 
 <!-- Botón flotante WhatsApp -->

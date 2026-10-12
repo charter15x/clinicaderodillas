@@ -6,22 +6,43 @@
     <title>Rehabilitación Rodilla - Dr. Cristobal Alonso</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .exercise-card { transition: transform 0.2s; border: 1px solid #e2e8f0; }
-        .exercise-card:hover { transform: scale(1.02); border-color: #3b82f6; }
-        .download-btn { background-color: #ef4444; color: white; padding: 1rem 2rem; border-radius: 1rem; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
-        .download-btn:hover { background-color: #dc2626; transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .exercise-card { transition: transform 0.2s; border: 1px solid #D0D7DE; }
+        .exercise-card:hover { transform: scale(1.02); border-color: #218BFF; }
+        .download-btn { background-color: #0969DA; color: white; padding: 1rem 2rem; border-radius: 1rem; font-weight: 800; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
+        .download-btn:hover { background-color: #0550AE; transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
     </style>
+    <link rel="icon" type="image/svg+xml" href="../assets/logo-icon.svg">
+    <link rel="stylesheet" href="../assets/site.css">
+    <script src="../assets/site.js" defer></script>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-slate-50 text-slate-900">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio"><img class="brand__icon" src="../assets/logo-icon.svg" alt="" width="42" height="42"><span class="brand__text"><span class="brand__name">Clínica de Rodilla</span><span class="brand__city">GUADALAJARA</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../citas.html">Citas</a>
+      <a href="../ejercicios.html" aria-current="page">Ejercicios</a>
+      <a href="../recomendaciones.html">Recomendaciones</a>
+      <a class="site-nav__cta" href="../citas.html">Agendar cita</a>
+    </nav>
+  </div>
+</header>
+<span id="contenido"></span>
 
-    <header class="bg-white border-b sticky top-0 z-50 p-6 shadow-sm text-center">
-        <h1 class="text-3xl font-black text-blue-900 uppercase tracking-tighter text-center">Plan de Ejercicios Post-Prótesis</h1>
+    <section class="page-header bg-white border-b p-6 text-center">
+        <h1 class="text-3xl font-black text-[#0D1B2A] uppercase tracking-tighter text-center">Plan de Ejercicios Post-Prótesis</h1>
         <p class="text-slate-500 font-bold uppercase text-sm mt-1 mb-4">Dr. Cristobal Alonso Gonzalez</p>
         
         <a href="Ejercicios protesis.pdf" download class="download-btn">
-            <span>📄</span> DESCARGAR GUÍA EN PDF
+            DESCARGAR GUÍA EN PDF
         </a>
-    </header>
+    </section>
 
     <main class="max-w-6xl mx-auto p-4 md:p-8 space-y-16">
 
@@ -29,25 +50,57 @@
 
         <div class="flex justify-center pt-10">
             <a href="Ejercicios protesis.pdf" download class="download-btn text-xl p-6">
-                <span>📄</span> DESCARGAR MANUAL COMPLETO (PDF)
+                DESCARGAR MANUAL COMPLETO (PDF)
             </a>
         </div>
 
     </main>
 
-    <footer class="bg-slate-900 text-white p-12 mt-20 text-center">
-        <p class="text-2xl font-bold italic mb-4 uppercase"><code>CLÍNICA DE RODILLA</code></p>
-        <p class="text-slate-400 mb-6 font-mono text-sm uppercase"><code>Av. Hidalgo 930, Guadalajara - Hospital MAC Bernardette</code></p>
-        <a href="https://wa.me/3313427809" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-2xl font-black text-xl transition shadow-xl inline-block">
-            CONSULTAR DUDAS (WHATSAPP)
-        </a>
-    </footer>
+    <section class="max-w-6xl mx-auto px-4 pb-12 text-center">
+        <p class="text-slate-600 mb-4">Clínica de Rodilla · Av. Hidalgo 930, Guadalajara - Hospital MAC Bernardette</p>
+        <a href="https://wa.me/3313427809" class="btn-wa" style="display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 1.5rem;font-size:1.05rem">Consultar dudas (WhatsApp)</a>
+    </section>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <a class="brand" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio"><img class="brand__icon" src="../assets/logo-icon.svg" alt="" width="42" height="42"><span class="brand__text"><span class="brand__name">Clínica de Rodilla</span><span class="brand__city">GUADALAJARA</span></span></a>
+      <p class="site-footer__about">Dr. Cristóbal Alonso · Traumatólogo, subespecialista en cirugía de rodilla.</p>
+    </div>
+    <div>
+      <h2>Consultorio</h2>
+      <address>Hospital Bernardette, MAC Hospitales<br>Av. Hidalgo 930, Col. Centro<br>Guadalajara, Jal. CP 44100</address>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <ul>
+        <li>Citas: <a href="tel:+523338258447">(33) 3825-8447</a></li>
+        <li>WhatsApp: <a href="https://wa.me/523313427809">(33) 1342-7809</a></li>
+        <li>Lun–Vie 9:00–19:00 · Sáb 9:00–14:00</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Sitio</h2>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../citas.html">Citas</a></li>
+        <li><a href="../ejercicios.html">Ejercicios</a></li>
+        <li><a href="../recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="../alquiler/">Alquiler movilizador</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2025 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
+    <span>Guadalajara, Jalisco</span>
+  </div>
+</footer>
 
     <script>
         const secciones = [
             {
                 titulo: "FASE 1: PRIMEROS DÍAS (EN CAMA)",
-                color: "bg-blue-700",
+                color: "bg-[#0969DA]",
                 ejercicios: [
                     { n: "1", t: "FLEXIÓN Y DORSIFLEXIÓN", r: "3 SERIES / 20 REPS", d: "MUEVA EL PIE ARRIBA Y ABAJO SUAVEMENTE.", i: "f1-1.jpg" },
                     { n: "2", t: "DORSIFLEXIÓN CON BANDA", r: "3 SERIES / 10 REPS", d: "USE BANDA PARA RESISTENCIA AL SUBIR EL PIE.", i: "f1-2.jpg" },
@@ -62,7 +115,7 @@
             },
             {
                 titulo: "FASE 2: FORTALECIMIENTO (ANDADOR / SILLA)",
-                color: "bg-green-700",
+                color: "bg-[#0550AE]",
                 ejercicios: [
                     { n: "10", t: "ANDAR CON ANDADOR", r: "5 MINUTOS", d: "MARQUE TALÓN Y LUEGO PUNTA AL CAMINAR.", i: "f2-1.jpg" },
                     { n: "11", t: "FLEXIÓN DE CADERA", r: "3 SERIES / 10 REPS", d: "ELEVE LAS RODILLAS AL CAMINAR.", i: "f2-2.jpg" },
@@ -75,7 +128,7 @@
             },
             {
                 titulo: "FASE 3: AVANZADOS Y EQUILIBRIO",
-                color: "bg-orange-700",
+                color: "bg-[#0D1B2A]",
                 ejercicios: [
                     { n: "17", t: "EXTENSIÓN ATRÁS", r: "3 SERIES / 10 REPS", d: "LLEVE LA PIERNA RECTA HACIA ATRÁS.", i: "f3-1.jpg" },
                     { n: "18", t: "ABDUCCIÓN DE PIE", r: "3 SERIES / 10 REPS", d: "LLEVE LA PIERNA HACIA UN LADO.", i: "f3-2.jpg" },
@@ -99,9 +152,9 @@
                                 <img src="img/${ex.i}" alt="${ex.t}" class="max-h-full object-contain">
                             </div>
                             <div class="flex-grow">
-                                <h4 class="text-blue-900 font-black text-lg leading-tight mb-1">${ex.t}</h4>
-                                <p class="text-blue-600 font-bold text-sm mb-3 underline decoration-blue-200 decoration-2">${ex.r}</p>
-                                <div class="bg-slate-100 p-3 rounded-lg border-l-4 border-blue-500">
+                                <h4 class="text-[#0D1B2A] font-black text-lg leading-tight mb-1">${ex.t}</h4>
+                                <p class="text-[#0969DA] font-bold text-sm mb-3 underline decoration-blue-200 decoration-2">${ex.r}</p>
+                                <div class="bg-slate-100 p-3 rounded-lg border-l-4 border-[#218BFF]">
                                     <code class="text-xs md:text-sm text-slate-700 uppercase font-bold leading-relaxed block">
                                         ${ex.d}
                                     </code>

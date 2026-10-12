@@ -12,20 +12,19 @@
   <meta property="og:image:height"  content="630">
   <meta property="og:url"          content="https://clinicaderodillas.net/campanas/protesis-85k.html">
   <meta property="og:type"         content="website">
-  <link rel="icon" href="../images/logo.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-icon.svg">
+  <link rel="alternate icon" href="../images/logo.jpg">
   <style>
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     :root {
-      --navy:#0f2547; --blue:#1d4ed8;
-      --dark:#1e293b; --mid:#475569; --light:#f8fafc; --white:#fff;
-      --border:#e2e8f0; --shadow:0 2px 16px rgba(15,37,71,.09); --r:1rem;
-      --green:#16a34a; --red:#dc2626;
+      --navy:#0D1B2A; --blue:#0969DA;
+      --dark:#0D1B2A; --mid:#57606A; --light:#F6F8FA; --white:#fff;
+      --border:#D0D7DE; --shadow:0 2px 16px rgba(13,27,42,.09); --r:1rem;
+      --green:#0550AE; --red:#0969DA;
     }
     html { -webkit-text-size-adjust:100%; }
     body {
-      font-family:'Inter',sans-serif; background:var(--light);
+      font-family: var(--font); background:var(--light);
       color:var(--dark); -webkit-font-smoothing:antialiased;
       font-size:17px; line-height:1.65; overflow-x:hidden;
     }
@@ -81,10 +80,10 @@
     }
     .sticky-cta .btn-wa {
       flex:2; display:flex; align-items:center; justify-content:center; gap:.5rem;
-      background:#22c55e; color:#fff; min-height:52px; border-radius:.875rem;
+      background:#0969DA; color:#fff; min-height:52px; border-radius:.875rem;
       font-size:1rem; font-weight:700; -webkit-tap-highlight-color:transparent;
     }
-    .sticky-cta .btn-wa:active { background:#16a34a; }
+    .sticky-cta .btn-wa:active { background:#0550AE; }
     .sticky-cta .btn-wa svg { width:20px; height:20px; fill:#fff; }
     .sticky-cta .btn-call {
       flex:1; display:flex; align-items:center; justify-content:center; gap:.4rem;
@@ -92,7 +91,7 @@
       font-size:.88rem; font-weight:700; border:1.5px solid var(--border);
       -webkit-tap-highlight-color:transparent;
     }
-    .sticky-cta .btn-call:active { background:#e2e8f0; }
+    .sticky-cta .btn-call:active { background:#D0D7DE; }
     .sticky-cta .btn-call svg { width:18px; height:18px; fill:var(--blue); }
 
     /* PRECIO BOX */
@@ -129,12 +128,12 @@
 
     /* SEGUROS */
     .seguros {
-      background:#f0fdf4; border:1px solid #bbf7d0; border-radius:var(--r);
+      background:#DDF4FF; border:1px solid #B6E3FF; border-radius:var(--r);
       padding:1rem 1.1rem; display:flex; gap:.75rem; align-items:center;
       margin-bottom:1.25rem;
     }
     .seguros .icon { font-size:1.75rem; flex-shrink:0; }
-    .seguros p { font-size:.88rem; color:#166534; font-weight:600; line-height:1.5; }
+    .seguros p { font-size:.88rem; color:#0D1B2A; font-weight:600; line-height:1.5; }
 
     /* DOCTOR */
     .doctor-card {
@@ -159,10 +158,12 @@
     .ubi-row svg { width:20px; height:20px; fill:var(--blue); flex-shrink:0; margin-top:.1rem; }
     .ubi-row span { font-size:.88rem; color:var(--mid); line-height:1.55; }
   </style>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
 
-<div class="hero">
+<div class="hero hero-landing">
   <img class="hero-img" src="../images/rodilla3.jpg" alt="Prótesis de Rodilla mínima invasiva">
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -175,13 +176,13 @@
   </div>
 </div>
 
-<div class="logo-bar">
-  <img src="../images/logo.jpg" alt="Logo">
+<a class="logo-bar" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio">
+  <img src="../assets/logo-icon.svg" alt="" width="40" height="40">
   <div class="logo-bar-text">
     <strong>Clínica de Rodilla</strong>
     <span>Dr. Cristóbal Alonso · Traumatólogo</span>
   </div>
-</div>
+</a>
 
 <div class="content">
 

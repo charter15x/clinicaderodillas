@@ -5,30 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recomendaciones Postquirúrgicas – Dr. Cristóbal Alonso | Clínica de Rodilla</title>
   <meta name="description" content="Indicaciones y cuidados postquirúrgicos para pacientes operados de rodilla. Dr. Cristóbal Alonso – Guadalajara, Jal.">
-  <link rel="icon" href="images/logo.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+  <link rel="alternate icon" href="images/logo.jpg">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --navy:   #0f2547;
-      --blue:   #1d4ed8;
-      --blue-lt:#3b82f6;
-      --dark:   #1e293b;
-      --mid:    #475569;
-      --muted:  #94a3b8;
-      --light:  #f8fafc;
+      --navy:   #0D1B2A;
+      --blue:   #0969DA;
+      --blue-lt:#218BFF;
+      --dark:   #0D1B2A;
+      --mid:    #57606A;
+      --muted:  #57606A;
+      --light:  #F6F8FA;
       --white:  #ffffff;
-      --border: #e2e8f0;
-      --shadow: 0 4px 24px rgba(15,37,71,.08);
+      --border: #D0D7DE;
+      --shadow: 0 4px 24px rgba(13,27,42,.08);
       --r:      1rem;
       --red:    #dc2626;
       --amber:  #d97706;
-      --green:  #16a34a;
+      --green:  #0550AE;
     }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font);
       color: var(--dark);
       background: var(--light);
       -webkit-font-smoothing: antialiased;
@@ -65,7 +64,7 @@
     }
     .hero .label {
       font-size: .7rem; font-weight: 700; letter-spacing: .12em;
-      text-transform: uppercase; color: #60a5fa; margin-bottom: .5rem;
+      text-transform: uppercase; color: #8CC8FF; margin-bottom: .5rem;
     }
     .hero h1 {
       font-size: clamp(1.6rem, 5vw, 2.2rem);
@@ -148,7 +147,7 @@
     .ejerc-items { display: flex; flex-direction: column; gap: .75rem; }
     .ejerc-item {
       display: flex; align-items: center; gap: .85rem;
-      background: #eff6ff; border: 1px solid #bfdbfe;
+      background: #DDF4FF; border: 1px solid #B6E3FF;
       border-radius: .75rem; padding: .9rem 1rem;
     }
     .ejerc-item .e-num {
@@ -157,7 +156,7 @@
       border-radius: 50%; width: 34px; height: 34px;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .ejerc-item span { font-size: .95rem; color: #1e40af; font-weight: 600; line-height: 1.45; }
+    .ejerc-item span { font-size: .95rem; color: #0D1B2A; font-weight: 600; line-height: 1.45; }
 
     /* ── IMAGEN SECCIÓN ──────────────────────────────────── */
     .sec-img {
@@ -209,13 +208,13 @@
     .cta-card p  { color: rgba(255,255,255,.7); font-size: .9rem; margin-bottom: 1.25rem; }
     .btn-wa {
       display: inline-flex; align-items: center; gap: .6rem;
-      background: #22c55e; color: #fff;
+      background: #0969DA; color: #fff;
       padding: .85rem 1.75rem; border-radius: 9999px;
       font-weight: 700; font-size: 1rem;
-      box-shadow: 0 4px 16px rgba(34,197,94,.4);
+      box-shadow: 0 4px 16px rgba(9,105,218,.4);
       transition: background .15s, transform .15s;
     }
-    .btn-wa:hover { background: #16a34a; transform: translateY(-2px); }
+    .btn-wa:hover { background: #0550AE; transform: translateY(-2px); }
     .btn-wa svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
 
     /* ── FOOTER ──────────────────────────────────────────── */
@@ -239,22 +238,29 @@
       .nav-links a.active { display: block; }
     }
   </style>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
 </head>
-<body>
+<body class="has-mobile-cta">
 
-<!-- NAVBAR -->
-<nav class="nav">
-  <a class="nav-logo" href="index.html">
-    <img src="images/logo.jpg" alt="Clínica de Rodilla">
-  </a>
-  <div class="nav-links">
-    <a href="index.html">Inicio</a>
-    <a href="citas.html">Citas</a>
-    <a href="ejercicios.html">Ejercicios</a>
-    <a href="recomendaciones.html" class="active">Recomendaciones</a>
-    <a href="citas.html" class="nav-cta">Agendar cita</a>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio"><img class="brand__icon" src="assets/logo-icon.svg" alt="" width="42" height="42"><span class="brand__text"><span class="brand__name">Clínica de Rodilla</span><span class="brand__city">GUADALAJARA</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="citas.html">Citas</a>
+      <a href="ejercicios.html">Ejercicios</a>
+      <a href="recomendaciones.html" aria-current="page">Recomendaciones</a>
+      <a class="site-nav__cta" href="citas.html">Agendar cita</a>
+    </nav>
   </div>
-</nav>
+</header>
+<span id="contenido"></span>
 
 <!-- HERO -->
 <div class="hero">
@@ -274,7 +280,7 @@
   <div class="sec-card">
     <img class="sec-img" src="images/rodilla2.jpeg" alt="Cuidados en casa después de cirugía de rodilla">
     <div class="sec-header">
-      <div class="sec-icon" style="background:#dbeafe;">🏠</div>
+      <div class="sec-icon" style="background:#C8EBFF;">🏠</div>
       <div>
         <h2>Cuidados Generales en Casa</h2>
         <p>Los primeros días son los más importantes</p>
@@ -317,7 +323,7 @@
   <!-- 2. INFLAMACIÓN Y HERIDA -->
   <div class="sec-card">
     <div class="sec-header">
-      <div class="sec-icon" style="background:#dcfce7;">🧊</div>
+      <div class="sec-icon" style="background:#DDF4FF;">🧊</div>
       <div>
         <h2>Inflamación y Herida</h2>
         <p>Cómo controlar el dolor e hinchazón</p>
@@ -326,28 +332,28 @@
     <div class="sec-body">
       <div class="simple-list">
         <div class="simple-item">
-          <div class="s-icon" style="background:#eff6ff;">❄️</div>
+          <div class="s-icon" style="background:#DDF4FF;">❄️</div>
           <div>
             <h3>Frío Local</h3>
             <p>Aplique una bolsa de gel frío o hielo envuelta en una toalla sobre la rodilla durante 15–20 minutos, cada 3–4 horas, en los primeros 3 días.</p>
           </div>
         </div>
         <div class="simple-item">
-          <div class="s-icon" style="background:#eff6ff;">🛋️</div>
+          <div class="s-icon" style="background:#DDF4FF;">🛋️</div>
           <div>
             <h3>Eleve la Pierna</h3>
             <p>Cuando esté en reposo, mantenga la pierna levantada sobre cojines para reducir la hinchazón.</p>
           </div>
         </div>
         <div class="simple-item">
-          <div class="s-icon" style="background:#f0fdf4;">🩹</div>
+          <div class="s-icon" style="background:#DDF4FF;">🩹</div>
           <div>
             <h3>Cuide la Herida</h3>
             <p>Manténgala <strong>limpia, seca y siempre cubierta</strong> hasta el retiro de puntos. No la moje hasta que el médico lo autorice. No aplique pomadas sin indicación.</p>
             <ul style="margin-top:.65rem;list-style:none;display:flex;flex-direction:column;gap:.45rem;">
-              <li style="display:flex;gap:.5rem;align-items:flex-start;font-size:.875rem;color:var(--mid)"><span style="color:#16a34a;font-weight:700;flex-shrink:0">✓</span>Realice curación <strong>diaria con Microdacyn</strong> sobre la herida.</li>
-              <li style="display:flex;gap:.5rem;align-items:flex-start;font-size:.875rem;color:var(--mid)"><span style="color:#16a34a;font-weight:700;flex-shrink:0">✓</span>Sustituya con <strong>gasa nueva estéril</strong> en cada curación.</li>
-              <li style="display:flex;gap:.5rem;align-items:flex-start;font-size:.875rem;color:var(--mid)"><span style="color:#16a34a;font-weight:700;flex-shrink:0">✓</span>Use siempre <strong>guantes estériles</strong> al tocar la herida.</li>
+              <li style="display:flex;gap:.5rem;align-items:flex-start;font-size:.875rem;color:var(--mid)"><span style="color:#0550AE;font-weight:700;flex-shrink:0">✓</span>Realice curación <strong>diaria con Microdacyn</strong> sobre la herida.</li>
+              <li style="display:flex;gap:.5rem;align-items:flex-start;font-size:.875rem;color:var(--mid)"><span style="color:#0550AE;font-weight:700;flex-shrink:0">✓</span>Sustituya con <strong>gasa nueva estéril</strong> en cada curación.</li>
+              <li style="display:flex;gap:.5rem;align-items:flex-start;font-size:.875rem;color:var(--mid)"><span style="color:#0550AE;font-weight:700;flex-shrink:0">✓</span>Use siempre <strong>guantes estériles</strong> al tocar la herida.</li>
             </ul>
           </div>
         </div>
@@ -359,7 +365,7 @@
   <div class="sec-card">
     <img class="sec-img" src="images/artroscopia.jpeg" alt="Rehabilitación y ejercicios de rodilla">
     <div class="sec-header">
-      <div class="sec-icon" style="background:#dcfce7;">🦵</div>
+      <div class="sec-icon" style="background:#DDF4FF;">🦵</div>
       <div>
         <h2>Ejercicios Iniciales</h2>
         <p>Puede comenzar desde el primer día</p>
@@ -390,7 +396,7 @@
   <!-- 4. REHABILITACIÓN -->
   <div class="sec-card">
     <div class="sec-header">
-      <div class="sec-icon" style="background:#dbeafe;">🚶</div>
+      <div class="sec-icon" style="background:#C8EBFF;">🚶</div>
       <div>
         <h2>Rehabilitación</h2>
         <p>Indicaciones para las semanas siguientes</p>
@@ -413,14 +419,14 @@
           </div>
         </div>
         <div class="simple-item">
-          <div class="s-icon" style="background:#f0fdf4;">🦯</div>
+          <div class="s-icon" style="background:#DDF4FF;">🦯</div>
           <div>
             <h3>Use Andadera o Bastón</h3>
             <p>No cruce las piernas ni se arrodille durante la recuperación. Use siempre un apoyo al caminar.</p>
           </div>
         </div>
         <div class="simple-item">
-          <div class="s-icon" style="background:#f0fdf4;">🍽️</div>
+          <div class="s-icon" style="background:#DDF4FF;">🍽️</div>
           <div>
             <h3>Alimentación</h3>
             <p>Puede comer de todo con <strong>normalidad</strong> — no hay restricciones alimenticias después de la cirugía. Una buena nutrición acelera la cicatrización y la recuperación.</p>
@@ -429,7 +435,7 @@
         </div>
       </div>
       <div style="padding:1rem 1.4rem 1.4rem; text-align:center;">
-        <a href="ejercicios-protesis.html" style="display:inline-flex;align-items:center;gap:.6rem;background:var(--blue);color:#fff;padding:.85rem 1.75rem;border-radius:9999px;font-weight:700;font-size:1rem;box-shadow:0 4px 16px rgba(29,78,216,.35);transition:background .15s,transform .15s;">
+        <a href="ejercicios-protesis.html" style="display:inline-flex;align-items:center;gap:.6rem;background:var(--blue);color:#fff;padding:.85rem 1.75rem;border-radius:9999px;font-weight:700;font-size:1rem;box-shadow:0 4px 16px rgba(9,105,218,.35);transition:background .15s,transform .15s;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/></svg>
           Ver Ejercicios para Prótesis de Rodilla
         </a>
@@ -511,16 +517,45 @@
 
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <span>© 2025 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
-  <span>
-    <a href="index.html">Inicio</a> &nbsp;·&nbsp;
-    <a href="citas.html">Citas</a> &nbsp;·&nbsp;
-    <a href="ejercicios.html">Ejercicios</a> &nbsp;·&nbsp;
-    <a href="recomendaciones.html">Recomendaciones</a> &nbsp;·&nbsp;
-    <a href="alquiler/">Alquiler movilizador</a>
-  </span>
+<div class="mobile-cta" aria-label="Contacto rápido">
+  <a class="is-primary" href="citas.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>Agendar cita</a>
+  <a href="https://wa.me/523313427809"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>WhatsApp</a>
+  <a href="tel:+523338258447"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>Llamar</a>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <a class="brand" href="index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio"><img class="brand__icon" src="assets/logo-icon.svg" alt="" width="42" height="42"><span class="brand__text"><span class="brand__name">Clínica de Rodilla</span><span class="brand__city">GUADALAJARA</span></span></a>
+      <p class="site-footer__about">Dr. Cristóbal Alonso · Traumatólogo, subespecialista en cirugía de rodilla.</p>
+    </div>
+    <div>
+      <h2>Consultorio</h2>
+      <address>Hospital Bernardette, MAC Hospitales<br>Av. Hidalgo 930, Col. Centro<br>Guadalajara, Jal. CP 44100</address>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <ul>
+        <li>Citas: <a href="tel:+523338258447">(33) 3825-8447</a></li>
+        <li>WhatsApp: <a href="https://wa.me/523313427809">(33) 1342-7809</a></li>
+        <li>Lun–Vie 9:00–19:00 · Sáb 9:00–14:00</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Sitio</h2>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="citas.html">Citas</a></li>
+        <li><a href="ejercicios.html">Ejercicios</a></li>
+        <li><a href="recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="alquiler/">Alquiler movilizador</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2025 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
+    <span>Guadalajara, Jalisco</span>
+  </div>
 </footer>
 
 </body>

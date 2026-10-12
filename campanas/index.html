@@ -4,21 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Campañas de Difusión – Clínica de Rodilla</title>
-  <link rel="icon" href="../images/logo.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-icon.svg">
+  <link rel="alternate icon" href="../images/logo.jpg">
   <style>
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     :root {
-      --navy:#0f2547; --blue:#1d4ed8;
-      --dark:#1e293b; --mid:#475569; --muted:#94a3b8;
-      --light:#f8fafc; --white:#fff; --border:#e2e8f0;
-      --shadow:0 2px 16px rgba(15,37,71,.09); --r:1rem;
-      --green:#16a34a; --red:#dc2626; --amber:#d97706;
+      --navy:#0D1B2A; --blue:#0969DA;
+      --dark:#0D1B2A; --mid:#57606A; --muted:#57606A;
+      --light:#F6F8FA; --white:#fff; --border:#D0D7DE;
+      --shadow:0 2px 16px rgba(13,27,42,.09); --r:1rem;
+      --green:#0550AE; --red:#0969DA; --amber:#d97706;
     }
     html { -webkit-text-size-adjust:100%; }
     body {
-      font-family:'Inter',sans-serif; background:var(--light);
+      font-family: var(--font); background:var(--light);
       color:var(--dark); -webkit-font-smoothing:antialiased;
       font-size:17px; line-height:1.6; overflow-x:hidden;
     }
@@ -42,7 +41,7 @@
 
     /* HEADER */
     .header {
-      background:linear-gradient(135deg,var(--navy) 0%,#1a3a6e 100%);
+      background:linear-gradient(135deg,var(--navy) 0%,#0D1B2A 100%);
       padding:2rem 1.25rem 1.75rem; text-align:center;
     }
     .header .badge {
@@ -72,7 +71,7 @@
 
     .campaign-meta { display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem; }
     .status-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-    .dot-active { background:var(--green); box-shadow:0 0 0 3px #dcfce7; }
+    .dot-active { background:var(--green); box-shadow:0 0 0 3px #DDF4FF; }
     .status-label { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--green); }
 
     .campaign-body h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.3rem; line-height:1.25; }
@@ -82,13 +81,13 @@
 
     .btn-share {
       display:flex; align-items:center; justify-content:center; gap:.4rem;
-      background:#22c55e; color:#fff;
+      background:#0969DA; color:#fff;
       min-height:48px; border-radius:.75rem;
       font-size:.9rem; font-weight:700; cursor:pointer; border:none;
       font-family:inherit; transition:background .15s;
       -webkit-tap-highlight-color:transparent;
     }
-    .btn-share:active { background:#16a34a; }
+    .btn-share:active { background:#0550AE; }
     .btn-share svg { width:18px; height:18px; fill:#fff; flex-shrink:0; }
 
     .btn-view {
@@ -98,7 +97,7 @@
       font-size:.9rem; font-weight:600; border:1.5px solid var(--border);
       -webkit-tap-highlight-color:transparent;
     }
-    .btn-view:active { background:#e2e8f0; }
+    .btn-view:active { background:#D0D7DE; }
     .btn-view svg { width:16px; height:16px; fill:var(--navy); flex-shrink:0; }
 
     /* INSTRUCCIONES */
@@ -144,7 +143,7 @@
     @keyframes fade-in   { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:none; } }
 
     .modal-handle {
-      width:40px; height:4px; background:#e2e8f0; border-radius:9999px;
+      width:40px; height:4px; background:#D0D7DE; border-radius:9999px;
       margin:0 auto 1.25rem;
     }
     @media (min-width:600px) { .modal-handle { display:none; } }
@@ -170,20 +169,20 @@
       cursor:pointer; font-family:inherit; transition:background .15s;
       -webkit-tap-highlight-color:transparent;
     }
-    .btn-copy:active { background:#e2e8f0; }
-    .btn-copy.copied { background:#dcfce7; border-color:#86efac; color:var(--green); }
+    .btn-copy:active { background:#D0D7DE; }
+    .btn-copy.copied { background:#DDF4FF; border-color:#B6E3FF; color:var(--green); }
     .btn-copy svg { width:18px; height:18px; }
 
     .btn-wa-modal {
       display:flex; align-items:center; justify-content:center; gap:.5rem;
-      background:#22c55e; color:#fff;
+      background:#0969DA; color:#fff;
       min-height:52px; border-radius:.875rem;
       font-size:.95rem; font-weight:700; border:none;
       cursor:pointer; font-family:inherit; transition:background .15s;
       -webkit-tap-highlight-color:transparent;
       text-decoration:none;
     }
-    .btn-wa-modal:active { background:#16a34a; }
+    .btn-wa-modal:active { background:#0550AE; }
     .btn-wa-modal svg { width:20px; height:20px; fill:#fff; }
 
     .btn-close-modal {
@@ -194,16 +193,29 @@
       -webkit-tap-highlight-color:transparent;
     }
   </style>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
 
-<nav class="nav">
-  <div class="nav-logo">
-    <img src="../images/logo.jpg" alt="Logo">
-    <span>Clínica de Rodilla</span>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio"><img class="brand__icon" src="../assets/logo-icon.svg" alt="" width="42" height="42"><span class="brand__text"><span class="brand__name">Clínica de Rodilla</span><span class="brand__city">GUADALAJARA</span></span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Principal">
+      <a href="../index.html">Inicio</a>
+      <a href="../citas.html">Citas</a>
+      <a href="../ejercicios.html">Ejercicios</a>
+      <a href="../recomendaciones.html">Recomendaciones</a>
+      <a class="site-nav__cta" href="../citas.html">Agendar cita</a>
+    </nav>
   </div>
-  <a class="nav-back" href="../index.html">← Sitio</a>
-</nav>
+</header>
+<span id="contenido"></span>
 
 <div class="header">
   <p class="badge">Panel de Campañas</p>
@@ -477,5 +489,39 @@ https://clinicaderodillas.net/campanas/consulta.html`
     if (e.target === this) closeShare();
   });
 </script>
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <a class="brand" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio"><img class="brand__icon" src="../assets/logo-icon.svg" alt="" width="42" height="42"><span class="brand__text"><span class="brand__name">Clínica de Rodilla</span><span class="brand__city">GUADALAJARA</span></span></a>
+      <p class="site-footer__about">Dr. Cristóbal Alonso · Traumatólogo, subespecialista en cirugía de rodilla.</p>
+    </div>
+    <div>
+      <h2>Consultorio</h2>
+      <address>Hospital Bernardette, MAC Hospitales<br>Av. Hidalgo 930, Col. Centro<br>Guadalajara, Jal. CP 44100</address>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <ul>
+        <li>Citas: <a href="tel:+523338258447">(33) 3825-8447</a></li>
+        <li>WhatsApp: <a href="https://wa.me/523313427809">(33) 1342-7809</a></li>
+        <li>Lun–Vie 9:00–19:00 · Sáb 9:00–14:00</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Sitio</h2>
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../citas.html">Citas</a></li>
+        <li><a href="../ejercicios.html">Ejercicios</a></li>
+        <li><a href="../recomendaciones.html">Recomendaciones</a></li>
+        <li><a href="../alquiler/">Alquiler movilizador</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <span>© 2025 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
+    <span>Guadalajara, Jalisco</span>
+  </div>
+</footer>
 </body>
 </html>

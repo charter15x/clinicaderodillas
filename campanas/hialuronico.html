@@ -12,20 +12,19 @@
   <meta property="og:image:height" content="630">
   <meta property="og:url"         content="https://clinicaderodillas.net/campanas/hialuronico.html">
   <meta property="og:type"        content="website">
-  <link rel="icon" href="../images/logo.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-icon.svg">
+  <link rel="alternate icon" href="../images/logo.jpg">
   <style>
     *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
     :root {
-      --navy:#0f2547; --blue:#1d4ed8; --teal:#0d9488;
-      --dark:#1e293b; --mid:#475569; --light:#f8fafc; --white:#fff;
-      --border:#e2e8f0; --shadow:0 2px 16px rgba(15,37,71,.09); --r:1rem;
-      --green:#16a34a;
+      --navy:#0D1B2A; --blue:#0969DA; --teal:#0969DA;
+      --dark:#0D1B2A; --mid:#57606A; --light:#F6F8FA; --white:#fff;
+      --border:#D0D7DE; --shadow:0 2px 16px rgba(13,27,42,.09); --r:1rem;
+      --green:#0550AE;
     }
     html { -webkit-text-size-adjust:100%; }
     body {
-      font-family:'Inter',sans-serif; background:var(--light);
+      font-family: var(--font); background:var(--light);
       color:var(--dark); -webkit-font-smoothing:antialiased;
       font-size:17px; line-height:1.65; overflow-x:hidden;
     }
@@ -34,7 +33,7 @@
 
     /* HERO */
     .hero {
-      background:linear-gradient(150deg,#0d9488 0%,#0f2547 100%);
+      background:linear-gradient(150deg,#0969DA 0%,#0D1B2A 100%);
       padding:2.25rem 1.25rem 2rem; text-align:center;
     }
     .hero .badge {
@@ -70,10 +69,10 @@
     }
     .sticky-cta .btn-wa {
       flex:2; display:flex; align-items:center; justify-content:center; gap:.5rem;
-      background:#22c55e; color:#fff; min-height:52px; border-radius:.875rem;
+      background:#0969DA; color:#fff; min-height:52px; border-radius:.875rem;
       font-size:1rem; font-weight:700; -webkit-tap-highlight-color:transparent;
     }
-    .sticky-cta .btn-wa:active { background:#16a34a; }
+    .sticky-cta .btn-wa:active { background:#0550AE; }
     .sticky-cta .btn-wa svg { width:20px; height:20px; fill:#fff; }
     .sticky-cta .btn-call {
       flex:1; display:flex; align-items:center; justify-content:center; gap:.4rem;
@@ -81,7 +80,7 @@
       font-size:.88rem; font-weight:700; border:1.5px solid var(--border);
       -webkit-tap-highlight-color:transparent;
     }
-    .sticky-cta .btn-call:active { background:#e2e8f0; }
+    .sticky-cta .btn-call:active { background:#D0D7DE; }
     .sticky-cta .btn-call svg { width:18px; height:18px; fill:var(--blue); }
 
     /* BENEFICIOS */
@@ -103,44 +102,46 @@
       border-radius:var(--r); padding:1rem; display:flex; gap:1rem; align-items:center;
       box-shadow:var(--shadow);
     }
-    .product-card img { width:72px; height:72px; object-fit:contain; border-radius:.625rem; flex-shrink:0; background:#f8fafc; }
+    .product-card img { width:72px; height:72px; object-fit:contain; border-radius:.625rem; flex-shrink:0; background:#F6F8FA; }
     .product-card h3 { font-size:.95rem; font-weight:800; color:var(--navy); margin-bottom:.2rem; }
     .product-card p  { font-size:.82rem; color:var(--mid); line-height:1.55; }
 
     /* IDEAL PARA */
     .ideal-card {
-      background:#f0fdfa; border:1px solid #99f6e4;
+      background:#DDF4FF; border:1px solid #B6E3FF;
       border-radius:var(--r); padding:1.25rem; margin-bottom:1.25rem;
     }
-    .ideal-card h3 { font-size:.95rem; font-weight:800; color:#0f766e; margin-bottom:.85rem; }
+    .ideal-card h3 { font-size:.95rem; font-weight:800; color:#0550AE; margin-bottom:.85rem; }
     .ideal-card ul { list-style:none; display:flex; flex-direction:column; gap:.6rem; }
-    .ideal-card li { display:flex; gap:.6rem; font-size:.9rem; color:#134e4a; line-height:1.5; }
+    .ideal-card li { display:flex; gap:.6rem; font-size:.9rem; color:#0D1B2A; line-height:1.5; }
     .ideal-card li::before { content:'✓'; color:var(--teal); font-weight:800; flex-shrink:0; font-size:1rem; }
 
     /* SEGUROS */
     .seguros {
-      background:#f0fdf4; border:1px solid #bbf7d0; border-radius:var(--r);
+      background:#DDF4FF; border:1px solid #B6E3FF; border-radius:var(--r);
       padding:1rem 1.1rem; display:flex; gap:.75rem; align-items:center; margin-bottom:5rem;
     }
     .seguros .icon { font-size:1.75rem; flex-shrink:0; }
-    .seguros p { font-size:.88rem; color:#166534; font-weight:600; line-height:1.5; }
+    .seguros p { font-size:.88rem; color:#0D1B2A; font-weight:600; line-height:1.5; }
   </style>
+  <link rel="stylesheet" href="../assets/site.css">
+  <script src="../assets/site.js" defer></script>
 </head>
 <body>
 
-<div class="hero">
+<div class="hero hero-landing">
   <p class="badge">💉 Sin cirugía · Sin internamiento</p>
   <h1>Alivie el dolor de rodilla<br>sin operación</h1>
   <p>Ácido hialurónico intraarticular — lubrica, protege y alivia el dolor de manera duradera.</p>
 </div>
 
-<div class="logo-bar">
-  <img src="../images/logo.jpg" alt="Logo">
+<a class="logo-bar" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio">
+  <img src="../assets/logo-icon.svg" alt="" width="40" height="40">
   <div class="logo-bar-text">
     <strong>Clínica de Rodilla</strong>
     <span>Dr. Cristóbal Alonso · Traumatólogo</span>
   </div>
-</div>
+</a>
 
 <div class="content">
 
