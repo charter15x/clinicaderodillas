@@ -130,13 +130,18 @@
     .hosps__head { margin-bottom: 1.25rem; }
     .hosps__head .section-sub { margin-bottom: 0; }
     .hosps__grid { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: .9rem; }
-    .hosps__card { display: flex; align-items: center; gap: .85rem; background: var(--c-white); border: 1px solid var(--c-line); border-radius: var(--radius-lg); padding: 1rem 1.1rem; min-height: 76px; }
-    .hosps__icon { width: 44px; height: 44px; border-radius: 12px; background: var(--c-pale); border: 1px solid var(--c-pale-2); display: grid; place-items: center; flex-shrink: 0; }
-    .hosps__icon svg { width: 22px; height: 22px; fill: var(--c-blue); }
-    .hosps__card span { font-size: .78rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--c-text-2); display: block; }
-    .hosps__card strong { display: block; color: var(--c-navy); font-size: 1rem; font-weight: 600; line-height: 1.3; }
+    .hosps__card { display: flex; flex-direction: column; background: var(--c-white); border: 1px solid var(--c-line); border-radius: var(--radius-lg); overflow: hidden; }
+    .hosps__logo { height: 104px; display: grid; place-items: center; padding: 1rem 1.25rem; border-bottom: 1px solid var(--c-line); background: #fff; }
+    .hosps__logo img { max-height: 60px; max-width: 100%; width: auto; height: auto; object-fit: contain; }
+    .hosps__logo .tall { max-height: 68px; }
+    .hosps__mono { display: flex; flex-direction: column; align-items: center; line-height: 1; color: var(--c-navy); }
+    .hosps__mono b { font-size: 1.9rem; font-weight: 800; letter-spacing: -.04em; color: var(--c-blue); }
+    .hosps__mono small { margin-top: .3rem; font-size: .62rem; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: var(--c-text-2); }
+    .hosps__name { padding: .8rem 1rem .9rem; }
+    .hosps__name span { font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--c-text-2); display: block; }
+    .hosps__name strong { display: block; color: var(--c-navy); font-size: 1rem; font-weight: 600; line-height: 1.3; }
     @media (max-width: 980px) { .hosps__grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 520px) { .hosps { margin-top: 2.25rem; } .hosps__grid { gap: .55rem; } .hosps__card { min-height: 0; padding: .75rem; gap: .6rem; } .hosps__icon { width: 34px; height: 34px; border-radius: 10px; } .hosps__icon svg { width: 18px; height: 18px; } .hosps__card span { font-size: .66rem; } .hosps__card strong { font-size: .92rem; } }
+    @media (max-width: 520px) { .hosps { margin-top: 2.25rem; } .hosps__grid { gap: .55rem; } .hosps__logo { height: 84px; padding: .75rem; } .hosps__logo img { max-height: 46px; } .hosps__logo .tall { max-height: 54px; } .hosps__name { padding: .6rem .75rem .7rem; } .hosps__name span { font-size: .64rem; } .hosps__name strong { font-size: .92rem; } }
 
     /* 7 · Ubicación y contacto */
     .contact { display: grid; grid-template-columns: 1fr 400px; border: 1px solid var(--c-line); border-radius: var(--radius-lg); overflow: hidden; background: var(--c-white); }
@@ -419,13 +424,13 @@
       <p class="section-sub">Tu atención y tu cirugía en los principales hospitales de Guadalajara.</p>
     </div>
     <ul class="hosps__grid">
-        <li class="hosps__card"><i class="hosps__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3v4Z"/></svg></i><div><span>Hospital</span><strong>MAC Bernardette</strong></div></li>
-        <li class="hosps__card"><i class="hosps__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3v4Z"/></svg></i><div><span>Hospital</span><strong>Jardines</strong></div></li>
-        <li class="hosps__card"><i class="hosps__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3v4Z"/></svg></i><div><span>Hospital</span><strong>México Americano</strong></div></li>
-        <li class="hosps__card"><i class="hosps__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3v4Z"/></svg></i><div><span>Hospital</span><strong>Chapalita</strong></div></li>
-        <li class="hosps__card"><i class="hosps__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3v4Z"/></svg></i><div><span>Hospital</span><strong>Puerta de Hierro</strong></div></li>
-        <li class="hosps__card"><i class="hosps__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3v4Z"/></svg></i><div><span>Hospital</span><strong>San José</strong></div></li>
-        <li class="hosps__card"><i class="hosps__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2Zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3v4Z"/></svg></i><div><span>Hospital</span><strong>Hispano</strong></div></li>
+        <li class="hosps__card"><div class="hosps__logo"><img src="images/bernardette-logo.svg" alt="Logotipo de Hospital MAC Bernardette" width="74" height="61" loading="lazy" class="tall"></div><div class="hosps__name"><span>Hospital</span><strong>MAC Bernardette</strong></div></li>
+        <li class="hosps__card"><div class="hosps__logo"><img src="images/hospitales/jardines.webp" alt="Logotipo de Jardines Hospital" width="309" height="120" loading="lazy"></div><div class="hosps__name"><span>Hospital</span><strong>Jardines</strong></div></li>
+        <li class="hosps__card"><div class="hosps__logo"><img src="images/hospitales/mexico-americano.webp" alt="Logotipo de Hospital México Americano" width="95" height="120" loading="lazy" class="tall"></div><div class="hosps__name"><span>Hospital</span><strong>México Americano</strong></div></li>
+        <li class="hosps__card"><div class="hosps__logo"><span class="hosps__mono" aria-hidden="true"><b>Ch</b><small>Chapalita</small></span></div><div class="hosps__name"><span>Hospital</span><strong>Chapalita</strong></div></li>
+        <li class="hosps__card"><div class="hosps__logo"><img src="images/hospitales/puerta-de-hierro.webp" alt="Logotipo de Hospitales Puerta de Hierro" width="240" height="61" loading="lazy"></div><div class="hosps__name"><span>Hospital</span><strong>Puerta de Hierro</strong></div></li>
+        <li class="hosps__card"><div class="hosps__logo"><img src="images/hospitales/real-san-jose.webp" alt="Logotipo de Hospital Real San José" width="187" height="120" loading="lazy" class="tall"></div><div class="hosps__name"><span>Hospital</span><strong>Real San José</strong></div></li>
+        <li class="hosps__card"><div class="hosps__logo"><img src="images/hospitales/hispano.webp" alt="Logotipo de Hospital Hispano" width="221" height="120" loading="lazy"></div><div class="hosps__name"><span>Hospital</span><strong>Hispano</strong></div></li>
     </ul>
   </div>
 </section>
