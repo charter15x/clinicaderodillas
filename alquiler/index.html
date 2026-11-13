@@ -61,6 +61,32 @@
     .rx-frame { padding: 8px; border-radius: var(--r-xl); background: rgba(13,27,42,.035); box-shadow: inset 0 0 0 1px var(--hair); }
     .rx-frame__in { border-radius: calc(var(--r-xl) - 8px); overflow: hidden; background: #fff; box-shadow: 0 1px 1px rgba(13,27,42,.04), 0 24px 60px -30px rgba(13,27,42,.35); }
 
+    /* BANNER DE FOTOS (carrusel) */
+    .rx-banner { position: relative; background: var(--ink); overflow: hidden; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+    .rx-banner__stage { position: relative; aspect-ratio: 4 / 3; }
+    @media (min-width: 700px) { .rx-banner__stage { aspect-ratio: 16 / 7; } }
+    .rx-banner__slide { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1s var(--ease); }
+    .rx-banner__slide.is-on { opacity: 1; }
+    .rx-banner__slide img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.04); transition: transform 7s linear; }
+    .rx-banner__slide.is-on img { transform: scale(1); }
+    .rx-banner__stage::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 28%; background: linear-gradient(to top, rgba(13,27,42,.45), rgba(13,27,42,0)); pointer-events: none; }
+    .rx-banner__nav { position: absolute; top: 50%; z-index: 2; transform: translateY(-50%); display: none; place-items: center; width: 48px; height: 48px; border: 0; border-radius: 50%; background: rgba(255,255,255,.88); color: var(--ink); cursor: pointer; box-shadow: 0 10px 30px -12px rgba(13,27,42,.6); transition: background-color .3s var(--ease), transform .4s var(--ease); -webkit-tap-highlight-color: transparent; }
+    .rx-banner__nav svg { width: 22px; height: 22px; }
+    .rx-banner__nav--prev { left: 18px; }
+    .rx-banner__nav--next { right: 18px; }
+    @media (min-width: 700px) { .rx-banner__nav { display: grid; } }
+    @media (hover: hover) { .rx-banner__nav:hover { background: #fff; } }
+    .rx-banner__nav:active { transform: translateY(-50%) scale(.94); }
+    .rx-banner__dots { position: absolute; left: 50%; bottom: 6px; z-index: 2; transform: translateX(-50%); display: flex; gap: 2px; }
+    .rx-banner__dots button { appearance: none; border: 0; background: none; padding: 0; width: 26px; height: 26px; display: grid; place-items: center; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .rx-banner__dots button::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,.6); transition: width .5s var(--ease), background-color .5s var(--ease); }
+    .rx-banner__dots button[aria-current="true"]::before { width: 24px; background: #fff; }
+    .rx-banner__dots button:focus-visible, .rx-banner__nav:focus-visible { outline: 2px solid #7CC0FF; outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      .rx-banner__slide, .rx-banner__slide img, .rx-banner__dots button::before { transition-duration: .01s; }
+      .rx-banner__slide img { transform: none; }
+    }
+
     /* HERO */
     .rx-hero { padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3.5rem, 7vw, 6rem); background: radial-gradient(120% 70% at 85% 0%, #EAF3FC 0%, rgba(234,243,252,0) 60%), #fff; overflow: hidden; }
     .rx-hero__grid { display: grid; grid-template-columns: 1fr; gap: 2.75rem; align-items: center; }
@@ -277,6 +303,42 @@
 <span id="contenido"></span>
 
 <main>
+
+  <!-- BANNER DE FOTOS -->
+  <section class="rx-banner" id="banner" aria-roledescription="carrusel" aria-label="Fotos del movilizador pasivo de rodilla (CPM)">
+    <div class="rx-banner__stage" id="bannerStage">
+      <figure class="rx-banner__slide is-on" role="group" aria-roledescription="diapositiva" aria-label="1 de 6" aria-hidden="false">
+        <img src="../images/cpm/banner-1.jpg" width="1600" height="893" alt="Movilizador pasivo de rodilla (CPM) junto al sofá de una sala con plantas" fetchpriority="high">
+      </figure>
+      <figure class="rx-banner__slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 6" aria-hidden="true">
+        <img src="../images/cpm/banner-2.jpg" width="1600" height="893" alt="Movilizador pasivo de rodilla (CPM) sobre una camilla en un gimnasio" loading="lazy">
+      </figure>
+      <figure class="rx-banner__slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 6" aria-hidden="true">
+        <img src="../images/cpm/banner-3.jpg" width="512" height="286" alt="Movilizador pasivo de rodilla (CPM) sobre una cama, con su fuente de poder" loading="lazy">
+      </figure>
+      <figure class="rx-banner__slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 6" aria-hidden="true">
+        <img src="../images/cpm/banner-4.jpg" width="1600" height="893" alt="Pantalla y código QR del movilizador pasivo de rodilla (CPM) sobre una camilla" loading="lazy">
+      </figure>
+      <figure class="rx-banner__slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 6" aria-hidden="true">
+        <img src="../images/cpm/banner-5.jpg" width="1600" height="893" alt="Movilizador pasivo de rodilla (CPM) con su panel de control, de frente" loading="lazy">
+      </figure>
+      <figure class="rx-banner__slide" role="group" aria-roledescription="diapositiva" aria-label="6 de 6" aria-hidden="true">
+        <img src="../images/cpm/banner-6.jpg" width="512" height="286" alt="Movilizador pasivo de rodilla (CPM) en un consultorio de fisioterapia" loading="lazy">
+      </figure>
+
+      <button class="rx-banner__nav rx-banner__nav--prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <button class="rx-banner__nav rx-banner__nav--next" type="button" aria-label="Foto siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+
+      <div class="rx-banner__dots" role="group" aria-label="Elegir foto">
+        <button type="button" aria-label="Ver foto 1" aria-current="true"></button>
+        <button type="button" aria-label="Ver foto 2" aria-current="false"></button>
+        <button type="button" aria-label="Ver foto 3" aria-current="false"></button>
+        <button type="button" aria-label="Ver foto 4" aria-current="false"></button>
+        <button type="button" aria-label="Ver foto 5" aria-current="false"></button>
+        <button type="button" aria-label="Ver foto 6" aria-current="false"></button>
+      </div>
+    </div>
+  </section>
 
   <!-- HERO -->
   <section class="rx-hero">
@@ -720,6 +782,61 @@
     new IntersectionObserver(function (en) { heroOut = !en[0].isIntersecting; upd(); }, { threshold: 0.15 }).observe(hero);
     new IntersectionObserver(function (en) { closeIn = en[0].isIntersecting; upd(); }).observe(close);
   }
+})();
+
+// Banner de fotos: cambia cada 5 s, se pausa al pasar el cursor o enfocarlo, y se desliza con el dedo
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stage = document.getElementById('bannerStage');
+  var slides = stage.querySelectorAll('.rx-banner__slide');
+  var dots = stage.querySelectorAll('.rx-banner__dots button');
+  var prev = stage.querySelector('.rx-banner__nav--prev');
+  var next = stage.querySelector('.rx-banner__nav--next');
+  var cur = 0, timer = null, hover = false, focus = false;
+
+  function show(n) {
+    cur = (n + slides.length) % slides.length;
+    slides.forEach(function (s, i) {
+      s.classList.toggle('is-on', i === cur);
+      s.setAttribute('aria-hidden', i === cur ? 'false' : 'true');
+    });
+    dots.forEach(function (d, i) { d.setAttribute('aria-current', i === cur ? 'true' : 'false'); });
+  }
+  function play() {
+    clearInterval(timer);
+    if (reduce || hover || focus) return;
+    timer = setInterval(function () { show(cur + 1); }, 5000);
+  }
+  function go(n) { show(n); play(); }
+
+  prev.addEventListener('click', function () { go(cur - 1); });
+  next.addEventListener('click', function () { go(cur + 1); });
+  dots.forEach(function (d, i) { d.addEventListener('click', function () { go(i); }); });
+
+  if (window.matchMedia('(hover: hover)').matches) {
+    stage.addEventListener('mouseenter', function () { hover = true; play(); });
+    stage.addEventListener('mouseleave', function () { hover = false; play(); });
+  }
+  stage.addEventListener('focusin', function () { focus = true; play(); });
+  stage.addEventListener('focusout', function () { focus = false; play(); });
+
+  // Deslizar con el dedo (horizontal) o con el mouse arrastrando
+  var x0 = null;
+  stage.addEventListener('pointerdown', function (e) { if (e.target.closest('button')) return; x0 = e.clientX; });
+  stage.addEventListener('pointerup', function (e) {
+    if (x0 === null) return;
+    var dx = e.clientX - x0; x0 = null;
+    if (Math.abs(dx) > 40) go(dx < 0 ? cur + 1 : cur - 1);
+  });
+  stage.addEventListener('pointercancel', function () { x0 = null; });
+
+  // Pausar si la pestaña queda oculta o si el banner sale de pantalla
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) {
+      if (en[0].isIntersecting) play(); else clearInterval(timer);
+    }, { threshold: 0.25 }).observe(stage);
+  }
+  play();
 })();
 </script>
 </body>
