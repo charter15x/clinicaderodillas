@@ -74,7 +74,7 @@
     .dot-active { background:var(--green); box-shadow:0 0 0 3px #DDF4FF; }
     .status-label { font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--green); }
 
-    .campaign-body h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.3rem; line-height:1.25; }
+    .campaign-body h2 { font-size:1.05rem; font-weight:800 !important; color:var(--navy); margin-bottom:.3rem; line-height:1.25; }
     .campaign-body p  { font-size:.875rem; color:var(--mid); line-height:1.6; margin-bottom:1rem; }
 
     .campaign-actions { display:grid; grid-template-columns:1fr 1fr; gap:.6rem; }
@@ -106,7 +106,7 @@
       border-radius:var(--r); padding:1.25rem; margin-top:1.5rem;
       box-shadow:var(--shadow);
     }
-    .how-it-works h3 { font-size:.95rem; font-weight:800; color:var(--navy); margin-bottom:1rem; }
+    .how-it-works h2 { font-size:.95rem; font-weight:800 !important; color:var(--navy); margin-bottom:1rem; }
     .steps { display:flex; flex-direction:column; gap:.9rem; }
     .step { display:flex; gap:.85rem; align-items:flex-start; }
     .step-num {
@@ -148,7 +148,7 @@
     }
     @media (min-width:600px) { .modal-handle { display:none; } }
 
-    .modal h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.25rem; }
+    .modal h2 { font-size:1.05rem; font-weight:800 !important; color:var(--navy); margin-bottom:.25rem; }
     .modal-sub { font-size:.85rem; color:var(--mid); margin-bottom:1rem; line-height:1.5; }
 
     .msg-box {
@@ -193,7 +193,7 @@
       -webkit-tap-highlight-color:transparent;
     }
   </style>
-  <link rel="stylesheet" href="../assets/site.css?v=20261014">
+  <link rel="stylesheet" href="../assets/site.css?v=20261116">
   <script src="../assets/site.js?v=20261014" defer></script>
 </head>
 <body>
@@ -237,7 +237,7 @@
           <span class="status-dot dot-active"></span>
           <span class="status-label">Activa</span>
         </div>
-        <h3>Prótesis de Rodilla — Precio Especial $85,000</h3>
+        <h2>Prótesis de Rodilla — Precio Especial $85,000</h2>
         <p>Campaña de precio promocional para prótesis de rodilla con técnica mínima invasiva.</p>
         <div class="campaign-actions">
           <button class="btn-share" onclick="openShare('protesis')">
@@ -259,7 +259,7 @@
           <span class="status-dot dot-active"></span>
           <span class="status-label">Activa</span>
         </div>
-        <h3>Ácido Hialurónico — Sin Cirugía</h3>
+        <h2>Ácido Hialurónico — Sin Cirugía</h2>
         <p>Alivio del dolor de rodilla con inyección intraarticular. Ideal para desgaste articular.</p>
         <div class="campaign-actions">
           <button class="btn-share" onclick="openShare('hialuronico')">
@@ -281,7 +281,7 @@
           <span class="status-dot dot-active"></span>
           <span class="status-label">Activa</span>
         </div>
-        <h3>Artroscopia de Rodilla — Mínima Invasión</h3>
+        <h2>Artroscopia de Rodilla — Mínima Invasión</h2>
         <p>Cirugía artroscópica para menisco, ligamentos y desgaste. Sin grandes cortes, recuperación rápida.</p>
         <div class="campaign-actions">
           <button class="btn-share" onclick="openShare('artroscopia')">
@@ -303,7 +303,7 @@
           <span class="status-dot dot-active"></span>
           <span class="status-label">Activa</span>
         </div>
-        <h3>Consulta con el Dr. Cristóbal Alonso</h3>
+        <h2>Consulta con el Dr. Cristóbal Alonso</h2>
         <p>Campaña general de agenda. Para pacientes nuevos o con dolor crónico de rodilla.</p>
         <div class="campaign-actions">
           <button class="btn-share" onclick="openShare('consulta')">
@@ -321,7 +321,7 @@
   </div>
 
   <div class="how-it-works">
-    <h3>📱 ¿Cómo usarlo?</h3>
+    <h2>📱 ¿Cómo usarlo?</h2>
     <div class="steps">
       <div class="step"><div class="step-num">1</div><p>Toca <strong>Compartir</strong> en la campaña que quieras difundir.</p></div>
       <div class="step"><div class="step-num">2</div><p>Toca <strong>Copiar texto</strong> — el mensaje queda en tu portapapeles.</p></div>
@@ -336,7 +336,7 @@
 <div class="modal-overlay" id="shareModal">
   <div class="modal">
     <div class="modal-handle"></div>
-    <h3 id="modalTitle">Compartir campaña</h3>
+    <h2 id="modalTitle">Compartir campaña</h2>
     <p class="modal-sub">Copia el mensaje y pégalo en tu lista de difusión:</p>
     <div class="msg-box" id="modalMsg"></div>
     <div class="modal-btns">
@@ -521,7 +521,7 @@ https://clinicaderodillas.net/campanas/consulta.html`
     </div>
   </div>
   <div class="site-footer__bottom">
-    <span>© 2025 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
+    <span>© 2026 Clínica de Rodilla · Dr. Cristóbal Alonso</span>
     <span>Guadalajara, Jalisco · <a href="../aviso-de-privacidad/">Aviso de privacidad</a></span>
   </div>
 </footer>

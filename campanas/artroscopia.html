@@ -96,7 +96,7 @@
       display:flex; gap:.9rem; align-items:flex-start; box-shadow:var(--shadow);
     }
     .benefit .icon { font-size:2rem; flex-shrink:0; line-height:1; }
-    .benefit h3 { font-size:1rem; font-weight:700; color:var(--navy); margin-bottom:.2rem; }
+    .benefit h2 { font-size:1rem; font-weight:700 !important; color:var(--navy); margin-bottom:.2rem; }
     .benefit p  { font-size:.875rem; color:var(--mid); line-height:1.6; }
 
     /* INDICACIONES */
@@ -104,7 +104,7 @@
       background:var(--white); border:1px solid var(--border);
       border-radius:var(--r); padding:1.25rem; margin-bottom:1.25rem; box-shadow:var(--shadow);
     }
-    .indica-card h3 { font-size:.95rem; font-weight:800; color:var(--navy); margin-bottom:.9rem; }
+    .indica-card h2 { font-size:.95rem; font-weight:800 !important; color:var(--navy); margin-bottom:.9rem; }
     .indica-card ul { list-style:none; display:flex; flex-direction:column; gap:.6rem; }
     .indica-card li { display:flex; gap:.6rem; font-size:.9rem; color:var(--mid); line-height:1.5; }
     .indica-card li::before { content:'✓'; color:var(--blue); font-weight:800; flex-shrink:0; font-size:1rem; }
@@ -116,7 +116,7 @@
     }
     .doctor-img { width:100%; aspect-ratio:16/9; object-fit:cover; object-position:right top; }
     .doctor-body { padding:1.1rem 1.1rem; }
-    .doctor-body h3 { font-size:1.05rem; font-weight:800; color:var(--navy); margin-bottom:.15rem; }
+    .doctor-body h2 { font-size:1.05rem; font-weight:800 !important; color:var(--navy); margin-bottom:.15rem; }
     .doctor-body .role { font-size:.8rem; color:var(--blue); font-weight:700; margin-bottom:.55rem; }
     .doctor-body p { font-size:.875rem; color:var(--mid); line-height:1.65; }
 
@@ -133,13 +133,13 @@
       background:var(--white); border:1px solid var(--border);
       border-radius:var(--r); padding:1.1rem 1.1rem; box-shadow:var(--shadow); margin-bottom:5rem;
     }
-    .ubicacion h3 { font-size:.9rem; font-weight:800; color:var(--navy); margin-bottom:.8rem; }
+    .ubicacion h2 { font-size:.9rem; font-weight:800 !important; color:var(--navy); margin-bottom:.8rem; }
     .ubi-row { display:flex; gap:.65rem; align-items:flex-start; margin-bottom:.6rem; }
     .ubi-row:last-child { margin-bottom:0; }
     .ubi-row svg { width:20px; height:20px; fill:var(--blue); flex-shrink:0; margin-top:.1rem; }
     .ubi-row span { font-size:.88rem; color:var(--mid); line-height:1.55; }
   </style>
-  <link rel="stylesheet" href="../assets/site.css?v=20261014">
+  <link rel="stylesheet" href="../assets/site.css?v=20261116">
   <script src="../assets/site.js?v=20261014" defer></script>
 </head>
 <body>
@@ -167,24 +167,24 @@
   <div class="benefits">
     <div class="benefit">
       <span class="icon">🎯</span>
-      <div><h3>Máxima precisión</h3><p>Una cámara de fibra óptica permite visualizar y tratar el interior de la articulación con exactitud quirúrgica.</p></div>
+      <div><h2>Máxima precisión</h2><p>Una cámara de fibra óptica permite visualizar y tratar el interior de la articulación con exactitud quirúrgica.</p></div>
     </div>
     <div class="benefit">
       <span class="icon">🩹</span>
-      <div><h3>Incisiones mínimas</h3><p>Solo dos pequeñas entradas de menos de 1 cm. Menos dolor, menos cicatriz y menor riesgo de infección.</p></div>
+      <div><h2>Incisiones mínimas</h2><p>Solo dos pequeñas entradas de menos de 1 cm. Menos dolor, menos cicatriz y menor riesgo de infección.</p></div>
     </div>
     <div class="benefit">
       <span class="icon">🚶</span>
-      <div><h3>Recuperación acelerada</h3><p>La mayoría de los pacientes regresan a sus actividades diarias en menos tiempo que con cirugía abierta.</p></div>
+      <div><h2>Recuperación acelerada</h2><p>La mayoría de los pacientes regresan a sus actividades diarias en menos tiempo que con cirugía abierta.</p></div>
     </div>
     <div class="benefit">
       <span class="icon">🏥</span>
-      <div><h3>Sin internamiento prolongado</h3><p>Procedimiento ambulatorio o de corta estancia en Hospital Bernardette, Guadalajara.</p></div>
+      <div><h2>Sin internamiento prolongado</h2><p>Procedimiento ambulatorio o de corta estancia en Hospital Bernardette, Guadalajara.</p></div>
     </div>
   </div>
 
   <div class="indica-card">
-    <h3>¿Cuándo se recomienda la artroscopia?</h3>
+    <h2>¿Cuándo se recomienda la artroscopia?</h2>
     <ul>
       <li>Lesión de menisco (desgarro o daño)</li>
       <li>Ruptura o lesión de ligamentos (LCA, LCP)</li>
@@ -198,7 +198,7 @@
   <div class="doctor-card">
     <img class="doctor-img" src="../images/dr-alonso-cirugia.jpg" alt="Dr. Cristóbal Alonso durante una cirugía" style="object-position:center 28%">
     <div class="doctor-body">
-      <h3>Dr. Cristóbal Alonso</h3>
+      <h2>Dr. Cristóbal Alonso</h2>
       <p class="role">Traumatólogo · Subespecialista en Cirugía de Rodilla</p>
       <p>Amplia experiencia en artroscopia de rodilla. Diagnóstico y tratamiento de lesiones de menisco, ligamentos y cartílago con técnicas mínimamente invasivas.</p>
     </div>
@@ -210,7 +210,7 @@
   </div>
 
   <div class="ubicacion">
-    <h3>📍 Dónde encontrarnos</h3>
+    <h2>📍 Dónde encontrarnos</h2>
     <div class="ubi-row">
       <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
       <span>Av. Hidalgo 930, Col. Centro<br>Guadalajara, Jal. CP 44100</span>

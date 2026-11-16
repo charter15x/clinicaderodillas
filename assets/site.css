@@ -91,7 +91,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus
 .brand__icon { width: 46px; height: 46px; flex-shrink: 0; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand__name { font-size: 1.2rem; font-weight: 700; color: var(--c-navy); letter-spacing: -.01em; }
-.brand__city { font-size: .68rem; font-weight: 600; letter-spacing: .32em; color: var(--c-blue); margin-top: .2rem; }
+.brand__city { font-size: .72rem; font-weight: 600; letter-spacing: .3em; color: var(--c-blue); margin-top: .2rem; }
 
 .site-nav { display: flex; align-items: center; gap: 1.4rem; flex: 1; }
 .site-nav > a:first-child { margin-left: auto; }
