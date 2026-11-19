@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Prótesis de Rodilla – Precio especial – Dr. Cristóbal Alonso</title>
+  <meta name="description" content="Precio especial en prótesis de rodilla mínima invasiva. Dr. Cristóbal Alonso – Guadalajara. (33) 3825-8447">
+  <meta property="og:title"        content="🦴 Prótesis de Rodilla — Precio Especial">
+  <meta property="og:description"  content="Cirugía mínima invasiva con el Dr. Cristóbal Alonso. Heridas pequeñas, recuperación más rápida. Aceptamos seguros. Av. Hidalgo 930, Guadalajara.">
+  <meta property="og:image"        content="https://clinicaderodillas.net/images/rodilla3.jpg">
+  <meta property="og:image:width"   content="1200">
+  <meta property="og:image:height"  content="630">
+  <meta property="og:url"          content="https://clinicaderodillas.net/campanas/protesis-precio-especial.html">
+  <meta property="og:type"         content="website">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo-icon.svg?v=2">
+  <link rel="alternate icon" href="../images/logo.jpg">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root {
+      --navy:#0D1B2A; --blue:#0969DA;
+      --dark:#0D1B2A; --mid:#57606A; --light:#F6F8FA; --white:#fff;
+      --border:#D0D7DE; --shadow:0 2px 16px rgba(13,27,42,.09); --r:1rem;
+      --green:#0550AE; --red:#0969DA;
+    }
+    html { -webkit-text-size-adjust:100%; }
+    body {
+      font-family: var(--font); background:var(--light);
+      color:var(--dark); -webkit-font-smoothing:antialiased;
+      font-size:17px; line-height:1.65; overflow-x:hidden;
+    }
+    a { text-decoration:none; color:inherit; }
+    img { display:block; max-width:100%; }
+
+    /* HERO */
+    .hero { position:relative; }
+    .hero-img { width:100%; aspect-ratio:4/3; object-fit:cover; object-position:center 30%; display:block; }
+    @media (min-width:480px) { .hero-img { aspect-ratio:16/9; } }
+    .hero-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(10,25,50,.95) 0%, rgba(10,25,50,.5) 55%, rgba(10,25,50,.15) 100%);
+    }
+    .hero-content { position:absolute; bottom:0; left:0; right:0; padding:1.5rem 1.25rem; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:.35rem;
+      background:var(--red); color:#fff;
+      font-size:.72rem; font-weight:800; letter-spacing:.06em; text-transform:uppercase;
+      padding:.35rem .85rem; border-radius:9999px; margin-bottom:.65rem;
+    }
+    .hero-content h1 {
+      font-size:clamp(1.5rem,6vw,2rem); font-weight:800; color:#fff;
+      line-height:1.15; margin-bottom:.5rem;
+    }
+    .hero-price { color:#fff; }
+    .hero-price .amount { font-size:clamp(2.4rem,10vw,3.2rem); font-weight:900; line-height:1; }
+    .hero-price .amount small { font-size:55%; font-weight:700; }
+    .hero-price .note { font-size:.8rem; color:rgba(255,255,255,.7); margin-top:.25rem; }
+
+    /* LOGO BAR */
+    .logo-bar {
+      background:var(--white); padding:.9rem 1.25rem;
+      display:flex; align-items:center; gap:.75rem;
+      border-bottom:1px solid var(--border);
+      position:sticky; top:0; z-index:50;
+      box-shadow:0 1px 8px rgba(0,0,0,.07);
+    }
+    .logo-bar img { height:36px; border-radius:.375rem; }
+    .logo-bar-text strong { display:block; font-size:.88rem; font-weight:800; color:var(--navy); }
+    .logo-bar-text span  { font-size:.75rem; color:var(--mid); }
+
+    /* CONTENT */
+    .content { max-width:540px; margin:0 auto; padding:1.5rem 1.25rem calc(2rem + env(safe-area-inset-bottom)); }
+
+    /* CTA FIJO INFERIOR */
+    .sticky-cta {
+      position:fixed; bottom:0; left:0; right:0; z-index:100;
+      background:var(--white); border-top:1px solid var(--border);
+      padding:.85rem 1.25rem calc(.85rem + env(safe-area-inset-bottom));
+      display:flex; gap:.65rem;
+      box-shadow:0 -4px 20px rgba(0,0,0,.1);
+    }
+    .sticky-cta .btn-wa {
+      flex:2; display:flex; align-items:center; justify-content:center; gap:.5rem;
+      background:#0969DA; color:#fff; min-height:52px; border-radius:.875rem;
+      font-size:1rem; font-weight:700; -webkit-tap-highlight-color:transparent;
+    }
+    .sticky-cta .btn-wa:active { background:#0550AE; }
+    .sticky-cta .btn-wa svg { width:20px; height:20px; fill:#fff; }
+    .sticky-cta .btn-call {
+      flex:1; display:flex; align-items:center; justify-content:center; gap:.4rem;
+      background:var(--light); color:var(--navy); min-height:52px; border-radius:.875rem;
+      font-size:.88rem; font-weight:700; border:1.5px solid var(--border);
+      -webkit-tap-highlight-color:transparent;
+    }
+    .sticky-cta .btn-call:active { background:#D0D7DE; }
+    .sticky-cta .btn-call svg { width:18px; height:18px; fill:var(--blue); }
+
+    /* PRECIO BOX */
+    .price-box {
+      background:var(--navy); border-radius:var(--r);
+      padding:1.5rem 1.25rem; text-align:center; margin-bottom:1.25rem;
+    }
+    .price-box .label { font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.55); margin-bottom:.35rem; }
+    .price-box .price { font-size:clamp(2.5rem,12vw,3.5rem); font-weight:900; color:#fff; line-height:1; }
+    .price-box .price small { font-size:55%; font-weight:700; }
+    .price-box p { color:rgba(255,255,255,.6); font-size:.82rem; margin-top:.4rem; }
+
+    /* BENEFICIOS */
+    .benefits { display:flex; flex-direction:column; gap:.85rem; margin-bottom:1.25rem; }
+    .benefit {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:1.1rem 1rem;
+      display:flex; gap:.9rem; align-items:flex-start;
+      box-shadow:var(--shadow);
+    }
+    .benefit .icon { font-size:2rem; flex-shrink:0; line-height:1; }
+    .benefit h2 { font-size:1rem; font-weight:700 !important; color:var(--navy); margin-bottom:.25rem; }
+    .benefit p  { font-size:.875rem; color:var(--mid); line-height:1.6; }
+
+    /* INCLUYE */
+    .include-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:1.25rem; margin-bottom:1.25rem; box-shadow:var(--shadow);
+    }
+    .include-card h2 { font-size:.95rem; font-weight:800 !important; color:var(--navy); margin-bottom:.9rem; }
+    .include-card ul { list-style:none; display:flex; flex-direction:column; gap:.6rem; }
+    .include-card li { display:flex; gap:.6rem; font-size:.9rem; color:var(--mid); line-height:1.5; }
+    .include-card li::before { content:'✓'; color:var(--green); font-weight:800; flex-shrink:0; font-size:1rem; }
+
+    /* SEGUROS */
+    .seguros {
+      background:#DDF4FF; border:1px solid #B6E3FF; border-radius:var(--r);
+      padding:1rem 1.1rem; display:flex; gap:.75rem; align-items:center;
+      margin-bottom:1.25rem;
+    }
+    .seguros .icon { font-size:1.75rem; flex-shrink:0; }
+    .seguros p { font-size:.88rem; color:#0D1B2A; font-weight:600; line-height:1.5; }
+
+    /* DOCTOR */
+    .doctor-card {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow); margin-bottom:1.25rem;
+    }
+    .doctor-img { width:100%; aspect-ratio:16/9; object-fit:cover; object-position:right top; }
+    .doctor-body { padding:1.1rem 1.1rem; }
+    .doctor-body h2 { font-size:1.05rem; font-weight:800 !important; color:var(--navy); margin-bottom:.15rem; }
+    .doctor-body .role { font-size:.8rem; color:var(--blue); font-weight:700; margin-bottom:.55rem; }
+    .doctor-body p { font-size:.875rem; color:var(--mid); line-height:1.65; }
+
+    /* UBICACIÓN */
+    .ubicacion {
+      background:var(--white); border:1px solid var(--border);
+      border-radius:var(--r); padding:1.1rem 1.1rem; box-shadow:var(--shadow);
+      margin-bottom:5rem; /* espacio para sticky CTA */
+    }
+    .ubicacion h2 { font-size:.9rem; font-weight:800 !important; color:var(--navy); margin-bottom:.8rem; }
+    .ubi-row { display:flex; gap:.65rem; align-items:flex-start; margin-bottom:.6rem; }
+    .ubi-row:last-child { margin-bottom:0; }
+    .ubi-row svg { width:20px; height:20px; fill:var(--blue); flex-shrink:0; margin-top:.1rem; }
+    .ubi-row span { font-size:.88rem; color:var(--mid); line-height:1.55; }
+  </style>
+  <link rel="stylesheet" href="../assets/site.css?v=20261116b">
+  <script src="../assets/site.js?v=20261014" defer></script>
+</head>
+<body>
+
+<div class="hero hero-landing">
+  <img class="hero-img" src="../images/rodilla3.jpg" alt="Prótesis de Rodilla mínima invasiva">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🔥 Precio especial 2025</div>
+    <h1>Prótesis de Rodilla<br>Mínima Invasiva</h1>
+    <div class="hero-price">
+      <div class="amount">Precio especial</div>
+      <p class="note">precio especial · sujeto a evaluación</p>
+    </div>
+  </div>
+</div>
+
+<a class="logo-bar" href="../index.html" aria-label="Clínica de Rodilla Guadalajara, ir al inicio">
+  <img src="../assets/logo-icon.svg?v=2" alt="" width="40" height="40">
+  <div class="logo-bar-text">
+    <strong>Clínica de Rodilla</strong>
+    <span>Dr. Cristóbal Alonso · Traumatólogo</span>
+  </div>
+</a>
+
+<div class="content">
+
+  <div class="price-box">
+    <p class="label">Precio especial de campaña</p>
+    <div class="price">Precio especial</div>
+    <p>Incluye prótesis e implante · Consulte disponibilidad</p>
+  </div>
+
+  <div class="benefits">
+    <div class="benefit">
+      <span class="icon">🩹</span>
+      <div><h2>Mínima Invasión</h2><p>Heridas pequeñas, menos dolor y cicatrización más rápida que con técnica tradicional.</p></div>
+    </div>
+    <div class="benefit">
+      <span class="icon">🚶</span>
+      <div><h2>Camina el Mismo Día</h2><p>La mayoría de los pacientes se levantan a caminar el mismo día de la cirugía.</p></div>
+    </div>
+    <div class="benefit">
+      <span class="icon">🏆</span>
+      <div><h2>Tecnología de Vanguardia</h2><p>Implantes de alta calidad para máxima durabilidad y función a largo plazo.</p></div>
+    </div>
+    <div class="benefit">
+      <span class="icon">🏥</span>
+      <div><h2>Hospital Bernardette</h2><p>Procedimiento en Hospital Bernardette, MAC Hospitales — Guadalajara.</p></div>
+    </div>
+  </div>
+
+  <div class="include-card">
+    <h2>¿Qué incluye el precio?</h2>
+    <ul>
+      <li>Consulta preoperatoria con el especialista</li>
+      <li>Implante y prótesis de rodilla</li>
+      <li>Cirugía con técnica de mínima invasión</li>
+      <li>Atención postquirúrgica inmediata</li>
+      <li>Plan de rehabilitación e indicaciones</li>
+    </ul>
+  </div>
+
+  <div class="seguros">
+    <span class="icon">🛡️</span>
+    <p>Aceptamos seguros de gastos médicos. Consulte disponibilidad con su aseguradora.</p>
+  </div>
+
+  <div class="doctor-card">
+    <img class="doctor-img" src="../images/dr-alonso-cirugia.jpg" alt="Dr. Cristóbal Alonso durante una cirugía" style="object-position:center 28%">
+    <div class="doctor-body">
+      <h2>Dr. Cristóbal Alonso</h2>
+      <p class="role">Traumatólogo · Subespecialista en Cirugía de Rodilla</p>
+      <p>Amplia experiencia en prótesis de rodilla con técnica de mínima invasión. Atención personalizada centrada en el bienestar del paciente.</p>
+    </div>
+  </div>
+
+  <div class="ubicacion">
+    <h2>📍 Dónde encontrarnos</h2>
+    <div class="ubi-row">
+      <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      <span>Av. Hidalgo 930, Col. Centro<br>Guadalajara, Jal. CP 44100</span>
+    </div>
+    <div class="ubi-row">
+      <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+      <span>Lun–Vie 9:00–19:00 · Sáb 9:00–14:00</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTONES FIJOS ABAJO -->
+<div class="sticky-cta">
+  <a class="btn-wa" href="https://wa.me/523313427809?text=Hola%20Dr.%20Cristóbal%2C%20vi%20la%20promoción%20de%20prótesis%20de%20rodilla%20y%20me%20gustaría%20más%20información.">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    WhatsApp
+  </a>
+  <a class="btn-call" href="tel:+523338258447">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+    Llamar
+  </a>
+</div>
+
+</body>
+</html>
