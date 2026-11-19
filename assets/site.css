@@ -265,8 +265,8 @@ main p a:not([class]), .content p a:not([class]), .container p a:not([class]) {
   }
   .mobile-cta a {
     display: flex; align-items: center; justify-content: center; gap: .4rem;
-    min-height: 46px; border-radius: var(--radius-sm);
-    font-size: .9rem; font-weight: 600; text-decoration: none;
+    min-height: 46px; padding: 0 .5rem; border-radius: var(--radius-sm);
+    font-size: .9rem; font-weight: 600; text-decoration: none; white-space: nowrap;
     background: var(--c-white); color: var(--c-navy); border: 1px solid var(--c-line);
   }
   .mobile-cta a svg { width: 18px; height: 18px; fill: var(--c-blue); flex-shrink: 0; }
