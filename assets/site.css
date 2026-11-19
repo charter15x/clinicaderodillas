@@ -226,6 +226,7 @@ main p a:not([class]), .content p a:not([class]), .container p a:not([class]) {
 /* ── Pie de página ────────────────────────────────────────────────────── */
 .site-footer { display: block !important; padding: 0 !important; text-align: left !important; background: var(--c-navy); color: rgba(255, 255, 255, .78); font-size: .9rem; }
 .site-footer__bottom { width: 100%; }
+.site-footer a:not(.brand) { display: inline-block; padding: .4rem 0; margin: -.4rem 0; }
 .site-footer__inner {
   max-width: 1180px; margin: 0 auto; padding: 3rem 1.25rem 2rem;
   display: grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 2rem;
