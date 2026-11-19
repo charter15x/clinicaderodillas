@@ -193,6 +193,9 @@ input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus
 }
 .hero:not(.hero--home):not(.hero-landing) .label { display: block; }
 .back-link { color: var(--c-blue) !important; }
+a[href^="tel:"]:not([class]):not(.mobile-cta > a), a[href^="mailto:"]:not([class]):not(.mobile-cta > a), a[href*="wa.me"]:not([class]):not(.mobile-cta > a) { display: inline-block; padding: .4rem 0; margin: -.4rem 0; }
+:is(p, li, td) > a:not([class]):not(.mobile-cta > a) { display: inline-block; padding: .4rem 0; margin: -.4rem 0; }
+.back-link { min-height: 24px; display: inline-flex; align-items: center; }
 .back-link:hover { color: var(--c-blue-hover) !important; text-decoration: underline; }
 .btn-download { background: var(--c-blue) !important; color: #fff !important; box-shadow: var(--shadow-sm) !important; }
 .btn-download:hover { background: var(--c-blue-hover) !important; }
